@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace GrandiaReduxMaker
@@ -355,35 +356,46 @@ namespace GrandiaReduxMaker
 
         public void UpdateAttackValue(string ID)
         {
+            // Get the tabpage that contains the groups
+            TabPage tabPage = tabControl1.TabPages[0];
+
+            // Get all the controls in the tabpage
+            List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
+
+            // Get the groupboxes in the tabpage
+            List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
+
+            // Initialize a list to hold the textboxes and comboboxes
+            List<TextBox> textBoxes = new List<TextBox>();
+            List<ComboBox> comboBoxes = new List<ComboBox>();
+
+            // Get the comboboxes in each groupbox
+            foreach (GroupBox groupBox in groupBoxes.Where(x => x.Name.Contains("_GroupBox")))
+            {
+                comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+            }
+
+            // Get the textboxes in each groupbox
+            foreach (GroupBox groupBox in groupBoxes)
+            {
+                textBoxes.AddRange(groupBox.Controls.OfType<TextBox>().Where(x => x.Name.Contains("_TextBox")));
+                comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>().Where(x => x.Name.Contains("_ComboBox")));
+            }
+
+            foreach (ComboBox comboBox in comboBoxes)
+            {
+                comboBox.SelectedValue = -1;
+            }
+
+            foreach (TextBox textBox in textBoxes)
+            {
+                textBox.Clear();
+            }
+
             var effectTypeForMode = "";
             for (int i = 1; i < 6; i++)
             {
                 var values = EnemiesStats.EnemiesAttacksDictionary.Where(kvp => kvp.Key.StartsWith($"{ID}_{i}")).FirstOrDefault().Value;
-
-                // Get the tabpage that contains the groups
-                TabPage tabPage = tabControl1.TabPages[0];
-
-                // Get all the controls in the tabpage
-                List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
-
-                // Get the groupboxes in the tabpage
-                List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
-
-                // Initialize a list to hold the textboxes and comboboxes
-                List<TextBox> textBoxes = new List<TextBox>();
-                List<ComboBox> comboBoxes = new List<ComboBox>();
-
-                // Get the textboxes in each groupbox
-                foreach (GroupBox groupBox in groupBoxes)
-                {
-                    textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
-                }
-
-                // Get the comboboxes in each groupbox
-                foreach (GroupBox groupBox in groupBoxes)
-                {
-                    comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
-                }
 
                 if (values != null)
                 {
@@ -392,28 +404,6 @@ namespace GrandiaReduxMaker
                         // Edit the text of the textboxes
                         foreach (TextBox textBox in textBoxes.Where(x => x.Name.Contains($"{value.Key}_")))
                         {
-                            if (i is 1)
-                            {
-                                textBox.Clear();
-
-                                if (textBox.Name.Equals($"{value.Key}_{i + 1}_TextBox"))
-                                {
-                                    textBox.Clear();
-                                }
-                                else if (textBox.Name.Equals($"{value.Key}_{i + 2}_TextBox"))
-                                {
-                                    textBox.Clear();
-                                }
-                                else if(textBox.Name.Equals($"{value.Key}_{i + 3}_TextBox"))
-                                {
-                                    textBox.Clear();
-                                }
-                                else if(textBox.Name.Equals($"{value.Key}_{i + 4}_TextBox"))
-                                {
-                                    textBox.Clear();
-                                }
-                            }
-
                             if (textBox.Name.Equals($"{value.Key}_{i}_TextBox"))
                             {
                                 textBox.Text = value.Value.ToString();
@@ -424,31 +414,6 @@ namespace GrandiaReduxMaker
                         // Edit the text of the comboboxes
                         foreach (ComboBox comboBox in comboBoxes.Where(x => x.Name.Contains($"{value.Key}_")))
                         {
-                            if (i is 1)
-                            {
-                                comboBox.SelectedIndex = -1;
-
-                                if (comboBox.Name.Equals($"{value.Key}_{i + 1}_ComboBox"))
-                                {
-                                    comboBox.SelectedIndex = -1;
-                                }
-
-                                if (comboBox.Name.Equals($"{value.Key}_{i + 2}_ComboBox"))
-                                {
-                                    comboBox.SelectedIndex = -1;
-                                }
-
-                                if (comboBox.Name.Equals($"{value.Key}_{i + 3}_ComboBox"))
-                                {
-                                    comboBox.SelectedIndex = -1;
-                                }
-
-                                if (comboBox.Name.Equals($"{value.Key}_{i + 4}_ComboBox"))
-                                {
-                                    comboBox.SelectedIndex = -1;
-                                }
-                            }
-
                             if (comboBox.Name.Equals($"EffectType_{i}_ComboBox"))
                             {
                                 //keep Variable For Mode
@@ -561,7 +526,7 @@ namespace GrandiaReduxMaker
             SetForm(ExtAttCak, "External Att Cak", 420, 130);
 
             var j = 0;
-            
+
             //ATTACKS
             for (int i = 1; i < 6; i++)
             {
@@ -705,6 +670,84 @@ namespace GrandiaReduxMaker
                             break;
                     }
                 }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, string> GetValueToList = new Dictionary<string, string>();
+
+            // Get the tabpage that contains the groups
+            TabPage tabPage = tabControl1.TabPages[0];
+
+            // Get all the controls in the tabpage
+            List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
+
+            // Get the groupboxes in the tabpage
+            List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
+
+            // Initialize a list to hold the textboxes
+            List<TextBox> textBoxes = new List<TextBox>();
+            List<ComboBox> comboBoxes = new List<ComboBox>();
+
+            // Get the textboxes in each groupbox
+            foreach (GroupBox groupBox in groupBoxes)
+            {
+                textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
+            }
+
+            // Get the comboboxes in each groupbox
+            foreach (GroupBox groupBox in groupBoxes)
+            {
+                comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+            }
+
+            var i = 0;
+            var addSeven = "";
+            var check1 = false;
+            var check2 = false;
+            var check3 = false;
+            var check4 = false;
+            var check5 = false;
+
+            // Edit the text of the textboxes
+            foreach (TextBox textBoxe in textBoxes)
+            {
+                Console.WriteLine($"TextBox : {textBoxe.Name}, Value : {textBoxe.Text}");
+
+                if (!string.IsNullOrWhiteSpace(textBoxe.Text))
+                {
+                    GetValueToList.Add(textBoxe.Name.Replace("_TextBox", "").Replace("TextBox", ""), textBoxe.Text);
+                }
+            }
+
+            // Edit the text of the comboboxes
+            foreach (ComboBox comboBox in comboBoxes)
+            {
+                if (comboBox.SelectedItem != null)
+                {
+                    GetValueToList.Add(comboBox.Name.Replace("_ComboBox", "").Replace("ComboBox", ""), comboBox.SelectedValue.ToString());
+                }
+            }
+
+            using (FileStream stream = new FileStream(@"d:\AAAAAA\M_DAT2.BIN", FileMode.OpenOrCreate))
+            {
+                stream.Seek(int.Parse(SetPosition.Text), SeekOrigin.Begin);
+                stream.ReadByte();
+                var LV = ByteConverterClass.IntToByte(GetValueToList["LV"]);
+                stream.Write(LV, 0, LV.Length);
+                var HP = ByteConverterClass.Int16ToBytes(GetValueToList["HP"]);
+                stream.Write(HP, 0, HP.Length);
+                var STR = ByteConverterClass.Int16ToBytes(GetValueToList["STR"]);
+                stream.Write(STR, 0, STR.Length);
+                var VIT = ByteConverterClass.Int16ToBytes(GetValueToList["VIT"]);
+                stream.Write(VIT, 0, VIT.Length);
+                var WIT = ByteConverterClass.Int16ToBytes(GetValueToList["WIT"]);
+                stream.Write(WIT, 0, WIT.Length);
+                var AGI = ByteConverterClass.Int16ToBytes(GetValueToList["AGI"]);
+                stream.Write(AGI, 0, AGI.Length);
+                var IpPower = ByteConverterClass.Int16ToBytes(GetValueToList["IpPower"]);
+                stream.Write(IpPower, 0, IpPower.Length);
             }
         }
     }

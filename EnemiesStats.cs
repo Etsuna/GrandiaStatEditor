@@ -117,7 +117,6 @@ namespace GrandiaReduxMaker
                             var ExtPower = reader.ReadByte();
                             var StopMode = reader.ReadByte();
                             var Unknow4 = reader.ReadByte();
-                            
                             var NotSet2 = reader.ReadByte();
                             var AtkRange = reader.ReadByte();
                             var AttackQuarter = reader.ReadBytes(10);

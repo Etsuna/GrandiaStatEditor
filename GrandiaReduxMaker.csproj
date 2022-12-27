@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ByteConverterClass.cs" />
     <Compile Include="ModeClass.cs" />
     <Compile Include="ComboBoxList.cs" />
     <Compile Include="EnemyListClass.cs" />
