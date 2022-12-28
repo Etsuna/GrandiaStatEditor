@@ -1,9 +1,9 @@
 ﻿using GrandiaReduxMaker.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GrandiaReduxMaker
@@ -25,7 +25,6 @@ namespace GrandiaReduxMaker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button1.Enabled = false;
             button1.Text = char.ConvertFromUtf32(0x2190);
             button2.Text = char.ConvertFromUtf32(0x2192);
             button1.Enabled = false;
@@ -55,6 +54,269 @@ namespace GrandiaReduxMaker
         {
             ChangeMode(5);
         }
+        private void TextBox_Resist_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text) + 7;
+
+            if (result < 0 || result > 14)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between -7 to 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+        private void TextBox_0to3_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 3)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to4_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 4)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 4", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to7_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 7)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to99_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 99)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 99", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to100_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 100)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 100", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to255_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 255)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 255", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to999_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 999)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to9999_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 9999)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 9999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to12800_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 12800)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 12800", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to32767_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 32767)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 32767", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to65535_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 65535)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 to 65535", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -117,7 +379,7 @@ namespace GrandiaReduxMaker
             GroupBox groupBox = new GroupBox();
             groupBox.Name = $"{groupeName}GroupBox";
             groupBox.Text = groupeName;
-            groupBox.Location = new System.Drawing.Point(10 + xGroupPosition, 30 + yGroupPosition);
+            groupBox.Location = new Point(10 + xGroupPosition, 30 + yGroupPosition);
             groupBox.AutoSize = true;
             this.tabPage1.Controls.Add(groupBox);
 
@@ -127,8 +389,8 @@ namespace GrandiaReduxMaker
                 Label label = new Label();
                 label.Name = $"{item}Label";
                 label.Text = item;
-                label.Location = new System.Drawing.Point(10, 20 + y);
-                label.Size = new System.Drawing.Size(100 - x, 20);
+                label.Location = new Point(10, 20 + y);
+                label.Size = new Size(100 - x, 20);
                 groupBox.Controls.Add(label);
 
                 if (item.Equals("Ext_Type") || item.Equals("ItemDrop1") || item.Equals("ItemDrop2") || item.Equals("CallID") || item.Equals("SkillID1") || item.Equals("SkillID2") || item.Equals("SkillID3") || item.Equals("SkillID4"))
@@ -153,14 +415,13 @@ namespace GrandiaReduxMaker
                             comboBox.DataSource = SkillClass.SkillList();
                             break;
                         default:
-                            Console.WriteLine("Invalid selection.");
                             break;
                     }
                     comboBox.Name = $"{item}ComboBox";
                     comboBox.ValueMember = "Value";
                     comboBox.DisplayMember = "Text";
-                    comboBox.Location = new System.Drawing.Point(100, 20 + y);
-                    comboBox.Size = new System.Drawing.Size(100, 20);
+                    comboBox.Location = new Point(100, 20 + y);
+                    comboBox.Size = new Size(100, 20);
                     groupBox.Controls.Add(comboBox);
                 }
                 else
@@ -177,13 +438,73 @@ namespace GrandiaReduxMaker
                         case "NameFull":
                             textBox.Enabled = false;
                             break;
+                        case "MagicBlockResist":
+                        case "MoveBlockResist":
+                        case "PlagueResist":
+                        case "PoisonResist":
+                        case "ParalysisResist":
+                        case "SleepResist":
+                        case "ConfusionResist":
+                        case "CriticalResist":
+                        case "FireResist":
+                        case "WaterResist":
+                        case "WindResist":
+                        case "EarthResist":
+                            textBox.TextChanged += new EventHandler(TextBox_Resist_TextChanged);
+                            break;
+                        case "AntiIp":
+                            textBox.TextChanged += new EventHandler(TextBox_0to3_TextChanged);
+                            break;
+                        case "CallNumber":
+                            textBox.TextChanged += new EventHandler(TextBox_0to4_TextChanged);
+                            break;
+                        case "KBAttack":
+                        case "AntiKB":
+                        case "Ext_Atk":
+                            textBox.TextChanged += new EventHandler(TextBox_0to7_TextChanged);
+                            break;
+                        case "LV":
+                        case "AttackCount":
+                        case "MP1":
+                        case "MP2":
+                        case "MP3":
+                            textBox.TextChanged += new EventHandler(TextBox_0to99_TextChanged);
+                            break;
+                        case "GoldPourcent":
+                        case "ItemDrop1Pourcent":
+                        case "ItemDrop2Pourcent":
+                        case "Ext_Pourcent":
+                        case "CallPourcent":
+                            textBox.TextChanged += new EventHandler(TextBox_0to100_TextChanged);
+                            break;
+                        case "STR":
+                        case "VIT":
+                        case "WIT":
+                        case "AGI":
+                            textBox.TextChanged += new EventHandler(TextBox_0to999_TextChanged);
+                            break;
+                        case "AttackRange":
+                        case "Walk":
+                        case "SP":
+                            textBox.TextChanged += new EventHandler(TextBox_0to255_TextChanged);
+                            break;
+                        case "HP":
+                            textBox.TextChanged += new EventHandler(TextBox_0to9999_TextChanged);
+                            break;
+                        case "IpPower":
+                            textBox.TextChanged += new EventHandler(TextBox_0to12800_TextChanged);
+                            break;
+                        
+                        case "EXP":
+                        case "GP":
+                            textBox.TextChanged += new EventHandler(TextBox_0to65535_TextChanged);
+                            break;
                         default:
-                            Console.WriteLine("Invalid selection.");
                             break;
                     }
                     textBox.Name = $"{item}TextBox";
-                    textBox.Location = new System.Drawing.Point(100, 20 + y);
-                    textBox.Size = new System.Drawing.Size(100, 20);
+                    textBox.Location = new Point(100, 20 + y);
+                    textBox.Size = new Size(100, 20);
                     groupBox.Controls.Add(textBox);
                 }
 
@@ -200,7 +521,7 @@ namespace GrandiaReduxMaker
             GroupBox groupBox = new GroupBox();
             groupBox.Name = $"{groupeName}_{number}_GroupBox";
             groupBox.Text = groupeName;
-            groupBox.Location = new System.Drawing.Point(10 + xGroupPosition, 30 + yGroupPosition);
+            groupBox.Location = new Point(10 + xGroupPosition, 30 + yGroupPosition);
             groupBox.AutoSize = true;
             this.tabPage1.Controls.Add(groupBox);
 
@@ -210,8 +531,8 @@ namespace GrandiaReduxMaker
                 Label label = new Label();
                 label.Name = $"{item}_{number}_Label";
                 label.Text = item;
-                label.Location = new System.Drawing.Point(10, 20 + y);
-                label.Size = new System.Drawing.Size(100 - x, 20);
+                label.Location = new Point(10, 20 + y);
+                label.Size = new Size(100 - x, 20);
                 groupBox.Controls.Add(label);
 
                 if (item.Equals("Elemental") || item.Equals("Target") || item.Equals("EffectType") || item.Equals("StopMode") || item.Equals("Mode") || item.Equals("ExtType"))
@@ -258,15 +579,14 @@ namespace GrandiaReduxMaker
                             comboBox.DataSource = ComboBoxList.ExtTypeList();
                             break;
                         default:
-                            Console.WriteLine("Invalid selection.");
                             break;
                     }
 
                     comboBox.Name = $"{item}_{number}_ComboBox";
                     comboBox.ValueMember = "Value";
                     comboBox.DisplayMember = "Text";
-                    comboBox.Location = new System.Drawing.Point(100, 20 + y);
-                    comboBox.Size = new System.Drawing.Size(100, 20);
+                    comboBox.Location = new Point(100, 20 + y);
+                    comboBox.Size = new Size(100, 20);
                     groupBox.Controls.Add(comboBox);
 
                 }
@@ -281,13 +601,31 @@ namespace GrandiaReduxMaker
                         case "AttackFull":
                             textBox.Enabled = false;
                             break;
+                        case "KnockBack":
+                        case "ExtPower":
+                            textBox.TextChanged += new EventHandler(TextBox_0to7_TextChanged);
+                            break;
+                        case "Critical":
+                        case "ExtProb":
+                            textBox.TextChanged += new EventHandler(TextBox_0to100_TextChanged);
+                            break;
+                        case "AtkWalk":
+                        case "AtkRange":
+                        case "AreaRange":
+                            textBox.TextChanged += new EventHandler(TextBox_0to255_TextChanged);
+                            break;
+                        case "IpPow":
+                            textBox.TextChanged += new EventHandler(TextBox_0to12800_TextChanged);
+                            break;
+                        case "Power":
+                            textBox.TextChanged += new EventHandler(TextBox_0to32767_TextChanged);
+                            break;
                         default:
-                            Console.WriteLine("Invalid selection.");
                             break;
                     }
                     textBox.Name = $"{item}_{number}_TextBox";
-                    textBox.Location = new System.Drawing.Point(100, 20 + y);
-                    textBox.Size = new System.Drawing.Size(100, 20);
+                    textBox.Location = new Point(100, 20 + y);
+                    textBox.Size = new Size(100, 20);
                     groupBox.Controls.Add(textBox);
 
                 }
@@ -385,11 +723,14 @@ namespace GrandiaReduxMaker
             foreach (ComboBox comboBox in comboBoxes)
             {
                 comboBox.SelectedValue = -1;
+                comboBox.Enabled = false;
             }
 
             foreach (TextBox textBox in textBoxes)
             {
                 textBox.Clear();
+                textBox.Enabled = false;
+                textBox.BackColor = Color.White;
             }
 
             var effectTypeForMode = "";
@@ -407,8 +748,15 @@ namespace GrandiaReduxMaker
                             if (textBox.Name.Equals($"{value.Key}_{i}_TextBox"))
                             {
                                 textBox.Text = value.Value.ToString();
+                                if (textBox.Name.Contains("Attack"))
+                                {
+                                    textBox.Enabled = false;
+                                }
+                                else
+                                {
+                                    textBox.Enabled = true;
+                                }
                             }
-
                         }
 
                         // Edit the text of the comboboxes
@@ -420,6 +768,7 @@ namespace GrandiaReduxMaker
                                 effectTypeForMode = value.Value;
                                 var valueParse = int.Parse(value.Value);
                                 comboBox.SelectedValue = valueParse;
+                                comboBox.Enabled = true;
                             }
                             else if (comboBox.Name.Equals($"Mode_{i}_ComboBox"))
                             {
@@ -453,17 +802,18 @@ namespace GrandiaReduxMaker
                                         comboBox.DataSource = ModeClass.Mode10List();
                                         break;
                                     default:
-                                        Console.WriteLine("Invalid selection.");
                                         break;
                                 }
                                 var valueParse = int.Parse(value.Value);
                                 comboBox.SelectedValue = valueParse;
+                                comboBox.Enabled = true;
                             }
 
                             else if (comboBox.Name.Equals($"{value.Key}_{i}_ComboBox"))
                             {
                                 var valueParse = int.Parse(value.Value);
                                 comboBox.SelectedValue = valueParse;
+                                comboBox.Enabled = true;
                             }
                         }
                     }
@@ -497,7 +847,6 @@ namespace GrandiaReduxMaker
             button1.Enabled = false;
             button1.Text = char.ConvertFromUtf32(0x2190);
             button2.Text = char.ConvertFromUtf32(0x2192);
-            button1.Enabled = true;
             button2.Enabled = true;
 
             //STATS
@@ -666,7 +1015,6 @@ namespace GrandiaReduxMaker
                             comboBox.DataSource = ModeClass.Mode10List();
                             break;
                         default:
-                            Console.WriteLine("Invalid selection.");
                             break;
                     }
                 }
@@ -703,13 +1051,6 @@ namespace GrandiaReduxMaker
             }
 
             var i = 0;
-            var addSeven = "";
-            var check1 = false;
-            var check2 = false;
-            var check3 = false;
-            var check4 = false;
-            var check5 = false;
-
             // Edit the text of the textboxes
             foreach (TextBox textBoxe in textBoxes)
             {
@@ -732,22 +1073,107 @@ namespace GrandiaReduxMaker
 
             using (FileStream stream = new FileStream(@"d:\AAAAAA\M_DAT2.BIN", FileMode.OpenOrCreate))
             {
+                var ID = ByteConverterClass.IntToByte(GetValueToList["ID"]);
+
                 stream.Seek(int.Parse(SetPosition.Text), SeekOrigin.Begin);
                 stream.ReadByte();
+
                 var LV = ByteConverterClass.IntToByte(GetValueToList["LV"]);
                 stream.Write(LV, 0, LV.Length);
+
                 var HP = ByteConverterClass.Int16ToBytes(GetValueToList["HP"]);
                 stream.Write(HP, 0, HP.Length);
+
                 var STR = ByteConverterClass.Int16ToBytes(GetValueToList["STR"]);
                 stream.Write(STR, 0, STR.Length);
+
                 var VIT = ByteConverterClass.Int16ToBytes(GetValueToList["VIT"]);
                 stream.Write(VIT, 0, VIT.Length);
+
                 var WIT = ByteConverterClass.Int16ToBytes(GetValueToList["WIT"]);
                 stream.Write(WIT, 0, WIT.Length);
+
                 var AGI = ByteConverterClass.Int16ToBytes(GetValueToList["AGI"]);
                 stream.Write(AGI, 0, AGI.Length);
+
                 var IpPower = ByteConverterClass.Int16ToBytes(GetValueToList["IpPower"]);
                 stream.Write(IpPower, 0, IpPower.Length);
+
+                var EXP = ByteConverterClass.Int16ToBytes(GetValueToList["EXP"]);
+                stream.Write(EXP, 0, EXP.Length);
+
+                var GP = ByteConverterClass.Int16ToBytes(GetValueToList["GP"]);
+                stream.Write(GP, 0, GP.Length);
+
+                var GoldPourcent = ByteConverterClass.IntToByte(GetValueToList["GoldPourcent"]);
+                stream.Write(GoldPourcent, 0, GoldPourcent.Length);
+
+                var Walk = ByteConverterClass.IntToByte(GetValueToList["Walk"]);
+                stream.Write(Walk, 0, Walk.Length);
+
+                var ItemDrop1 = ByteConverterClass.Int16ToBytes(GetValueToList["ItemDrop1"]);
+                stream.Write(ItemDrop1, 0, ItemDrop1.Length);
+
+                var ItemDrop2 = ByteConverterClass.Int16ToBytes(GetValueToList["ItemDrop2"]);
+                stream.Write(ItemDrop2, 0, ItemDrop2.Length);
+
+                var ItemDrop1Pourcent = ByteConverterClass.IntToByte(GetValueToList["ItemDrop1Pourcent"]);
+                stream.Write(ItemDrop1Pourcent, 0, ItemDrop1Pourcent.Length);
+
+                var ItemDrop2Pourcent = ByteConverterClass.IntToByte(GetValueToList["ItemDrop2Pourcent"]);
+                stream.Write(ItemDrop2Pourcent, 0, ItemDrop2Pourcent.Length);
+
+                var MP1 = ByteConverterClass.IntToByte(GetValueToList["MP1"]);
+                stream.Write(MP1, 0, MP1.Length);
+
+                var MP2 = ByteConverterClass.IntToByte(GetValueToList["MP2"]);
+                stream.Write(MP2, 0, MP2.Length);
+
+                var MP3 = ByteConverterClass.IntToByte(GetValueToList["MP3"]);
+                stream.Write(MP3, 0, MP3.Length);
+
+                var SP = ByteConverterClass.IntToByte(GetValueToList["SP"]);
+                stream.Write(SP, 0, SP.Length);
+
+                var SkillID1 = ByteConverterClass.IntToByte(GetValueToList["SkillID1"]);
+                stream.Write(SkillID1, 0, SkillID1.Length);
+
+                var SkillID2 = ByteConverterClass.IntToByte(GetValueToList["SkillID2"]);
+                stream.Write(SkillID2, 0, SkillID2.Length);
+
+                var SkillID3 = ByteConverterClass.IntToByte(GetValueToList["SkillID3"]);
+                stream.Write(SkillID3, 0, SkillID3.Length);
+
+                var SkillID4 = ByteConverterClass.IntToByte(GetValueToList["SkillID4"]);
+                stream.Write(SkillID4, 0, SkillID4.Length);
+
+                var AttackCount = ByteConverterClass.IntToByte(GetValueToList["AttackCount"]);
+                stream.Write(AttackCount, 0, AttackCount.Length);
+
+                var AttackRange = ByteConverterClass.IntToByte(GetValueToList["AttackRange"]);
+                stream.Write(AttackRange, 0, AttackRange.Length);
+
+                var ExternalAttackAndType = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(GetValueToList["Ext_Atk"], GetValueToList["Ext_Type"]).ToString());
+                stream.Write(ExternalAttackAndType, 0, ExternalAttackAndType.Length);
+
+                var Ext_Pourcent = ByteConverterClass.IntToByte(GetValueToList["Ext_Pourcent"]);
+                stream.Write(Ext_Pourcent, 0, Ext_Pourcent.Length);
+
+                var position = stream.Position;
+                var tempRead = stream.ReadByte();
+                var UnknowKnockBackAttack = ByteConverterClass.GetNibble((byte)tempRead).Item1;
+                var UnknowAndKnockBackAttack = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(UnknowKnockBackAttack.ToString(), GetValueToList["KBAttack"]).ToString());
+                stream.Seek(position, SeekOrigin.Begin);
+                stream.Write(UnknowAndKnockBackAttack, 0, UnknowAndKnockBackAttack.Length);
+
+                var AntiIpAndAntiKnockBack = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(GetValueToList["AntiIp"], GetValueToList["AntiKB"]).ToString());
+                stream.Write(AntiIpAndAntiKnockBack, 0, AntiIpAndAntiKnockBack.Length);
+
+                var MagicAndMoveBlockResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(GetValueToList["MagicBlockResist"], GetValueToList["MoveBlockResist"]).ToString());
+                stream.Write(MagicAndMoveBlockResist, 0, MagicAndMoveBlockResist.Length);
+
+                var PlagueAndPoisonResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(GetValueToList["PlagueResist"], GetValueToList["PoisonResist"]).ToString());
+                stream.Write(PlagueAndPoisonResist, 0, PlagueAndPoisonResist.Length);
             }
         }
     }

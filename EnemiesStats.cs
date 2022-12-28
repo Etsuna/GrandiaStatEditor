@@ -104,7 +104,7 @@ namespace GrandiaReduxMaker
                             var Power = reader.ReadInt16();
                             //Nibble
                             var UnknowAndKnockBack = reader.ReadByte();
-                            var KnockBack = GetNibble(UnknowAndKnockBack).Item2;
+                            var KnockBack = ByteConverterClass.GetNibble(UnknowAndKnockBack).Item2;
                             var AreaRange = reader.ReadByte();
                             //10 - Fire, 20 - Water, 40 - Wind, 50 - Thunder, 60 - Ice, 80 - Earth, 90 - Explosion, A0 - Forest
                             var Elemental = reader.ReadByte();
@@ -151,35 +151,35 @@ namespace GrandiaReduxMaker
                     };
 
                     //Nibble Stats
-                    var ExternalAttack = GetNibble(ExternalAttackAndType).Item1;
-                    var ExternalType = GetNibble(ExternalAttackAndType).Item2;
+                    var ExternalAttack = ByteConverterClass.GetNibble(ExternalAttackAndType).Item1;
+                    var ExternalType = ByteConverterClass.GetNibble(ExternalAttackAndType).Item2;
 
-                    var unknowKnockBack = GetNibble(UnknowAndKnockBackAttack).Item1;
-                    var knockBackAttack = GetNibble(UnknowAndKnockBackAttack).Item2;
+                    var unknowKnockBack = ByteConverterClass.GetNibble(UnknowAndKnockBackAttack).Item1;
+                    var knockBackAttack = ByteConverterClass.GetNibble(UnknowAndKnockBackAttack).Item2;
 
-                    var AntiIp = GetNibble(AntiIpAndAntiKnockBack).Item1;
-                    var AntiKB = GetNibble(AntiIpAndAntiKnockBack).Item2;
+                    var AntiIp = ByteConverterClass.GetNibble(AntiIpAndAntiKnockBack).Item1;
+                    var AntiKB = ByteConverterClass.GetNibble(AntiIpAndAntiKnockBack).Item2;
 
-                    var MagicBlockResist = GetNibble(MagicAndMoveBlockResist).Item1 - 7;
-                    var MoveBlockResist = GetNibble(MagicAndMoveBlockResist).Item2 - 7;
+                    var MagicBlockResist = ByteConverterClass.GetNibble(MagicAndMoveBlockResist).Item1 - 7;
+                    var MoveBlockResist = ByteConverterClass.GetNibble(MagicAndMoveBlockResist).Item2 - 7;
 
-                    var PlagueResist = GetNibble(PlagueAndPoisonResist).Item1 - 7;
-                    var PoisonResist = GetNibble(PlagueAndPoisonResist).Item2 - 7;
+                    var PlagueResist = ByteConverterClass.GetNibble(PlagueAndPoisonResist).Item1 - 7;
+                    var PoisonResist = ByteConverterClass.GetNibble(PlagueAndPoisonResist).Item2 - 7;
 
-                    var ParalysisResist = GetNibble(ParalysisAndSleepResist).Item1 - 7;
-                    var SleepResist = GetNibble(ParalysisAndSleepResist).Item2 - 7;
+                    var ParalysisResist = ByteConverterClass.GetNibble(ParalysisAndSleepResist).Item1 - 7;
+                    var SleepResist = ByteConverterClass.GetNibble(ParalysisAndSleepResist).Item2 - 7;
 
-                    var ConfusionResist = GetNibble(CriticalAndConfusionResist).Item1 - 7;
-                    var CriticalResist = GetNibble(CriticalAndConfusionResist).Item2 - 7;
+                    var ConfusionResist = ByteConverterClass.GetNibble(CriticalAndConfusionResist).Item1 - 7;
+                    var CriticalResist = ByteConverterClass.GetNibble(CriticalAndConfusionResist).Item2 - 7;
 
-                    var FireResist = GetNibble(FireAndWaterResist).Item1 - 7;
-                    var WaterResist = GetNibble(FireAndWaterResist).Item2 - 7;
+                    var FireResist = ByteConverterClass.GetNibble(FireAndWaterResist).Item1 - 7;
+                    var WaterResist = ByteConverterClass.GetNibble(FireAndWaterResist).Item2 - 7;
 
-                    var WindResist = GetNibble(WindAndEarthResist).Item1 - 7;
-                    var EarthResist = GetNibble(WindAndEarthResist).Item2 - 7;
+                    var WindResist = ByteConverterClass.GetNibble(WindAndEarthResist).Item1 - 7;
+                    var EarthResist = ByteConverterClass.GetNibble(WindAndEarthResist).Item2 - 7;
 
-                    var UnknowType = GetNibble(UnknowAndType).Item1;
-                    var Type = GetNibble(UnknowAndType).Item2;
+                    var UnknowType = ByteConverterClass.GetNibble(UnknowAndType).Item1;
+                    var Type = ByteConverterClass.GetNibble(UnknowAndType).Item2;
 
                     //MakeList
                     listStats.Add("ID", ID.ToString());
@@ -237,14 +237,5 @@ namespace GrandiaReduxMaker
                 }
             }
         }
-
-        private static Tuple<byte, byte> GetNibble(byte value)
-        {
-            byte nibble1 = (byte)(value & 0x0F);
-            byte nibble2 = (byte)((value & 0xF0) >> 4);
-            return Tuple.Create(nibble2, nibble1);
-        }
-
-
     }
 }

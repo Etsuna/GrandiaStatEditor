@@ -26,12 +26,27 @@ namespace GrandiaReduxMaker
         public static string AddSeven(string name, string value)
         {
             var result = int.Parse(value) + 7;
-            if(result < 0 || result > 14)
+            if (result < 0 || result > 14)
             {
                 MessageBox.Show($"{name} must be between -7 to 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return "Error";
             }
             return result.ToString();
+        }
+
+        public static int NibbleToByte(string nibble1, string nibble2)
+        {
+            var firstNibble = int.Parse(nibble1);
+            var SecondNibble = int.Parse(nibble2);
+            var result = (byte)(firstNibble << 4) | SecondNibble;
+            return result;
+        }
+
+        public static Tuple<byte, byte> GetNibble(byte value)
+        {
+            byte nibble1 = (byte)(value & 0x0F);
+            byte nibble2 = (byte)((value & 0xF0) >> 4);
+            return Tuple.Create(nibble2, nibble1);
         }
     }
 
