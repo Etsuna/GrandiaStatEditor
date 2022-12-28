@@ -85,6 +85,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <AdditionalFiles Include="Resources\M_DAT.BIN" />
+    <AdditionalFiles Include="Resources\mchar.dat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

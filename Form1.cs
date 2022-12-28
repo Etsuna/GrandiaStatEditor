@@ -828,8 +828,10 @@ namespace GrandiaReduxMaker
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     SelectedFolder = dialog.SelectedPath;
-                    var targetFile = Path.Combine(SelectedFolder, "M_DAT.BIN");
-                    File.WriteAllBytes(targetFile, Resources.M_DAT);
+                    var mdatTargetFile = Path.Combine(SelectedFolder, "M_DAT.BIN");
+                    File.WriteAllBytes(mdatTargetFile, Resources.M_DAT);
+                    var mcharTargetFile = Path.Combine(SelectedFolder, "mchar.dat");
+                    File.WriteAllBytes(mcharTargetFile, Resources.mchar);
                     FormToLoad();
 
                     EnemiesStats.ReadCharData(SelectedFolder);
@@ -903,10 +905,17 @@ namespace GrandiaReduxMaker
                     SelectedFolder = dialog.SelectedPath;
 
                     var mdatFilePath = Path.Combine(SelectedFolder, "M_DAT.BIN");
+                    var mcharFilePath = Path.Combine(SelectedFolder, "mchar.dat");
 
                     if (!File.Exists(mdatFilePath))
                     {
                         MessageBox.Show("M_DAT.BIN not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (!File.Exists(mcharFilePath))
+                    {
+                        MessageBox.Show("mchar.dat not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -932,10 +941,17 @@ namespace GrandiaReduxMaker
             SelectedFolder = Path.Combine(@"D:\", "AAAAAA");
 
             var mdatFilePath = Path.Combine(SelectedFolder, "M_DAT.BIN");
+            var mcharFilePath = Path.Combine(SelectedFolder, "mchar.dat");
 
             if (!File.Exists(mdatFilePath))
             {
                 MessageBox.Show("M_DAT.BIN not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!File.Exists(mcharFilePath))
+            {
+                MessageBox.Show("mchar.dat not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

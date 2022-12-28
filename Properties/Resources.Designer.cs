@@ -69,5 +69,15 @@ namespace GrandiaReduxMaker.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        internal static byte[] mchar {
+            get {
+                object obj = ResourceManager.GetObject("mchar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
