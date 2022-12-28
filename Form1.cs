@@ -821,7 +821,7 @@ namespace GrandiaReduxMaker
             }
         }
 
-        private void newProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NewProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
             {
@@ -1054,12 +1054,12 @@ namespace GrandiaReduxMaker
             // Edit the text of the textboxes
             foreach (TextBox textBoxe in textBoxes)
             {
-                Console.WriteLine($"TextBox : {textBoxe.Name}, Value : {textBoxe.Text}");
-
                 if (!string.IsNullOrWhiteSpace(textBoxe.Text))
                 {
                     GetValueToList.Add(textBoxe.Name.Replace("_TextBox", "").Replace("TextBox", ""), textBoxe.Text);
                 }
+
+                Console.WriteLine($"TextBox : {textBoxe.Name}, Value : {textBoxe.Text}");
             }
 
             // Edit the text of the comboboxes
@@ -1069,112 +1069,11 @@ namespace GrandiaReduxMaker
                 {
                     GetValueToList.Add(comboBox.Name.Replace("_ComboBox", "").Replace("ComboBox", ""), comboBox.SelectedValue.ToString());
                 }
+
+                Console.WriteLine($"TextBox : {comboBox.Name}, Value : {comboBox.SelectedValue}");
             }
 
-            using (FileStream stream = new FileStream(@"d:\AAAAAA\M_DAT2.BIN", FileMode.OpenOrCreate))
-            {
-                var ID = ByteConverterClass.IntToByte(GetValueToList["ID"]);
-
-                stream.Seek(int.Parse(SetPosition.Text), SeekOrigin.Begin);
-                stream.ReadByte();
-
-                var LV = ByteConverterClass.IntToByte(GetValueToList["LV"]);
-                stream.Write(LV, 0, LV.Length);
-
-                var HP = ByteConverterClass.Int16ToBytes(GetValueToList["HP"]);
-                stream.Write(HP, 0, HP.Length);
-
-                var STR = ByteConverterClass.Int16ToBytes(GetValueToList["STR"]);
-                stream.Write(STR, 0, STR.Length);
-
-                var VIT = ByteConverterClass.Int16ToBytes(GetValueToList["VIT"]);
-                stream.Write(VIT, 0, VIT.Length);
-
-                var WIT = ByteConverterClass.Int16ToBytes(GetValueToList["WIT"]);
-                stream.Write(WIT, 0, WIT.Length);
-
-                var AGI = ByteConverterClass.Int16ToBytes(GetValueToList["AGI"]);
-                stream.Write(AGI, 0, AGI.Length);
-
-                var IpPower = ByteConverterClass.Int16ToBytes(GetValueToList["IpPower"]);
-                stream.Write(IpPower, 0, IpPower.Length);
-
-                var EXP = ByteConverterClass.Int16ToBytes(GetValueToList["EXP"]);
-                stream.Write(EXP, 0, EXP.Length);
-
-                var GP = ByteConverterClass.Int16ToBytes(GetValueToList["GP"]);
-                stream.Write(GP, 0, GP.Length);
-
-                var GoldPourcent = ByteConverterClass.IntToByte(GetValueToList["GoldPourcent"]);
-                stream.Write(GoldPourcent, 0, GoldPourcent.Length);
-
-                var Walk = ByteConverterClass.IntToByte(GetValueToList["Walk"]);
-                stream.Write(Walk, 0, Walk.Length);
-
-                var ItemDrop1 = ByteConverterClass.Int16ToBytes(GetValueToList["ItemDrop1"]);
-                stream.Write(ItemDrop1, 0, ItemDrop1.Length);
-
-                var ItemDrop2 = ByteConverterClass.Int16ToBytes(GetValueToList["ItemDrop2"]);
-                stream.Write(ItemDrop2, 0, ItemDrop2.Length);
-
-                var ItemDrop1Pourcent = ByteConverterClass.IntToByte(GetValueToList["ItemDrop1Pourcent"]);
-                stream.Write(ItemDrop1Pourcent, 0, ItemDrop1Pourcent.Length);
-
-                var ItemDrop2Pourcent = ByteConverterClass.IntToByte(GetValueToList["ItemDrop2Pourcent"]);
-                stream.Write(ItemDrop2Pourcent, 0, ItemDrop2Pourcent.Length);
-
-                var MP1 = ByteConverterClass.IntToByte(GetValueToList["MP1"]);
-                stream.Write(MP1, 0, MP1.Length);
-
-                var MP2 = ByteConverterClass.IntToByte(GetValueToList["MP2"]);
-                stream.Write(MP2, 0, MP2.Length);
-
-                var MP3 = ByteConverterClass.IntToByte(GetValueToList["MP3"]);
-                stream.Write(MP3, 0, MP3.Length);
-
-                var SP = ByteConverterClass.IntToByte(GetValueToList["SP"]);
-                stream.Write(SP, 0, SP.Length);
-
-                var SkillID1 = ByteConverterClass.IntToByte(GetValueToList["SkillID1"]);
-                stream.Write(SkillID1, 0, SkillID1.Length);
-
-                var SkillID2 = ByteConverterClass.IntToByte(GetValueToList["SkillID2"]);
-                stream.Write(SkillID2, 0, SkillID2.Length);
-
-                var SkillID3 = ByteConverterClass.IntToByte(GetValueToList["SkillID3"]);
-                stream.Write(SkillID3, 0, SkillID3.Length);
-
-                var SkillID4 = ByteConverterClass.IntToByte(GetValueToList["SkillID4"]);
-                stream.Write(SkillID4, 0, SkillID4.Length);
-
-                var AttackCount = ByteConverterClass.IntToByte(GetValueToList["AttackCount"]);
-                stream.Write(AttackCount, 0, AttackCount.Length);
-
-                var AttackRange = ByteConverterClass.IntToByte(GetValueToList["AttackRange"]);
-                stream.Write(AttackRange, 0, AttackRange.Length);
-
-                var ExternalAttackAndType = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(GetValueToList["Ext_Atk"], GetValueToList["Ext_Type"]).ToString());
-                stream.Write(ExternalAttackAndType, 0, ExternalAttackAndType.Length);
-
-                var Ext_Pourcent = ByteConverterClass.IntToByte(GetValueToList["Ext_Pourcent"]);
-                stream.Write(Ext_Pourcent, 0, Ext_Pourcent.Length);
-
-                var position = stream.Position;
-                var tempRead = stream.ReadByte();
-                var UnknowKnockBackAttack = ByteConverterClass.GetNibble((byte)tempRead).Item1;
-                var UnknowAndKnockBackAttack = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(UnknowKnockBackAttack.ToString(), GetValueToList["KBAttack"]).ToString());
-                stream.Seek(position, SeekOrigin.Begin);
-                stream.Write(UnknowAndKnockBackAttack, 0, UnknowAndKnockBackAttack.Length);
-
-                var AntiIpAndAntiKnockBack = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(GetValueToList["AntiIp"], GetValueToList["AntiKB"]).ToString());
-                stream.Write(AntiIpAndAntiKnockBack, 0, AntiIpAndAntiKnockBack.Length);
-
-                var MagicAndMoveBlockResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(GetValueToList["MagicBlockResist"], GetValueToList["MoveBlockResist"]).ToString());
-                stream.Write(MagicAndMoveBlockResist, 0, MagicAndMoveBlockResist.Length);
-
-                var PlagueAndPoisonResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(GetValueToList["PlagueResist"], GetValueToList["PoisonResist"]).ToString());
-                stream.Write(PlagueAndPoisonResist, 0, PlagueAndPoisonResist.Length);
-            }
+            WriteDatas.WriteMdat(SelectedFolder, SetPosition.Text, GetValueToList);
         }
     }
 }

@@ -23,14 +23,9 @@ namespace GrandiaReduxMaker
             return bytes;
         }
 
-        public static string AddSeven(string name, string value)
+        public static string AddSeven(string value)
         {
             var result = int.Parse(value) + 7;
-            if (result < 0 || result > 14)
-            {
-                MessageBox.Show($"{name} must be between -7 to 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return "Error";
-            }
             return result.ToString();
         }
 

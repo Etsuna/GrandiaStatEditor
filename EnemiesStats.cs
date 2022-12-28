@@ -68,7 +68,7 @@ namespace GrandiaReduxMaker
                     //Nibble
                     var ParalysisAndSleepResist = reader.ReadByte();
                     //Nibble
-                    var CriticalAndConfusionResist = reader.ReadByte();
+                    var ConfusionAndCriticalResist = reader.ReadByte();
                     //Nibble
                     var FireAndWaterResist = reader.ReadByte();
                     //Nibble
@@ -81,7 +81,7 @@ namespace GrandiaReduxMaker
                     var HideAct = reader.ReadByte();
                     var Unknow2 = reader.ReadInt16();
                     var Unknow3 = reader.ReadByte();
-                    var CallId = reader.ReadByte();
+                    var CallID = reader.ReadByte();
                     var CallNumber = reader.ReadByte();
                     var CallPourcent = reader.ReadByte();
                     var IC = reader.ReadByte();
@@ -169,8 +169,8 @@ namespace GrandiaReduxMaker
                     var ParalysisResist = ByteConverterClass.GetNibble(ParalysisAndSleepResist).Item1 - 7;
                     var SleepResist = ByteConverterClass.GetNibble(ParalysisAndSleepResist).Item2 - 7;
 
-                    var ConfusionResist = ByteConverterClass.GetNibble(CriticalAndConfusionResist).Item1 - 7;
-                    var CriticalResist = ByteConverterClass.GetNibble(CriticalAndConfusionResist).Item2 - 7;
+                    var ConfusionResist = ByteConverterClass.GetNibble(ConfusionAndCriticalResist).Item1 - 7;
+                    var CriticalResist = ByteConverterClass.GetNibble(ConfusionAndCriticalResist).Item2 - 7;
 
                     var FireResist = ByteConverterClass.GetNibble(FireAndWaterResist).Item1 - 7;
                     var WaterResist = ByteConverterClass.GetNibble(FireAndWaterResist).Item2 - 7;
@@ -227,7 +227,7 @@ namespace GrandiaReduxMaker
                     listStats.Add("WindResist", WindResist.ToString());
                     listStats.Add("EarthResist", EarthResist.ToString());
                     listStats.Add("HideAct", HideAct.ToString());
-                    listStats.Add("CallID", CallId.ToString());
+                    listStats.Add("CallID", CallID.ToString());
                     listStats.Add("CallNumber", CallNumber.ToString());
                     listStats.Add("CallPourcent", CallPourcent.ToString());
                     listStats.Add("NameQuarter", Encoding.UTF8.GetString(MonsterQuarter));
