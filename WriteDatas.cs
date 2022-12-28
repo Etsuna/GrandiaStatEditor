@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GrandiaReduxMaker
 {
@@ -198,6 +194,19 @@ namespace GrandiaReduxMaker
                 stream.ReadByte();
                 stream.ReadByte();
 
+                //ListUpdate
+                foreach (var data in dataList)
+                {
+                    if (EnemiesStats.EnemiesStatsDictionary.TryGetValue(int.Parse(setPosition), out Dictionary<string, string> innerDict))
+                    {
+                        if (innerDict.TryGetValue(data.Key, out string value))
+                        {
+                            // Update the value for the key "innerKey" in the inner dictionary
+                            innerDict[data.Key] = data.Value;
+                        }
+                    }
+                }
+
                 var i = 1;
                 var AttackByID = stream.ReadByte();
                 while (AttackByID == IDCheck)
@@ -296,6 +305,20 @@ namespace GrandiaReduxMaker
                         stream.ReadByte();
 
                         AttackByID = stream.ReadByte();
+
+                        //ListUpdate
+                        foreach (var data in dataList)
+                        {
+                            if (EnemiesStats.EnemiesAttacksDictionary.TryGetValue($"{IDCheck}_{i}", out Dictionary<string, string> innerDict))
+                            {
+                                if (innerDict.TryGetValue(data.Key.Replace($"_{i}", ""), out string value))
+                                {
+                                    // Update the value for the key "innerKey" in the inner dictionary
+                                    innerDict[data.Key.Replace($"_{i}", "")] = data.Value;
+                                }
+                            }
+                        }
+
                         i++;
                     }
                 };
