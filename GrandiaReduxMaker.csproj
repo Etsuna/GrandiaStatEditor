@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ByteConverterClass.cs" />
+    <Compile Include="CharactersStats.cs" />
     <Compile Include="ModeClass.cs" />
     <Compile Include="ComboBoxList.cs" />
     <Compile Include="EnemyListClass.cs" />

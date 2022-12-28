@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -11,7 +10,7 @@ namespace GrandiaReduxMaker
 
         public static Dictionary<string, Dictionary<string, string>> EnemiesAttacksDictionary { get; set; } = new Dictionary<string, Dictionary<string, string>>();
 
-        public static void ReadCharData(string path)
+        public static void ReadEnemiesData(string path)
         {
             string mdatFilePath = Path.Combine(path, "M_DAT.bin");
 

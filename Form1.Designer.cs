@@ -31,6 +31,7 @@ namespace GrandiaReduxMaker
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.SetPosition = new System.Windows.Forms.Label();
             this.EnemiePosition = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@ namespace GrandiaReduxMaker
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SaveButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -53,7 +53,7 @@ namespace GrandiaReduxMaker
             this.tabControl1.Location = new System.Drawing.Point(13, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1709, 872);
+            this.tabControl1.Size = new System.Drawing.Size(1759, 922);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -71,6 +71,16 @@ namespace GrandiaReduxMaker
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "EnemiesStats";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(1620, 817);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 4;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.button3_Click);
             // 
             // SetPosition
             // 
@@ -113,11 +123,12 @@ namespace GrandiaReduxMaker
             // 
             // tabPage2
             // 
+            this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.Color.Lavender;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1701, 846);
+            this.tabPage2.Size = new System.Drawing.Size(1751, 896);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CharactersStats";
             // 
@@ -127,7 +138,7 @@ namespace GrandiaReduxMaker
             this.projectToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1734, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1784, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,21 +165,11 @@ namespace GrandiaReduxMaker
             this.loadProjectToolStripMenuItem.Text = "Load Project...";
             this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.loadProjectToolStripMenuItem_Click);
             // 
-            // SaveButton
-            // 
-            this.SaveButton.Location = new System.Drawing.Point(1620, 817);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 4;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.button3_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1734, 911);
+            this.ClientSize = new System.Drawing.Size(1784, 961);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

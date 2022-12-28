@@ -69,7 +69,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between -7 to 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between -7 and 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -90,7 +90,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -112,7 +112,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 4", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 4", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -134,7 +134,29 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SaveButton.Enabled = true;
+            textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to15_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = int.Parse(textBox.Text);
+
+            if (result < 0 || result > 15)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 and 15", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -156,7 +178,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 99", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 99", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -178,7 +200,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 100", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 100", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -200,7 +222,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 255", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 255", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -222,7 +244,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -244,7 +266,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 9999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 9999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -266,7 +288,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 12800", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 12800", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -288,7 +310,7 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 32767", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 32767", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
@@ -310,11 +332,36 @@ namespace GrandiaReduxMaker
             {
                 SaveButton.Enabled = false;
                 textBox.BackColor = Color.Red;
-                MessageBox.Show($"This value must be between 0 to 65535", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"This value must be between 0 and 65535", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             SaveButton.Enabled = true;
             textBox.BackColor = Color.White;
+        }
+
+        private void TextBox_0to4294967295_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                return;
+            }
+            var result = Int64.Parse(textBox.Text);
+
+            if (result < 0 || result > 4294967295)
+            {
+                SaveButton.Enabled = false;
+                textBox.BackColor = Color.Red;
+                MessageBox.Show($"This value must be between 0 and 4294967295", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                SaveButton.Enabled = true;
+                textBox.BackColor = Color.White;
+            }
         }
 
 
@@ -370,7 +417,153 @@ namespace GrandiaReduxMaker
             this.SetPosition.Text = text;
         }
 
-        public void SetForm(List<string> list, string groupeName, int xGroupPosition, int yGroupPosition)
+        public void SetCharacterForm()
+        {
+            var x = 10;
+
+            foreach (var value in CharactersStats.CharactersDictionary.Keys)
+            {
+                var y = 0;
+
+                GroupBox groupBox = new GroupBox();
+                groupBox.Name = $"{value}GroupBox";
+                groupBox.Text = value;
+                groupBox.Location = new Point(10 + x, 30);
+                groupBox.AutoSize = true;
+                this.tabPage2.Controls.Add(groupBox);
+
+                Dictionary<string, string> innerDictionary = CharactersStats.CharactersDictionary[value];
+
+                foreach (var item in innerDictionary)
+                {
+                    Label label = new Label();
+                    label.Name = $"{item.Key}Label";
+                    label.Text = item.Key;
+                    label.Location = new Point(10, 20 + y);
+                    label.Size = new Size(80, 20);
+                    groupBox.Controls.Add(label);
+
+                    if(item.Key.Equals("Weapon") || item.Key.Equals("Shield") || item.Key.Equals("Armor") || item.Key.Equals("Helmet") || item.Key.Equals("Footwear") || item.Key.Equals("Accessory") || item.Key.Contains("Item"))
+                    {
+                        ComboBox comboBox = new ComboBox();
+                        switch (item.Key)
+                        {
+                            case "Weapon":
+                            case "Shield":
+                            case "Armor":
+                            case "Helmet":
+                            case "Footwear":
+                            case "Accessory":
+                            case "Item1":
+                            case "Item2":
+                            case "Item3":
+                            case "Item4":
+                            case "Item5":
+                            case "Item6":
+                            case "Item7":
+                            case "Item8":
+                            case "Item9":
+                            case "Item10":
+                            case "Item11":
+                            case "Item12":
+                                comboBox.DataSource = ItemListClass.ItemDropList();
+                                break;
+                            default:
+                                break;
+                        }
+                        comboBox.Name = $"{value}_{item.Key}_ComboBox";
+                        comboBox.ValueMember = "Value";
+                        comboBox.DisplayMember = "Text";
+                        comboBox.Location = new Point(100, 20 + y);
+                        comboBox.Size = new Size(100, 20);
+                        groupBox.Controls.Add(comboBox);
+                        comboBox.CreateControl();
+                        comboBox.SelectedValue = int.Parse(item.Value);
+                    }
+                    else
+                    {
+                        TextBox textBox = new TextBox();
+                        switch (item.Key)
+                        {
+                            case "MagicBlockResist":
+                            case "MoveBlockResist":
+                            case "PlagueResist":
+                            case "PoisonResist":
+                            case "ParalysisResist":
+                            case "SleepResist":
+                            case "ConfusionResist":
+                            case "CriticalResist":
+                            case "FireResist":
+                            case "WaterResist":
+                            case "WindResist":
+                            case "EarthResist":
+                                textBox.TextChanged += new EventHandler(TextBox_Resist_TextChanged);
+                                break;
+                            case "Critical":
+                            case "Combo":
+                                textBox.TextChanged += new EventHandler(TextBox_0to15_TextChanged);
+                                break;
+                            case "LV":
+                            case "FireExp":
+                            case "WaterExp":
+                            case "WindExp":
+                            case "EarthExp":
+                            case "Weapon1Exp":
+                            case "Weapon2Exp":
+                            case "Weapon3Exp":
+                            case "Weapon4Exp":
+                            case "MaxMP1":
+                            case "MaxMP2":
+                            case "MaxMP3":
+                            case "CurrentMP1":
+                            case "CurrentMP2":
+                            case "CurrentMP3":
+                            case "Weapon1Level":
+                            case "Weapon2Level":
+                            case "Weapon3Level":
+                            case "Weapon4Level":
+                            case "FireLevel":
+                            case "WaterLevel":
+                            case "WindLevel":
+                            case "EarthLevel":
+                                textBox.TextChanged += new EventHandler(TextBox_0to99_TextChanged);
+                                break;
+                            case "STR":
+                            case "VIT":
+                            case "WIT":
+                            case "AGI":
+                                textBox.TextChanged += new EventHandler(TextBox_0to999_TextChanged);
+                                break;
+                            case "AttackRange":
+                            case "Walk":
+                            case "SP":
+                                textBox.TextChanged += new EventHandler(TextBox_0to255_TextChanged);
+                                break;
+                            case "HP":
+                                textBox.TextChanged += new EventHandler(TextBox_0to9999_TextChanged);
+                                break;
+                            case "EXP":
+                                textBox.TextChanged += new EventHandler(TextBox_0to4294967295_TextChanged);
+                                break;
+                            case "NextEXP":
+                                textBox.TextChanged += new EventHandler(TextBox_0to65535_TextChanged);
+                                break;
+                            default:
+                                break;
+                        }
+                        textBox.Name = $"{value}_{item.Key}_TextBox";
+                        textBox.Text = item.Value;
+                        textBox.Location = new Point(100, 20 + y);
+                        textBox.Size = new Size(100, 20);
+                        groupBox.Controls.Add(textBox);
+                    }
+                    y += 30;
+                }
+                x += 210;
+            }
+        }
+
+        public void SetEnemyForm(List<string> list, string groupeName, int xGroupPosition, int yGroupPosition)
         {
             var y = 0;
             var x = 10;
@@ -494,7 +687,7 @@ namespace GrandiaReduxMaker
                         case "IpPower":
                             textBox.TextChanged += new EventHandler(TextBox_0to12800_TextChanged);
                             break;
-                        
+
                         case "EXP":
                         case "GP":
                             textBox.TextChanged += new EventHandler(TextBox_0to65535_TextChanged);
@@ -512,7 +705,7 @@ namespace GrandiaReduxMaker
             }
         }
 
-        public void SetAttackForm(List<string> list, string groupeName, int number, int xGroupPosition, int yGroupPosition)
+        public void SetEnemyAttackForm(List<string> list, string groupeName, int number, int xGroupPosition, int yGroupPosition)
         {
             var y = 0;
             var x = 10;
@@ -834,7 +1027,7 @@ namespace GrandiaReduxMaker
                     File.WriteAllBytes(mcharTargetFile, Resources.mchar);
                     FormToLoad();
 
-                    EnemiesStats.ReadCharData(SelectedFolder);
+                    EnemiesStats.ReadEnemiesData(SelectedFolder);
 
                     CountInList = EnemiesStats.EnemiesStatsDictionary.Count();
 
@@ -868,27 +1061,29 @@ namespace GrandiaReduxMaker
             var AttackElemental = new List<string> { "Elemental" };
 
             //STATS
-            SetForm(statsList, "Status", 0, 0);
-            SetForm(magicsAndSkillsList, "Magic / Skills", 0, 430);
-            SetForm(itemsList, "Items", 210, 0);
-            SetForm(ipKnock_Back, "IP & Knock_Back", 210, 250);
-            SetForm(AntiStatus, "Resists", 210, 380);
-            SetForm(AnotherSettings, "Another Settings", 420, 0);
-            SetForm(ExtAttCak, "External Att Cak", 420, 130);
+            SetEnemyForm(statsList, "Status", 0, 0);
+            SetEnemyForm(magicsAndSkillsList, "Magic / Skills", 0, 430);
+            SetEnemyForm(itemsList, "Items", 210, 0);
+            SetEnemyForm(ipKnock_Back, "IP & Knock_Back", 210, 250);
+            SetEnemyForm(AntiStatus, "Resists", 210, 380);
+            SetEnemyForm(AnotherSettings, "Another Settings", 420, 0);
+            SetEnemyForm(ExtAttCak, "External Att Cak", 420, 130);
 
             var j = 0;
 
             //ATTACKS
             for (int i = 1; i < 6; i++)
             {
-                SetAttackForm(SpecialAttackName, $"Special Attack Name {i}", i, 630 + j, 0);
-                SetAttackForm(AttackStatus, $"Attack Status {i}", i, 630 + j, 110);
-                SetAttackForm(AttackMode, $"Mode {i}", i, 630 + j, 330);
-                SetAttackForm(AttackExtDamage, $"Ext Damage {i}", i, 630 + j, 520);
-                SetAttackForm(AttackElemental, $"Elemental Attack {i}", i, 630 + j, 650);
+                SetEnemyAttackForm(SpecialAttackName, $"Special Attack Name {i}", i, 630 + j, 0);
+                SetEnemyAttackForm(AttackStatus, $"Attack Status {i}", i, 630 + j, 110);
+                SetEnemyAttackForm(AttackMode, $"Mode {i}", i, 630 + j, 330);
+                SetEnemyAttackForm(AttackExtDamage, $"Ext Damage {i}", i, 630 + j, 520);
+                SetEnemyAttackForm(AttackElemental, $"Elemental Attack {i}", i, 630 + j, 650);
 
                 j = j + 210;
             }
+
+            SetCharacterForm();
         }
 
         private void loadProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -923,12 +1118,12 @@ namespace GrandiaReduxMaker
                     EnemiesStats.EnemiesAttacksDictionary.Clear();
 
                     Count = 0;
-
+                    
+                    EnemiesStats.ReadEnemiesData(SelectedFolder);
+                    CharactersStats.ReadCharatersData(SelectedFolder);
                     FormToLoad();
-                    EnemiesStats.ReadCharData(SelectedFolder);
 
                     CountInList = EnemiesStats.EnemiesStatsDictionary.Count();
-
 
                     var FirstValue = EnemiesStats.EnemiesStatsDictionary.FirstOrDefault();
                     UpdateValue(FirstValue);
@@ -957,14 +1152,15 @@ namespace GrandiaReduxMaker
 
             EnemiesStats.EnemiesStatsDictionary.Clear();
             EnemiesStats.EnemiesAttacksDictionary.Clear();
+            CharactersStats.CharactersDictionary.Clear();
 
             Count = 0;
 
+            EnemiesStats.ReadEnemiesData(SelectedFolder);
+            CharactersStats.ReadCharatersData(SelectedFolder);
             FormToLoad();
-            EnemiesStats.ReadCharData(SelectedFolder);
 
             CountInList = EnemiesStats.EnemiesStatsDictionary.Count();
-
 
             var FirstValue = EnemiesStats.EnemiesStatsDictionary.FirstOrDefault();
             UpdateValue(FirstValue);
@@ -1090,6 +1286,11 @@ namespace GrandiaReduxMaker
             }
 
             WriteDatas.WriteMdat(SelectedFolder, SetPosition.Text, GetValueToList);
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }
