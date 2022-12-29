@@ -61,6 +61,16 @@ namespace GrandiaReduxMaker.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon GrandiaReduxMakerIcon {
+            get {
+                object obj = ResourceManager.GetObject("GrandiaReduxMakerIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
         internal static byte[] M_DAT {
