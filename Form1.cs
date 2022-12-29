@@ -1,4 +1,4 @@
-﻿using GrandiaReduxMaker.Properties;
+﻿using GrandiaStatEditor.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace GrandiaReduxMaker
+namespace GrandiaStatEditor
 {
     public partial class Form1 : Form
     {

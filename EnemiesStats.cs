@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace GrandiaReduxMaker
+namespace GrandiaStatEditor
 {
     public class EnemiesStats
     {

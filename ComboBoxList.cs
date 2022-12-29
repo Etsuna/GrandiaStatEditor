@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GrandiaReduxMaker
+namespace GrandiaStatEditor
 {
     public class ComboBoxList
     {

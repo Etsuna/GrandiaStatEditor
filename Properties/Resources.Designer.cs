@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GrandiaReduxMaker.Properties {
+namespace GrandiaStatEditor.Properties {
     using System;
     
     

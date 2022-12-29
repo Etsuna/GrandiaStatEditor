@@ -1,5 +1,5 @@
 ﻿
-namespace GrandiaReduxMaker
+namespace GrandiaStatEditor
 {
     partial class Form1
     {
