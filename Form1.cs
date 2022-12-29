@@ -29,8 +29,6 @@ namespace GrandiaReduxMaker
             button2.Text = char.ConvertFromUtf32(0x2192);
             button1.Enabled = false;
             button2.Enabled = false;
-
-            LoadProjectDev();
         }
 
         private void EffectType_1_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
