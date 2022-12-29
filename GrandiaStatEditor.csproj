@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C497FF1C-3B07-4D1C-ADD3-0A89F25AF88E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GrandiaReduxMaker</RootNamespace>
-    <AssemblyName>GrandiaReduxMaker</AssemblyName>
+    <RootNamespace>GrandiaStatEditor</RootNamespace>
+    <AssemblyName>GrandiaStatEditor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>GrandiaReduxMakerIcon.ico</ApplicationIcon>
+    <ApplicationIcon>GrandiaStatEditorIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -95,10 +95,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="Resources\GrandiaReduxMakerIcon.ico" />
+    <AdditionalFiles Include="Resources\GrandiaStatEditorIcon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GrandiaReduxMakerIcon.ico" />
+    <Content Include="GrandiaStatEditorIcon.ico" />
+    <Content Include="GrandiaStatEditorIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

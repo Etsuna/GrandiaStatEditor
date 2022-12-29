@@ -39,7 +39,7 @@ namespace GrandiaStatEditor.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GrandiaReduxMaker.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GrandiaStatEditor.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace GrandiaStatEditor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
-        internal static System.Drawing.Icon GrandiaReduxMakerIcon {
+        internal static System.Drawing.Icon GrandiaStatEditorIcon {
             get {
-                object obj = ResourceManager.GetObject("GrandiaReduxMakerIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("GrandiaStatEditorIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

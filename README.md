@@ -1,2 +1,2 @@
-# GrandiaReduxMaker
- Grandia Redux Maker
+# GrandiaStatEditor
+ Grandia Stat Editor
