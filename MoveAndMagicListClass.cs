@@ -1,0 +1,122 @@
+﻿using System.Collections.Generic;
+
+namespace GrandiaStatEditor
+{
+    public class MoveAndMagicListClass
+    {
+
+        public class MoveAndMagic
+        {
+            public int Value { get; set; }
+            public string Text { get; set; }
+        }
+
+        public static List<MoveAndMagic> MoveAndMagicsList()
+        {
+            var itemList = new List<MoveAndMagic>
+            {
+                new MoveAndMagic() { Value = 01, Text = "DEF-LOSS" },
+                new MoveAndMagic() { Value = 02, Text = "TREMOR" },
+                new MoveAndMagic() { Value = 03, Text = "GRAVITY" },
+                new MoveAndMagic() { Value = 04, Text = "QUAKE" },
+                new MoveAndMagic() { Value = 05, Text = "HEAL" },
+                new MoveAndMagic() { Value = 06, Text = "ALHEAL" },
+                new MoveAndMagic() { Value = 07, Text = "SNOOZE" },
+                new MoveAndMagic() { Value = 08, Text = "HEALER" },
+                new MoveAndMagic() { Value = 09, Text = "ALHEALER" },
+                new MoveAndMagic() { Value = 10, Text = "ALHEALER+" },
+                new MoveAndMagic() { Value = 11, Text = "RESSURECT" },
+                new MoveAndMagic() { Value = 12, Text = "BURN" },
+                new MoveAndMagic() { Value = 13, Text = "BURNFLAME" },
+                new MoveAndMagic() { Value = 14, Text = "BURNSTRYK" },
+                new MoveAndMagic() { Value = 15, Text = "BURNFLARE" },
+                new MoveAndMagic() { Value = 16, Text = "FIREBURNR" },
+                new MoveAndMagic() { Value = 17, Text = "HOWL" },
+                new MoveAndMagic() { Value = 18, Text = "RUNNER" },
+                new MoveAndMagic() { Value = 19, Text = "HOWLSLASH" },
+                new MoveAndMagic() { Value = 20, Text = "LACOSTA" },
+                new MoveAndMagic() { Value = 21, Text = "SHHHH" },
+                new MoveAndMagic() { Value = 22, Text = "HOWLNADO" },
+                new MoveAndMagic() { Value = 23, Text = "POIZN" },
+                new MoveAndMagic() { Value = 24, Text = "CURE" },
+                new MoveAndMagic() { Value = 25, Text = "STRAM" },
+                new MoveAndMagic() { Value = 26, Text = "CRAZE" },
+                new MoveAndMagic() { Value = 27, Text = "REFRESH" },
+                new MoveAndMagic() { Value = 28, Text = "SPEEDY" },
+                new MoveAndMagic() { Value = 29, Text = "HALVAH" },
+                new MoveAndMagic() { Value = 30, Text = "BOOM" },
+                new MoveAndMagic() { Value = 31, Text = "WOW" },
+                new MoveAndMagic() { Value = 32, Text = "METEOR STKR" },
+                new MoveAndMagic() { Value = 33, Text = "BOOM-POW" },
+                new MoveAndMagic() { Value = 34, Text = "BA-BOOM" },
+                new MoveAndMagic() { Value = 35, Text = "CRACKLE" },
+                new MoveAndMagic() { Value = 36, Text = "FREEZE" },
+                new MoveAndMagic() { Value = 37, Text = "COLD" },
+                new MoveAndMagic() { Value = 38, Text = "FIORA" },
+                new MoveAndMagic() { Value = 39, Text = "CRACKLING" },
+                new MoveAndMagic() { Value = 40, Text = "ZAP" },
+                new MoveAndMagic() { Value = 41, Text = "GADZAP" },
+                new MoveAndMagic() { Value = 42, Text = "ZAP ALL" },
+                new MoveAndMagic() { Value = 43, Text = "DRAGON ZAP" },
+                new MoveAndMagic() { Value = 44, Text = "MAGIC ART" },
+                new MoveAndMagic() { Value = 45, Text = "STR SYMPHONY" },
+                new MoveAndMagic() { Value = 46, Text = "ENCLOSE" },
+                new MoveAndMagic() { Value = 47, Text = "TIME GATE" },
+                new MoveAndMagic() { Value = 48, Text = "LIFE TREE" },
+                new MoveAndMagic() { Value = 49, Text = "WORLD END" },
+                new MoveAndMagic() { Value = 50, Text = "V-SLASH" },
+                new MoveAndMagic() { Value = 51, Text = "W-BREAK" },
+                new MoveAndMagic() { Value = 52, Text = "SHOCKWAVE" },
+                new MoveAndMagic() { Value = 53, Text = "MIDAIR CUT" },
+                new MoveAndMagic() { Value = 54, Text = "IMMORTALAURA" },
+                new MoveAndMagic() { Value = 55, Text = "ICE SLASH" },
+                new MoveAndMagic() { Value = 56, Text = "LOTUS CUT" },
+                new MoveAndMagic() { Value = 57, Text = "THOR CUT" },
+                new MoveAndMagic() { Value = 58, Text = "DRAGON CUT1" },
+                new MoveAndMagic() { Value = 59, Text = "H&E CUT" },
+                new MoveAndMagic() { Value = 60, Text = "KNIFE HURL" },
+                new MoveAndMagic() { Value = 61, Text = "RANDOMHURL" },
+                new MoveAndMagic() { Value = 62, Text = "PARA WHIP" },
+                new MoveAndMagic() { Value = 63, Text = "FIRE WHIP" },
+                new MoveAndMagic() { Value = 64, Text = "ZAP! WHIP" },
+                new MoveAndMagic() { Value = 65, Text = "FIRE AWAY" },
+                new MoveAndMagic() { Value = 66, Text = "ROUNDWHACK" },
+                new MoveAndMagic() { Value = 67, Text = "PUFFY FIRE" },
+                new MoveAndMagic() { Value = 68, Text = "YAWN" },
+                new MoveAndMagic() { Value = 69, Text = "PUFFY KICK" },
+                new MoveAndMagic() { Value = 70, Text = "RAHRAHCHEER" },
+                new MoveAndMagic() { Value = 71, Text = "FIGHT CHEER" },
+                new MoveAndMagic() { Value = 72, Text = "ERUPT CUT" },
+                new MoveAndMagic() { Value = 73, Text = "FLY DRAG CUT" },
+                new MoveAndMagic() { Value = 74, Text = "DRAGON CUT2" },
+                new MoveAndMagic() { Value = 75, Text = "MIST HIDE" },
+                new MoveAndMagic() { Value = 76, Text = "DOPPELGANG" },
+                new MoveAndMagic() { Value = 77, Text = "DEATHSWORD" },
+                new MoveAndMagic() { Value = 78, Text = "MISSILE" },
+                new MoveAndMagic() { Value = 79, Text = "FIREBALL" },
+                new MoveAndMagic() { Value = 80, Text = "SIDETHROW" },
+                new MoveAndMagic() { Value = 81, Text = "DISCUTTER" },
+                new MoveAndMagic() { Value = 82, Text = "DEMON BALL" },
+                new MoveAndMagic() { Value = 83, Text = "NEO D BALL" },
+                new MoveAndMagic() { Value = 84, Text = "SPLITTER" },
+                new MoveAndMagic() { Value = 85, Text = "HOME RUN" },
+                new MoveAndMagic() { Value = 86, Text = "RAGE" },
+                new MoveAndMagic() { Value = 87, Text = "MILDA KICK" },
+                new MoveAndMagic() { Value = 88, Text = "MILDA HIT" },
+                new MoveAndMagic() { Value = 89, Text = "MILDA HIT2" },
+                new MoveAndMagic() { Value = 90, Text = "MOGAY SHOT" },
+                new MoveAndMagic() { Value = 91, Text = "MOGAY BOMB" },
+                new MoveAndMagic() { Value = 92, Text = "MOGAY HYPO" },
+                new MoveAndMagic() { Value = 93, Text = "POWER UP" },
+                new MoveAndMagic() { Value = 94, Text = "PICKPOCKET" },
+                new MoveAndMagic() { Value = 95, Text = "REDSHOCK" },
+                new MoveAndMagic() { Value = 96, Text = "ENCHDANCE" },
+                new MoveAndMagic() { Value = 97, Text = "PROTECTION" },
+                new MoveAndMagic() { Value = 98, Text = "SANCTUARY" },
+                new MoveAndMagic() { Value = 99, Text = "DIGGIN" },
+            };
+
+            return itemList;
+        }
+    }
+}

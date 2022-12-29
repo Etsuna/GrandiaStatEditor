@@ -55,6 +55,7 @@ namespace GrandiaStatEditor
             public string Text { get; set; }
         }
 
+        //Link with ModeClass
         public static List<EffectType> EffectTypeList()
         {
             var itemList = new List<EffectType>()
@@ -128,7 +129,7 @@ namespace GrandiaStatEditor
                 new ExtType() { Text = "Non", Value = 0},
                 new ExtType() { Text = "Confuse", Value = 1},
                 new ExtType() { Text = "Sleep", Value = 2},
-                new ExtType() { Text = "Paralise", Value = 3},
+                new ExtType() { Text = "Paralyse", Value = 3},
                 new ExtType() { Text = "Poison", Value = 4},
                 new ExtType() { Text = "Disease", Value = 5},
                 new ExtType() { Text = "Anti_Spe", Value = 6},

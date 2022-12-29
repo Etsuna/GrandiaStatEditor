@@ -89,5 +89,15 @@ namespace GrandiaStatEditor.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        internal static byte[] windt {
+            get {
+                object obj = ResourceManager.GetObject("windt", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace GrandiaStatEditor
 {
+    //Link with EffectTypeList()
     public class ModeClass
     {
         public class Mode0
@@ -15,8 +16,9 @@ namespace GrandiaStatEditor
             var itemList = new List<Mode0>()
             {
                 new Mode0() { Text = "Heal", Value = 0},
-                new Mode0() { Text = "Relife", Value = 1},
-                new Mode0() { Text = "Relife&HP_Heal", Value = 1},
+                new Mode0() { Text = "Restore", Value = 1},
+                new Mode0() { Text = "Restore&HP_Heal", Value = 2},
+                new Mode0() { Text = "Restore SP", Value = 3},
             };
 
             return itemList;
@@ -35,6 +37,7 @@ namespace GrandiaStatEditor
                 new Mode3() { Text = "Normal", Value = 0},
                 new Mode3() { Text = "Magic", Value = 1},
                 new Mode3() { Text = "Normal&Magic", Value = 2},
+                new Mode3() { Text = "Paralyse", Value = 4 },
             };
 
             return itemList;
@@ -68,7 +71,7 @@ namespace GrandiaStatEditor
             {
                 new Mode5() { Text = "Confuse", Value = 1},
                 new Mode5() { Text = "Sleep", Value = 2},
-                new Mode5() { Text = "Paralise", Value = 3},
+                new Mode5() { Text = "Paralyse", Value = 3},
                 new Mode5() { Text = "Poison", Value = 4},
                 new Mode5() { Text = "Disease", Value = 5},
                 new Mode5() { Text = "Anti_special", Value = 6},
@@ -95,7 +98,7 @@ namespace GrandiaStatEditor
             {
                 new Mode6() { Text = "Confuse", Value = 1},
                 new Mode6() { Text = "Sleep", Value = 2},
-                new Mode6() { Text = "Paralise", Value = 3},
+                new Mode6() { Text = "Paralyse", Value = 3},
                 new Mode6() { Text = "Poison", Value = 4},
                 new Mode6() { Text = "Disease", Value = 5},
                 new Mode6() { Text = "Anti_Special", Value = 6},
@@ -157,7 +160,11 @@ namespace GrandiaStatEditor
             var itemList = new List<Mode9>()
             {
                 new Mode9() { Text = "IP Wait", Value = 0},
+                new Mode9() { Text = "10 Tries To Steal", Value = 2},
                 new Mode9() { Text = "Vacume PC/MC", Value = 5},
+                new Mode9() { Text = "Temp Def", Value = 6},
+                new Mode9() { Text = "Warps Self", Value = 7},
+                new Mode9() { Text = "Block All Atk", Value = 8},
             };
 
             return itemList;
