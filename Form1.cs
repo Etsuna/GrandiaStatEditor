@@ -21,6 +21,7 @@ namespace GrandiaReduxMaker
         public Form1()
         {
             InitializeComponent();
+            tabControl1.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -483,7 +484,7 @@ namespace GrandiaReduxMaker
                     label.Size = new Size(80, 20);
                     groupBox.Controls.Add(label);
 
-                    if(item.Key.Equals("Weapon") || item.Key.Equals("Shield") || item.Key.Equals("Armor") || item.Key.Equals("Helmet") || item.Key.Equals("Footwear") || item.Key.Equals("Accessory") || item.Key.Contains("Item"))
+                    if (item.Key.Equals("Weapon") || item.Key.Equals("Shield") || item.Key.Equals("Armor") || item.Key.Equals("Helmet") || item.Key.Equals("Footwear") || item.Key.Equals("Accessory") || item.Key.Contains("Item"))
                     {
                         ComboBox comboBox = new ComboBox();
                         switch (item.Key)
@@ -1054,29 +1055,6 @@ namespace GrandiaReduxMaker
             }
         }
 
-        private void NewProjectToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    SelectedFolder = dialog.SelectedPath;
-                    var mdatTargetFile = Path.Combine(SelectedFolder, "M_DAT.BIN");
-                    File.WriteAllBytes(mdatTargetFile, Resources.M_DAT);
-                    var mcharTargetFile = Path.Combine(SelectedFolder, "mchar.dat");
-                    File.WriteAllBytes(mcharTargetFile, Resources.mchar);
-                    FormToLoad();
-
-                    EnemiesStats.ReadEnemiesData(SelectedFolder);
-
-                    CountInList = EnemiesStats.EnemiesStatsDictionary.Count();
-
-                    var FirstValue = EnemiesStats.EnemiesStatsDictionary.FirstOrDefault();
-                    UpdateValue(FirstValue);
-                }
-            }
-        }
-
         public void FormToLoad()
         {
             button1.Enabled = false;
@@ -1131,48 +1109,111 @@ namespace GrandiaReduxMaker
             LoadProject();
         }
 
+        private void NewProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    DialogResult result = MessageBox.Show($"Create a new project at this location : {dialog.SelectedPath}?", "Confirmation", MessageBoxButtons.OKCancel);
+
+                    if (result == DialogResult.OK)
+                    {
+                        SelectedFolder = dialog.SelectedPath;
+                        var mdatTargetFile = Path.Combine(SelectedFolder, "M_DAT.BIN");
+                        var mcharTargetFile = Path.Combine(SelectedFolder, "mchar.dat");
+
+                        if (File.Exists(mdatTargetFile))
+                        {
+                            DialogResult resultmdatTargetFile = MessageBox.Show($"The M_DAT.BIN file already exists, do you want to replace it?", "Confirmation", MessageBoxButtons.YesNo);
+                            if (resultmdatTargetFile == DialogResult.Yes)
+                            {
+                                File.WriteAllBytes(mdatTargetFile, Resources.M_DAT);
+                            }
+
+                        }
+                        else
+                        {
+                            File.WriteAllBytes(mdatTargetFile, Resources.M_DAT);
+                        }
+
+                        if (File.Exists(mcharTargetFile))
+                        {
+                            DialogResult resultmcharTargetFile = MessageBox.Show($"The mchar.dat file already exists, do you want to replace it?", "Confirmation", MessageBoxButtons.YesNo);
+                            if (resultmcharTargetFile == DialogResult.Yes)
+                            {
+                                File.WriteAllBytes(mcharTargetFile, Resources.mchar);
+                            }
+
+                        }
+                        else
+                        {
+                            File.WriteAllBytes(mcharTargetFile, Resources.mchar);
+                        }
+
+                        tabControl1.Visible = true;
+                        EnemiesStats.ReadEnemiesData(SelectedFolder);
+                        CharactersStats.ReadCharatersData(SelectedFolder);
+
+                        CountInList = EnemiesStats.EnemiesStatsDictionary.Count();
+
+                        var FirstValue = EnemiesStats.EnemiesStatsDictionary.FirstOrDefault();
+                        FormToLoad();
+                        UpdateValue(FirstValue);
+                    }
+                }
+            }
+        }
+
         private void LoadProject()
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    SelectedFolder = dialog.SelectedPath;
+                    DialogResult result = MessageBox.Show($"Load project at this location : {dialog.SelectedPath}?", "Confirmation", MessageBoxButtons.OKCancel);
 
-                    var mdatFilePath = Path.Combine(SelectedFolder, "M_DAT.BIN");
-                    var mcharFilePath = Path.Combine(SelectedFolder, "mchar.dat");
-
-                    if (!File.Exists(mdatFilePath))
+                    if (result == DialogResult.OK)
                     {
-                        MessageBox.Show("M_DAT.BIN not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        tabControl1.Visible = true;
+                        SelectedFolder = dialog.SelectedPath;
+
+                        var mdatFilePath = Path.Combine(SelectedFolder, "M_DAT.BIN");
+                        var mcharFilePath = Path.Combine(SelectedFolder, "mchar.dat");
+
+                        if (!File.Exists(mdatFilePath))
+                        {
+                            MessageBox.Show("M_DAT.BIN not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        if (!File.Exists(mcharFilePath))
+                        {
+                            MessageBox.Show("mchar.dat not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        EnemiesStats.EnemiesStatsDictionary.Clear();
+                        EnemiesStats.EnemiesAttacksDictionary.Clear();
+
+                        Count = 0;
+
+                        EnemiesStats.ReadEnemiesData(SelectedFolder);
+                        CharactersStats.ReadCharatersData(SelectedFolder);
+                        FormToLoad();
+
+                        CountInList = EnemiesStats.EnemiesStatsDictionary.Count();
+
+                        var FirstValue = EnemiesStats.EnemiesStatsDictionary.FirstOrDefault();
+                        UpdateValue(FirstValue);
                     }
-
-                    if (!File.Exists(mcharFilePath))
-                    {
-                        MessageBox.Show("mchar.dat not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    EnemiesStats.EnemiesStatsDictionary.Clear();
-                    EnemiesStats.EnemiesAttacksDictionary.Clear();
-
-                    Count = 0;
-                    
-                    EnemiesStats.ReadEnemiesData(SelectedFolder);
-                    CharactersStats.ReadCharatersData(SelectedFolder);
-                    FormToLoad();
-
-                    CountInList = EnemiesStats.EnemiesStatsDictionary.Count();
-
-                    var FirstValue = EnemiesStats.EnemiesStatsDictionary.FirstOrDefault();
-                    UpdateValue(FirstValue);
                 }
             }
         }
 
         private void LoadProjectDev()
         {
+            tabControl1.Visible = true;
             SelectedFolder = Path.Combine(@"D:\", "AAAAAA");
 
             var mdatFilePath = Path.Combine(SelectedFolder, "M_DAT.BIN");
@@ -1305,8 +1346,6 @@ namespace GrandiaReduxMaker
                 {
                     GetValueToList.Add(textBox.Name.Replace("_TextBox", "").Replace("TextBox", ""), textBox.Text);
                 }
-
-                Console.WriteLine($"TextBox : {textBox.Name}, Value : {textBox.Text}");
             }
 
             // Edit the text of the comboboxes
@@ -1316,8 +1355,6 @@ namespace GrandiaReduxMaker
                 {
                     GetValueToList.Add(comboBox.Name.Replace("_ComboBox", "").Replace("ComboBox", ""), comboBox.SelectedValue.ToString());
                 }
-
-                Console.WriteLine($"TextBox : {comboBox.Name}, Value : {comboBox.SelectedValue}");
             }
 
             WriteDatas.WriteMdat(SelectedFolder, SetPosition.Text, GetValueToList);
@@ -1346,8 +1383,6 @@ namespace GrandiaReduxMaker
 
                 foreach (TextBox textBoxe in textBoxes)
                 {
-                    Console.WriteLine($"Groupe : {groupBox.Name.Replace("GroupBox", "")}, TextBox : {textBoxe.Name.Replace("TextBox", "")}, Value : {textBoxe.Text.Replace("TextBox", "")}");
-
                     var groupKey = groupBox.Name.Replace("GroupBox", "");
                     var itemKey = textBoxe.Name.Replace("TextBox", "");
                     var ItemValue = textBoxe.Text.Replace("TextBox", "");
@@ -1364,8 +1399,6 @@ namespace GrandiaReduxMaker
 
                 foreach (ComboBox comboBox in comboBoxes)
                 {
-                    Console.WriteLine($"Groupe : {groupBox.Name.Replace("GroupBox", "")}, TextBox : {comboBox.Name.Replace("ComboBox", "")}, Value : {comboBox.SelectedValue.ToString().Replace("ComboBox", "")}");
-                    
                     var groupKey = groupBox.Name.Replace("GroupBox", "");
                     var itemKey = comboBox.Name.Replace("ComboBox", "");
                     var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
@@ -1378,11 +1411,9 @@ namespace GrandiaReduxMaker
                             innerDict[itemKey] = ItemValue;
                         }
                     }
-
                 }
 
                 WriteDatas.WriteMchar(SelectedFolder);
-
             }
         }
     }
