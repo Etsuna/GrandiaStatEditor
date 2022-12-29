@@ -59,7 +59,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -67,12 +68,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 14)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between -7 and 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
         private void TextBox_0to3_TextChanged(object sender, EventArgs e)
@@ -80,7 +83,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -88,12 +92,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 3)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -102,7 +108,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -110,12 +117,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 4)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 4", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -124,7 +133,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -132,12 +142,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 7)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -146,7 +158,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -154,12 +167,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 15)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 15", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -168,7 +183,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -176,12 +192,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 99)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 99", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -190,7 +208,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -198,12 +217,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 100)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 100", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -212,7 +233,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -220,12 +242,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 255)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 255", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -234,7 +258,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -242,12 +267,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 999)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -256,7 +283,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -264,12 +292,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 9999)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 9999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -278,7 +308,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -286,12 +317,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 12800)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 12800", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -300,7 +333,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -308,12 +342,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 32767)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 32767", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -322,7 +358,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -330,12 +367,14 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 65535)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 65535", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveButton.Enabled = true;
+            SaveEnemyButton.Enabled = true;
+            SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -344,7 +383,8 @@ namespace GrandiaReduxMaker
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -352,14 +392,16 @@ namespace GrandiaReduxMaker
 
             if (result < 0 || result > 4294967295)
             {
-                SaveButton.Enabled = false;
+                SaveEnemyButton.Enabled = false;
+                SaveTeamButton.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 4294967295", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                SaveButton.Enabled = true;
+                SaveEnemyButton.Enabled = true;
+                SaveTeamButton.Enabled = true;
                 textBox.BackColor = Color.White;
             }
         }
@@ -471,7 +513,7 @@ namespace GrandiaReduxMaker
                             default:
                                 break;
                         }
-                        comboBox.Name = $"{value}_{item.Key}_ComboBox";
+                        comboBox.Name = $"{item.Key}ComboBox";
                         comboBox.ValueMember = "Value";
                         comboBox.DisplayMember = "Text";
                         comboBox.Location = new Point(100, 20 + y);
@@ -551,7 +593,7 @@ namespace GrandiaReduxMaker
                             default:
                                 break;
                         }
-                        textBox.Name = $"{value}_{item.Key}_TextBox";
+                        textBox.Name = $"{item.Key}TextBox";
                         textBox.Text = item.Value;
                         textBox.Location = new Point(100, 20 + y);
                         textBox.Size = new Size(100, 20);
@@ -1233,7 +1275,7 @@ namespace GrandiaReduxMaker
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void SaveEnemyButton_Click(object sender, EventArgs e)
         {
             Dictionary<string, string> GetValueToList = new Dictionary<string, string>();
 
@@ -1254,24 +1296,19 @@ namespace GrandiaReduxMaker
             foreach (GroupBox groupBox in groupBoxes)
             {
                 textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
-            }
-
-            // Get the comboboxes in each groupbox
-            foreach (GroupBox groupBox in groupBoxes)
-            {
                 comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+
             }
 
-            var i = 0;
             // Edit the text of the textboxes
-            foreach (TextBox textBoxe in textBoxes)
+            foreach (TextBox textBox in textBoxes)
             {
-                if (!string.IsNullOrWhiteSpace(textBoxe.Text))
+                if (!string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    GetValueToList.Add(textBoxe.Name.Replace("_TextBox", "").Replace("TextBox", ""), textBoxe.Text);
+                    GetValueToList.Add(textBox.Name.Replace("_TextBox", "").Replace("TextBox", ""), textBox.Text);
                 }
 
-                Console.WriteLine($"TextBox : {textBoxe.Name}, Value : {textBoxe.Text}");
+                Console.WriteLine($"TextBox : {textBox.Name}, Value : {textBox.Text}");
             }
 
             // Edit the text of the comboboxes
@@ -1288,9 +1325,67 @@ namespace GrandiaReduxMaker
             WriteDatas.WriteMdat(SelectedFolder, SetPosition.Text, GetValueToList);
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void SaveTeamButton_Click(object sender, EventArgs e)
         {
+            // Get the tabpage that contains the groups
+            TabPage tabPage = tabControl1.TabPages[1];
 
+            // Get all the controls in the tabpage
+            List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
+
+            // Get the groupboxes in the tabpage
+            List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
+
+            // Initialize a list to hold the textboxes
+            List<TextBox> textBoxes = new List<TextBox>();
+            List<ComboBox> comboBoxes = new List<ComboBox>();
+
+            // Get the textboxes in each groupbox
+            foreach (GroupBox groupBox in groupBoxes)
+            {
+                textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
+                comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+
+                foreach (TextBox textBoxe in textBoxes)
+                {
+                    Console.WriteLine($"Groupe : {groupBox.Name.Replace("GroupBox", "")}, TextBox : {textBoxe.Name.Replace("TextBox", "")}, Value : {textBoxe.Text.Replace("TextBox", "")}");
+
+                    var groupKey = groupBox.Name.Replace("GroupBox", "");
+                    var itemKey = textBoxe.Name.Replace("TextBox", "");
+                    var ItemValue = textBoxe.Text.Replace("TextBox", "");
+
+                    if (CharactersStats.CharactersDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                    {
+                        if (innerDict.TryGetValue(itemKey, out string value))
+                        {
+                            // Update the value for the key "innerKey" in the inner dictionary
+                            innerDict[itemKey] = ItemValue;
+                        }
+                    }
+                }
+
+                foreach (ComboBox comboBox in comboBoxes)
+                {
+                    Console.WriteLine($"Groupe : {groupBox.Name.Replace("GroupBox", "")}, TextBox : {comboBox.Name.Replace("ComboBox", "")}, Value : {comboBox.SelectedValue.ToString().Replace("ComboBox", "")}");
+                    
+                    var groupKey = groupBox.Name.Replace("GroupBox", "");
+                    var itemKey = comboBox.Name.Replace("ComboBox", "");
+                    var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
+
+                    if (CharactersStats.CharactersDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                    {
+                        if (innerDict.TryGetValue(itemKey, out string value))
+                        {
+                            // Update the value for the key "innerKey" in the inner dictionary
+                            innerDict[itemKey] = ItemValue;
+                        }
+                    }
+
+                }
+
+                WriteDatas.WriteMchar(SelectedFolder);
+
+            }
         }
     }
 }

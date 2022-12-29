@@ -324,5 +324,195 @@ namespace GrandiaReduxMaker
                 };
             }
         }
+
+        public static void WriteMchar(string path)
+        {
+            var filePath = Path.Combine(path, "mchar.dat");
+            long position = 0x08;
+
+            using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
+            {
+                stream.Seek(position, SeekOrigin.Begin);
+
+                foreach (var value in CharactersStats.CharactersDictionary.Keys)
+                {
+                    Dictionary<string, string> innerDictionary = CharactersStats.CharactersDictionary[value];
+
+                    var EXP = ByteConverterClass.Int32ToBytes(innerDictionary["EXP"]);
+                    stream.Write(EXP, 0, EXP.Length);
+
+                    var NextEXP = ByteConverterClass.Int16ToBytes(innerDictionary["NextEXP"]);
+                    stream.Write(NextEXP, 0, NextEXP.Length);
+
+                    var LV = ByteConverterClass.IntToByte(innerDictionary["LV"]);
+                    stream.Write(LV, 0, LV.Length);
+
+                    var CrititalCombo = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(innerDictionary["Critical"], innerDictionary["Combo"]).ToString());
+                    stream.Write(CrititalCombo, 0, CrititalCombo.Length);
+
+                    var HP = ByteConverterClass.Int16ToBytes(innerDictionary["HP"]);
+                    stream.Write(HP, 0, HP.Length);
+
+                    var STR = ByteConverterClass.Int16ToBytes(innerDictionary["STR"]);
+                    stream.Write(STR, 0, STR.Length);
+
+                    var VIT = ByteConverterClass.Int16ToBytes(innerDictionary["VIT"]);
+                    stream.Write(VIT, 0, VIT.Length);
+
+                    var WIT = ByteConverterClass.Int16ToBytes(innerDictionary["WIT"]);
+                    stream.Write(WIT, 0, VIT.Length);
+
+                    var AGI = ByteConverterClass.Int16ToBytes(innerDictionary["AGI"]);
+                    stream.Write(AGI, 0, AGI.Length);
+
+                    var SP = ByteConverterClass.Int16ToBytes(innerDictionary["SP"]);
+                    stream.Write(SP, 0, SP.Length);
+
+                    var FireExp = ByteConverterClass.Int16ToBytes(innerDictionary["FireExp"]);
+                    stream.Write(FireExp, 0, FireExp.Length);
+
+                    var WaterExp = ByteConverterClass.Int16ToBytes(innerDictionary["WaterExp"]);
+                    stream.Write(WaterExp, 0, WaterExp.Length);
+
+                    var WindExp = ByteConverterClass.Int16ToBytes(innerDictionary["WindExp"]);
+                    stream.Write(WindExp, 0, WindExp.Length);
+
+                    var EarthExp = ByteConverterClass.Int16ToBytes(innerDictionary["EarthExp"]);
+                    stream.Write(EarthExp, 0, EarthExp.Length);
+
+                    var Weapon1Exp = ByteConverterClass.Int16ToBytes(innerDictionary["Weapon1Exp"]);
+                    stream.Write(Weapon1Exp, 0, Weapon1Exp.Length);
+
+                    var Weapon2Exp = ByteConverterClass.Int16ToBytes(innerDictionary["Weapon2Exp"]);
+                    stream.Write(Weapon2Exp, 0, Weapon2Exp.Length);
+
+                    var Weapon3Exp = ByteConverterClass.Int16ToBytes(innerDictionary["Weapon3Exp"]);
+                    stream.Write(Weapon3Exp, 0, Weapon3Exp.Length);
+
+                    var Weapon4Exp = ByteConverterClass.Int16ToBytes(innerDictionary["Weapon4Exp"]);
+                    stream.Write(Weapon4Exp, 0, Weapon4Exp.Length);
+
+                    var FireLevel = ByteConverterClass.IntToByte(innerDictionary["FireLevel"]);
+                    stream.Write(FireLevel, 0, FireLevel.Length);
+
+                    var WaterLevel = ByteConverterClass.IntToByte(innerDictionary["WaterLevel"]);
+                    stream.Write(WaterLevel, 0, WaterLevel.Length);
+
+                    var WindLevel = ByteConverterClass.IntToByte(innerDictionary["WindLevel"]);
+                    stream.Write(WindLevel, 0, WindLevel.Length);
+
+                    var EarthLevel = ByteConverterClass.IntToByte(innerDictionary["EarthLevel"]);
+                    stream.Write(EarthLevel, 0, EarthLevel.Length);
+
+                    var Weapon1Level = ByteConverterClass.IntToByte(innerDictionary["Weapon1Level"]);
+                    stream.Write(Weapon1Level, 0, Weapon1Level.Length);
+
+                    var Weapon2Level = ByteConverterClass.IntToByte(innerDictionary["Weapon2Level"]);
+                    stream.Write(Weapon2Level, 0, Weapon2Level.Length);
+
+                    var Weapon3Level = ByteConverterClass.IntToByte(innerDictionary["Weapon3Level"]);
+                    stream.Write(Weapon3Level, 0, Weapon3Level.Length);
+
+                    var Weapon4Level = ByteConverterClass.IntToByte(innerDictionary["Weapon4Level"]);
+                    stream.Write(Weapon4Level, 0, Weapon4Level.Length);
+
+                    var CurrentMP1 = ByteConverterClass.IntToByte(innerDictionary["CurrentMP1"]);
+                    stream.Write(CurrentMP1, 0, CurrentMP1.Length);
+
+                    var MaxMP1 = ByteConverterClass.IntToByte(innerDictionary["MaxMP1"]);
+                    stream.Write(MaxMP1, 0, MaxMP1.Length);
+
+                    var CurrentMP2 = ByteConverterClass.IntToByte(innerDictionary["CurrentMP2"]);
+                    stream.Write(CurrentMP2, 0, CurrentMP2.Length);
+
+                    var MaxMP2 = ByteConverterClass.IntToByte(innerDictionary["MaxMP2"]);
+                    stream.Write(MaxMP2, 0, MaxMP2.Length);
+
+                    var CurrentMP3 = ByteConverterClass.IntToByte(innerDictionary["CurrentMP3"]);
+                    stream.Write(CurrentMP3, 0, CurrentMP3.Length);
+
+                    var MaxMP3 = ByteConverterClass.IntToByte(innerDictionary["MaxMP3"]);
+                    stream.Write(MaxMP3, 0, MaxMP3.Length);
+
+                    var MagicAndMoveBlockResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(ByteConverterClass.AddSeven(innerDictionary["MagicBlockResist"]), ByteConverterClass.AddSeven(innerDictionary["MoveBlockResist"])).ToString());
+                    stream.Write(MagicAndMoveBlockResist, 0, MagicAndMoveBlockResist.Length);
+
+                    var PlagueAndPoisonResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(ByteConverterClass.AddSeven(innerDictionary["PlagueResist"]), ByteConverterClass.AddSeven(innerDictionary["PoisonResist"])).ToString());
+                    stream.Write(PlagueAndPoisonResist, 0, PlagueAndPoisonResist.Length);
+
+                    var ParalysisAndSleepResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(ByteConverterClass.AddSeven(innerDictionary["ParalysisResist"]), ByteConverterClass.AddSeven(innerDictionary["SleepResist"])).ToString());
+                    stream.Write(ParalysisAndSleepResist, 0, ParalysisAndSleepResist.Length);
+
+                    var ConfusionAndCriticalResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(ByteConverterClass.AddSeven(innerDictionary["ConfusionResist"]), ByteConverterClass.AddSeven(innerDictionary["CriticalResist"])).ToString());
+                    stream.Write(ConfusionAndCriticalResist, 0, ConfusionAndCriticalResist.Length);
+
+                    var FireAndWaterResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(ByteConverterClass.AddSeven(innerDictionary["FireResist"]), ByteConverterClass.AddSeven(innerDictionary["WaterResist"])).ToString());
+                    stream.Write(FireAndWaterResist, 0, FireAndWaterResist.Length);
+
+                    var WindAndEarthResist = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(ByteConverterClass.AddSeven(innerDictionary["WindResist"]), ByteConverterClass.AddSeven(innerDictionary["EarthResist"])).ToString());
+                    stream.Write(WindAndEarthResist, 0, WindAndEarthResist.Length);
+
+                    var Weapon = ByteConverterClass.Int16ToBytes(innerDictionary["Weapon"]);
+                    stream.Write(Weapon, 0, Weapon.Length);
+
+                    var Shield = ByteConverterClass.Int16ToBytes(innerDictionary["Shield"]);
+                    stream.Write(Shield, 0, Shield.Length);
+
+                    var Armor = ByteConverterClass.Int16ToBytes(innerDictionary["Armor"]);
+                    stream.Write(Armor, 0, Armor.Length);
+
+                    var Helmet = ByteConverterClass.Int16ToBytes(innerDictionary["Helmet"]);
+                    stream.Write(Helmet, 0, Helmet.Length);
+
+                    var Footwear = ByteConverterClass.Int16ToBytes(innerDictionary["Footwear"]);
+                    stream.Write(Footwear, 0, Footwear.Length);
+
+                    var Accessory = ByteConverterClass.Int16ToBytes(innerDictionary["Accessory"]);
+                    stream.Write(Accessory, 0, Accessory.Length);
+
+                    var Item1 = ByteConverterClass.Int16ToBytes(innerDictionary["Item1"]);
+                    stream.Write(Item1, 0, Item1.Length);
+
+                    var Item2 = ByteConverterClass.Int16ToBytes(innerDictionary["Item2"]);
+                    stream.Write(Item2, 0, Item2.Length);
+
+                    var Item3 = ByteConverterClass.Int16ToBytes(innerDictionary["Item3"]);
+                    stream.Write(Item3, 0, Item3.Length);
+
+                    var Item4 = ByteConverterClass.Int16ToBytes(innerDictionary["Item4"]);
+                    stream.Write(Item4, 0, Item1.Length);
+
+                    var Item5 = ByteConverterClass.Int16ToBytes(innerDictionary["Item5"]);
+                    stream.Write(Item5, 0, Item1.Length);
+
+                    var Item6 = ByteConverterClass.Int16ToBytes(innerDictionary["Item6"]);
+                    stream.Write(Item6, 0, Item6.Length);
+
+                    var Item7 = ByteConverterClass.Int16ToBytes(innerDictionary["Item7"]);
+                    stream.Write(Item7, 0, Item7.Length);
+
+                    var Item8 = ByteConverterClass.Int16ToBytes(innerDictionary["Item8"]);
+                    stream.Write(Item8, 0, Item8.Length);
+
+                    var Item9 = ByteConverterClass.Int16ToBytes(innerDictionary["Item9"]);
+                    stream.Write(Item9, 0, Item9.Length);
+
+                    var Item10 = ByteConverterClass.Int16ToBytes(innerDictionary["Item10"]);
+                    stream.Write(Item10, 0, Item10.Length);
+
+                    var Item11 = ByteConverterClass.Int16ToBytes(innerDictionary["Item11"]);
+                    stream.Write(Item11, 0, Item11.Length);
+
+                    var Item12 = ByteConverterClass.Int16ToBytes(innerDictionary["Item12"]);
+                    stream.Write(Item12, 0, Item12.Length);
+
+                    stream.ReadByte();
+                    stream.ReadByte();
+                    stream.ReadByte();
+                    stream.ReadByte();
+                }
+            };
+                
+        }
     }
 }

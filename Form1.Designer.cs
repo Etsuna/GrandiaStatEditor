@@ -31,7 +31,7 @@ namespace GrandiaReduxMaker
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.SaveEnemyButton = new System.Windows.Forms.Button();
             this.SetPosition = new System.Windows.Forms.Label();
             this.EnemiePosition = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,8 +41,10 @@ namespace GrandiaReduxMaker
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveTeamButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@ namespace GrandiaReduxMaker
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Lavender;
-            this.tabPage1.Controls.Add(this.SaveButton);
+            this.tabPage1.Controls.Add(this.SaveEnemyButton);
             this.tabPage1.Controls.Add(this.SetPosition);
             this.tabPage1.Controls.Add(this.EnemiePosition);
             this.tabPage1.Controls.Add(this.button2);
@@ -67,20 +69,20 @@ namespace GrandiaReduxMaker
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1701, 846);
+            this.tabPage1.Size = new System.Drawing.Size(1751, 896);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "EnemiesStats";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // SaveButton
+            // SaveEnemyButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(1620, 817);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 4;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.button3_Click);
+            this.SaveEnemyButton.Location = new System.Drawing.Point(1620, 817);
+            this.SaveEnemyButton.Name = "SaveEnemyButton";
+            this.SaveEnemyButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveEnemyButton.TabIndex = 4;
+            this.SaveEnemyButton.Text = "Save";
+            this.SaveEnemyButton.UseVisualStyleBackColor = true;
+            this.SaveEnemyButton.Click += new System.EventHandler(this.SaveEnemyButton_Click);
             // 
             // SetPosition
             // 
@@ -125,6 +127,7 @@ namespace GrandiaReduxMaker
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.Color.Lavender;
+            this.tabPage2.Controls.Add(this.SaveTeamButton);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -165,6 +168,16 @@ namespace GrandiaReduxMaker
             this.loadProjectToolStripMenuItem.Text = "Load Project...";
             this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.loadProjectToolStripMenuItem_Click);
             // 
+            // SaveTeamButton
+            // 
+            this.SaveTeamButton.Location = new System.Drawing.Point(1620, 6);
+            this.SaveTeamButton.Name = "SaveTeamButton";
+            this.SaveTeamButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveTeamButton.TabIndex = 0;
+            this.SaveTeamButton.Text = "Save";
+            this.SaveTeamButton.UseVisualStyleBackColor = true;
+            this.SaveTeamButton.Click += new System.EventHandler(this.SaveTeamButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +194,7 @@ namespace GrandiaReduxMaker
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -201,7 +215,8 @@ namespace GrandiaReduxMaker
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadProjectToolStripMenuItem;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button SaveEnemyButton;
+        private System.Windows.Forms.Button SaveTeamButton;
     }
 }
 

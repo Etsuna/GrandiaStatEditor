@@ -23,6 +23,13 @@ namespace GrandiaReduxMaker
             return bytes;
         }
 
+        public static byte[] Int32ToBytes(string value)
+        {
+            byte[] bytes = new byte[4];
+            Buffer.BlockCopy(BitConverter.GetBytes(int.Parse(value)), 0, bytes, 0, 2);
+            return bytes;
+        }
+
         public static string AddSeven(string value)
         {
             var result = int.Parse(value) + 7;
