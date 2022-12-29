@@ -33,7 +33,7 @@ namespace GrandiaStatEditor
                     var AreaRange = reader.ReadByte();
                     var Elemental = reader.ReadByte();
                     var Weapon = reader.ReadByte();
-                    var Walk = reader.ReadByte();
+                    var Move = reader.ReadByte();
                     var CriticalPourcent = reader.ReadByte();
                     var EffectType = reader.ReadByte();
                     var Mode = reader.ReadByte();
@@ -50,7 +50,7 @@ namespace GrandiaStatEditor
                     listStats.Add("Xp", Xp.ToString());
                     listStats.Add("AreaRange", AreaRange.ToString());
                     listStats.Add("Elemental", Elemental.ToString());
-                    listStats.Add("Walk", Walk.ToString());
+                    listStats.Add("Move", Move.ToString());
                     listStats.Add("CriticalPourcent", CriticalPourcent.ToString());
                     listStats.Add("EffectType", EffectType.ToString());
                     listStats.Add("Mode", Mode.ToString());

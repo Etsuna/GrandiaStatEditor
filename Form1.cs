@@ -631,7 +631,7 @@ namespace GrandiaStatEditor
                                 textBox.TextChanged += new EventHandler(TextBox_0to999_TextChanged);
                                 break;
                             case "AttackRange":
-                            case "Walk":
+                            case "Move":
                             case "SP":
                                 textBox.TextChanged += new EventHandler(TextBox_0to255_TextChanged);
                                 break;
@@ -773,7 +773,7 @@ namespace GrandiaStatEditor
                             textBox.TextChanged += new EventHandler(TextBox_0to999_TextChanged);
                             break;
                         case "AttackRange":
-                        case "Walk":
+                        case "Move":
                         case "SP":
                             textBox.TextChanged += new EventHandler(TextBox_0to255_TextChanged);
                             break;
@@ -898,7 +898,7 @@ namespace GrandiaStatEditor
                         case "ExtProb":
                             textBox.TextChanged += new EventHandler(TextBox_0to100_TextChanged);
                             break;
-                        case "AtkWalk":
+                        case "AtkMove":
                         case "AtkRange":
                         case "AreaRange":
                             textBox.TextChanged += new EventHandler(TextBox_0to255_TextChanged);
@@ -1118,7 +1118,7 @@ namespace GrandiaStatEditor
             button2.Enabled = true;
 
             //STATS
-            var statsList = new List<string> { "NameQuarter", "NameFull", "ID", "LV", "HP", "STR", "VIT", "WIT", "AGI", "IpPower", "AttackCount", "AttackRange", "Walk" };
+            var statsList = new List<string> { "NameQuarter", "NameFull", "ID", "LV", "HP", "STR", "VIT", "WIT", "AGI", "IpPower", "AttackCount", "AttackRange", "Move" };
             var itemsList = new List<string> { "EXP", "GP", "GoldPourcent", "ItemDrop1", "ItemDrop1Pourcent", "ItemDrop2", "ItemDrop2Pourcent" };
             var ipKnock_Back = new List<string> { "AntiIp", "KBAttack", "AntiKB" };
             var magicsAndSkillsList = new List<string> { "MP1", "MP2", "MP3", "SP", "SkillID1", "SkillID2", "SkillID3", "SkillID4" };
@@ -1128,7 +1128,7 @@ namespace GrandiaStatEditor
 
             //ATTACKS
             var SpecialAttackName = new List<string> { "AttackQuarter", "AttackFull" };
-            var AttackStatus = new List<string> { "Power", "IpPow", "Critical", "AtkWalk", "AtkRange", "KnockBack" };
+            var AttackStatus = new List<string> { "Power", "IpPow", "Critical", "AtkMove", "AtkRange", "KnockBack" };
             var AttackMode = new List<string> { "Target", "AreaRange", "StopMode", "EffectType", "Mode" };
             var AttackExtDamage = new List<string> { "ExtType", "ExtProb", "ExtPower" };
             var AttackElemental = new List<string> { "Elemental" };

@@ -37,7 +37,7 @@ namespace GrandiaStatEditor
                     var EXP = reader.ReadInt16();
                     var GP = reader.ReadInt16();
                     var GoldPourcent = reader.ReadByte();
-                    var Walk = reader.ReadByte();
+                    var Move = reader.ReadByte();
                     var ItemDrop1 = reader.ReadInt16();
                     var ItemDrop2 = reader.ReadInt16();
                     var ItemDrop1Pourcent = reader.ReadByte();
@@ -107,7 +107,7 @@ namespace GrandiaStatEditor
                             var AreaRange = reader.ReadByte();
                             //10 - Fire, 20 - Water, 40 - Wind, 50 - Thunder, 60 - Ice, 80 - Earth, 90 - Explosion, A0 - Forest
                             var Elemental = reader.ReadByte();
-                            var AtkWalk = reader.ReadByte();
+                            var AtkMove = reader.ReadByte();
                             var Critical = reader.ReadByte();
                             var EffectType = reader.ReadByte();
                             var Mode = reader.ReadByte();
@@ -129,7 +129,7 @@ namespace GrandiaStatEditor
                             listAttacks.Add("KnockBack", KnockBack.ToString());
                             listAttacks.Add("AreaRange", AreaRange.ToString());
                             listAttacks.Add("Elemental", Elemental.ToString());
-                            listAttacks.Add("AtkWalk", AtkWalk.ToString());
+                            listAttacks.Add("AtkMove", AtkMove.ToString());
                             listAttacks.Add("Critical", Critical.ToString());
                             listAttacks.Add("EffectType", EffectType.ToString());
                             listAttacks.Add("Mode", Mode.ToString());
@@ -192,7 +192,7 @@ namespace GrandiaStatEditor
                     listStats.Add("EXP", EXP.ToString());
                     listStats.Add("GP", GP.ToString());
                     listStats.Add("GoldPourcent", GoldPourcent.ToString());
-                    listStats.Add("Walk", Walk.ToString());
+                    listStats.Add("Move", Move.ToString());
                     listStats.Add("ItemDrop1", ItemDrop1.ToString());
                     listStats.Add("ItemDrop2", ItemDrop2.ToString());
                     listStats.Add("ItemDrop1Pourcent", ItemDrop1Pourcent.ToString());

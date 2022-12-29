@@ -47,8 +47,8 @@ namespace GrandiaStatEditor
                 var GoldPourcent = ByteConverterClass.IntToByte(dataList["GoldPourcent"]);
                 stream.Write(GoldPourcent, 0, GoldPourcent.Length);
 
-                var Walk = ByteConverterClass.IntToByte(dataList["Walk"]);
-                stream.Write(Walk, 0, Walk.Length);
+                var Move = ByteConverterClass.IntToByte(dataList["Move"]);
+                stream.Write(Move, 0, Move.Length);
 
                 var ItemDrop1 = ByteConverterClass.Int16ToBytes(dataList["ItemDrop1"]);
                 stream.Write(ItemDrop1, 0, ItemDrop1.Length);
@@ -239,8 +239,8 @@ namespace GrandiaStatEditor
                         var Elemental = ByteConverterClass.IntToByte(dataList[$"Elemental_{i}"]);
                         stream.Write(Elemental, 0, Elemental.Length);
 
-                        var AtkWalk = ByteConverterClass.IntToByte(dataList[$"AtkWalk_{i}"]);
-                        stream.Write(AtkWalk, 0, AtkWalk.Length);
+                        var AtkMove = ByteConverterClass.IntToByte(dataList[$"AtkMove_{i}"]);
+                        stream.Write(AtkMove, 0, AtkMove.Length);
 
                         var Critical = ByteConverterClass.IntToByte(dataList[$"Critical_{i}"]);
                         stream.Write(Critical, 0, Critical.Length);
