@@ -95,7 +95,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GrandiaReduxMakerIcon.ico" />
+    <AdditionalFiles Include="Resources\GrandiaReduxMakerIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="GrandiaReduxMakerIcon.ico" />
