@@ -1416,5 +1416,10 @@ namespace GrandiaReduxMaker
                 WriteDatas.WriteMchar(SelectedFolder);
             }
         }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Created by Etsuna. V0.1Beta", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
