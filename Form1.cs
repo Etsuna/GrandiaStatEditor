@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GrandiaStatEditor
@@ -78,6 +77,7 @@ namespace GrandiaStatEditor
             SaveTeamButton.Enabled = true;
             textBox.BackColor = Color.White;
         }
+
         private void TextBox_0to3_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -1180,53 +1180,20 @@ namespace GrandiaStatEditor
                         var mcharTargetFile = Path.Combine(SelectedFolder, "mchar.dat");
                         var windtTargetFile = Path.Combine(SelectedFolder, "windt.bin");
 
-                        if (File.Exists(mdatTargetFile))
-                        {
-                            DialogResult resultmdatTargetFile = MessageBox.Show($"The M_DAT.BIN file already exists, do you want to replace it?", "Confirmation", MessageBoxButtons.YesNo);
-                            if (resultmdatTargetFile == DialogResult.Yes)
-                            {
-                                Task t = Task.Run(() => File.WriteAllBytes(mdatTargetFile, Resources.M_DAT));
-                                t.Wait();
-                            }
-                        }
-                        else
-                        {
-                            Task t = Task.Run(() => File.WriteAllBytes(mdatTargetFile, Resources.M_DAT));
-                            t.Wait();
-                        }
-
-                        if (File.Exists(mcharTargetFile))
-                        {
-                            DialogResult resultmcharTargetFile = MessageBox.Show($"The mchar.dat file already exists, do you want to replace it?", "Confirmation", MessageBoxButtons.YesNo);
-                            if (resultmcharTargetFile == DialogResult.Yes)
-                            {
-                                Task t = Task.Run(() => File.WriteAllBytes(mcharTargetFile, Resources.mchar));
-                                t.Wait();
-                            }
-
-                        }
-                        else
-                        {
-                            Task t = Task.Run(() => File.WriteAllBytes(mcharTargetFile, Resources.mchar));
-                            t.Wait();
-                        }
-
-                        if (File.Exists(windtTargetFile))
-                        {
-                            DialogResult resultwindtTargetFile = MessageBox.Show($"The mchar.dat file already exists, do you want to replace it?", "Confirmation", MessageBoxButtons.YesNo);
-                            if (resultwindtTargetFile == DialogResult.Yes)
-                            {
-                                Task t = Task.Run(() => File.WriteAllBytes(windtTargetFile, Resources.windt));
-                                t.Wait();
-                            }
-                        }
-                        else
-                        {
-                            Task t = Task.Run(() => File.WriteAllBytes(windtTargetFile, Resources.windt));
-                            t.Wait();
-                        }
+                        CopyClass.CopyFileNewProject(mdatTargetFile, Resources.M_DAT);
+                        CopyClass.CopyFileNewProject(mcharTargetFile, Resources.mchar);
+                        CopyClass.CopyFileNewProject(windtTargetFile, Resources.windt);
 
                         tabControl1.Visible = true;
+
+                        EnemiesStats.EnemiesStatsDictionary.Clear();
+                        EnemiesStats.EnemiesAttacksDictionary.Clear();
+                        CharactersStats.CharactersDictionary.Clear();
+                        MoveAndMagicStats.MoveAndStatDictionary.Clear();
+
+                        Count = 0;
+                        CountInList = 0;
+
                         EnemiesStats.ReadEnemiesData(SelectedFolder);
                         CharactersStats.ReadCharatersData(SelectedFolder);
                         MoveAndMagicStats.ReadMoveAndMagicData(SelectedFolder);
@@ -1257,57 +1224,22 @@ namespace GrandiaStatEditor
                         var mdatTargetFile = Path.Combine(SelectedFolder, "M_DAT.BIN");
                         var mcharTargetFile = Path.Combine(SelectedFolder, "mchar.dat");
                         var windtTargetFile = Path.Combine(SelectedFolder, "windt.bin");
-                        var Load = true;
+                        var load = true;
 
-                        if (!File.Exists(mdatTargetFile))
-                        {
-                            DialogResult resultmdatTargetFile = MessageBox.Show($"The M_DAT.BIN file not exists, do you want to create it?", "Confirmation", MessageBoxButtons.YesNo);
-                            if (resultmdatTargetFile == DialogResult.Yes)
-                            {
-                                Task t = Task.Run(() => File.WriteAllBytes(mdatTargetFile, Resources.M_DAT));
-                                t.Wait();
-                            }
-                            else
-                            {
-                                Load = false;
-                            }
-                        }
+                        load = CopyClass.CopyFileLoadProject(mdatTargetFile, Resources.M_DAT, load);
+                        load = CopyClass.CopyFileLoadProject(mcharTargetFile, Resources.mchar, load);
+                        load = CopyClass.CopyFileLoadProject(windtTargetFile, Resources.windt, load);
 
-                        if (!File.Exists(mcharTargetFile))
-                        {
-                            DialogResult resultmcharTargetFile = MessageBox.Show($"The mchar.dat file not exists, do you want to create it?", "Confirmation", MessageBoxButtons.YesNo);
-                            if (resultmcharTargetFile == DialogResult.Yes)
-                            {
-                                Task t = Task.Run(() => File.WriteAllBytes(mcharTargetFile, Resources.mchar));
-                                t.Wait();
-                            }
-                            else
-                            {
-                                Load = false;
-                            }
-                        }
-
-                        if (!File.Exists(windtTargetFile))
-                        {
-                            DialogResult resultwindtTargetFile = MessageBox.Show($"The windt.bin file not exists, do you want to create it?", "Confirmation", MessageBoxButtons.YesNo);
-                            if (resultwindtTargetFile == DialogResult.Yes)
-                            {
-                                Task t = Task.Run(() => File.WriteAllBytes(windtTargetFile, Resources.windt));
-                                t.Wait();
-                            }
-                            else
-                            {
-                                Load = false;
-                            }
-                        }
-
-                        if (Load)
+                        if (load)
                         {
                             tabControl1.Visible = true;
                             EnemiesStats.EnemiesStatsDictionary.Clear();
                             EnemiesStats.EnemiesAttacksDictionary.Clear();
+                            CharactersStats.CharactersDictionary.Clear();
+                            MoveAndMagicStats.MoveAndStatDictionary.Clear();
 
                             Count = 0;
+                            CountInList = 0;
 
                             EnemiesStats.ReadEnemiesData(SelectedFolder);
                             CharactersStats.ReadCharatersData(SelectedFolder);
@@ -1322,42 +1254,6 @@ namespace GrandiaStatEditor
                     }
                 }
             }
-        }
-
-        private void LoadProjectDev()
-        {
-            tabControl1.Visible = true;
-            SelectedFolder = Path.Combine(@"D:\", "AAAAAA");
-
-            var mdatFilePath = Path.Combine(SelectedFolder, "M_DAT.BIN");
-            var mcharFilePath = Path.Combine(SelectedFolder, "mchar.dat");
-
-            if (!File.Exists(mdatFilePath))
-            {
-                MessageBox.Show("M_DAT.BIN not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!File.Exists(mcharFilePath))
-            {
-                MessageBox.Show("mchar.dat not Found, Select a project folder or make a new one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            EnemiesStats.EnemiesStatsDictionary.Clear();
-            EnemiesStats.EnemiesAttacksDictionary.Clear();
-            CharactersStats.CharactersDictionary.Clear();
-
-            Count = 0;
-
-            EnemiesStats.ReadEnemiesData(SelectedFolder);
-            CharactersStats.ReadCharatersData(SelectedFolder);
-            FormToLoad();
-
-            CountInList = EnemiesStats.EnemiesStatsDictionary.Count();
-
-            var FirstValue = EnemiesStats.EnemiesStatsDictionary.FirstOrDefault();
-            UpdateValue(FirstValue);
         }
 
         public void ChangeMode(int i)
