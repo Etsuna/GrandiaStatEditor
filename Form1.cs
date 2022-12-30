@@ -1219,6 +1219,63 @@ namespace GrandiaStatEditor
             }
         }
 
+        private void SaveMoveAndMagicButton_Click(object sender, EventArgs e)
+        {
+            // Get the tabpage that contains the groups
+            TabPage tabPage = tabControl1.TabPages[2];
+
+            // Get all the controls in the tabpage
+            List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
+
+            // Get the groupboxes in the tabpage
+            List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
+
+            // Initialize a list to hold the textboxes
+            List<TextBox> textBoxes = new List<TextBox>();
+            List<ComboBox> comboBoxes = new List<ComboBox>();
+
+            // Get the textboxes in each groupbox
+            foreach (GroupBox groupBox in groupBoxes)
+            {
+                textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
+                comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+
+                foreach (TextBox textBoxe in textBoxes)
+                {
+                    var groupKey = groupBox.Name.Replace("GroupBox", "");
+                    var itemKey = textBoxe.Name.Replace("TextBox", "");
+                    var ItemValue = textBoxe.Text.Replace("TextBox", "");
+
+                    if (MoveAndMagicStats.MoveAndStatDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                    {
+                        if (innerDict.TryGetValue(itemKey, out string value))
+                        {
+                            // Update the value for the key "innerKey" in the inner dictionary
+                            innerDict[itemKey] = ItemValue;
+                        }
+                    }
+                }
+
+                foreach (ComboBox comboBox in comboBoxes)
+                {
+                    var groupKey = groupBox.Name.Replace("GroupBox", "");
+                    var itemKey = comboBox.Name.Replace("ComboBox", "").Replace($"{groupKey}_", "");
+                    var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
+
+                    if (MoveAndMagicStats.MoveAndStatDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                    {
+                        if (innerDict.TryGetValue(itemKey, out string value))
+                        {
+                            // Update the value for the key "innerKey" in the inner dictionary
+                            innerDict[itemKey] = ItemValue;
+                        }
+                    }
+                }
+
+                WriteDatas.WriteWindt(SelectedFolder);
+            }
+        }
+
         private void loadProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadProject();
@@ -1676,5 +1733,7 @@ namespace GrandiaStatEditor
         {
             this.SetPosition.Text = text;
         }
+
+        
     }
 }

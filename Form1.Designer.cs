@@ -46,9 +46,11 @@ namespace GrandiaStatEditor
             this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.SaveMoveAndMagicButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,7 +145,7 @@ namespace GrandiaStatEditor
             // 
             // SaveTeamButton
             // 
-            this.SaveTeamButton.Location = new System.Drawing.Point(1620, 6);
+            this.SaveTeamButton.Location = new System.Drawing.Point(20, 6);
             this.SaveTeamButton.Name = "SaveTeamButton";
             this.SaveTeamButton.Size = new System.Drawing.Size(75, 23);
             this.SaveTeamButton.TabIndex = 0;
@@ -155,6 +157,7 @@ namespace GrandiaStatEditor
             // 
             this.tabPage3.AutoScroll = true;
             this.tabPage3.BackColor = System.Drawing.Color.Lavender;
+            this.tabPage3.Controls.Add(this.SaveMoveAndMagicButton);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1751, 896);
@@ -212,6 +215,16 @@ namespace GrandiaStatEditor
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "MoveRequirement";
             // 
+            // SaveMoveAndMagicButton
+            // 
+            this.SaveMoveAndMagicButton.Location = new System.Drawing.Point(20, 6);
+            this.SaveMoveAndMagicButton.Name = "SaveMoveAndMagicButton";
+            this.SaveMoveAndMagicButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveMoveAndMagicButton.TabIndex = 0;
+            this.SaveMoveAndMagicButton.Text = "Save";
+            this.SaveMoveAndMagicButton.UseVisualStyleBackColor = true;
+            this.SaveMoveAndMagicButton.Click += new System.EventHandler(this.SaveMoveAndMagicButton_Click);
+            // 
             // Form1
             // 
             this.AccessibleName = "";
@@ -232,6 +245,7 @@ namespace GrandiaStatEditor
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -257,6 +271,7 @@ namespace GrandiaStatEditor
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button SaveMoveAndMagicButton;
     }
 }
 

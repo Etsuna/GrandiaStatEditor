@@ -512,7 +512,71 @@ namespace GrandiaStatEditor
                     stream.ReadByte();
                 }
             };
-                
+
+        }
+
+        public static void WriteWindt(string path)
+        {
+            var filePath = Path.Combine(path, "windt.bin");
+            long position = 0x8D08;
+
+            using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
+            {
+                stream.Seek(position, SeekOrigin.Begin);
+
+                foreach (var value in MoveAndMagicStats.MoveAndStatDictionary.Keys)
+                {
+                    Dictionary<string, string> innerDictionary = MoveAndMagicStats.MoveAndStatDictionary[value];
+
+                    stream.ReadByte();
+                    stream.ReadByte();
+
+                    var MP_SP = ByteConverterClass.Int16ToBytes(innerDictionary["MP_SP"]);
+                    stream.Write(MP_SP, 0, MP_SP.Length);
+
+                    var CastSpeed = ByteConverterClass.Int16ToBytes(innerDictionary["CastSpeed"]);
+                    stream.Write(CastSpeed, 0, CastSpeed.Length);
+
+                    var IpPower = ByteConverterClass.Int16ToBytes(innerDictionary["IpPower"]);
+                    stream.Write(IpPower, 0, IpPower.Length);
+
+                    var Power = ByteConverterClass.Int16ToBytes(innerDictionary["Power"]);
+                    stream.Write(Power, 0, Power.Length);
+
+                    var Target = ByteConverterClass.IntToByte(innerDictionary["Target"]);
+                    stream.Write(Target, 0, Target.Length);
+
+                    stream.ReadByte();
+
+                    var XP = ByteConverterClass.IntToByte(innerDictionary["XP"]);
+                    stream.Write(XP, 0, XP.Length);
+
+                    var AreaRange = ByteConverterClass.IntToByte(innerDictionary["AreaRange"]);
+                    stream.Write(AreaRange, 0, AreaRange.Length);
+
+                    var Elemental = ByteConverterClass.IntToByte(innerDictionary["Elemental"]);
+                    stream.Write(Elemental, 0, Elemental.Length);
+
+                    stream.ReadByte();
+
+                    var Move = ByteConverterClass.IntToByte(innerDictionary["Move"]);
+                    stream.Write(Move, 0, Move.Length);
+
+                    var CriticalPourcent = ByteConverterClass.IntToByte(innerDictionary["CriticalPourcent"]);
+                    stream.Write(CriticalPourcent, 0, CriticalPourcent.Length);
+
+                    var EffectType = ByteConverterClass.IntToByte(innerDictionary["EffectType"]);
+                    stream.Write(EffectType, 0, EffectType.Length);
+
+                    var Mode = ByteConverterClass.IntToByte(innerDictionary["Mode"]);
+                    stream.Write(Mode, 0, Mode.Length);
+
+                    stream.ReadByte();
+                    stream.ReadByte();
+                    stream.ReadByte();
+                    stream.ReadByte();
+                }
+            };
         }
     }
 }
