@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="ItemListClass.cs" />
     <Compile Include="MoveAndMagicListClass.cs" />
+    <Compile Include="MoveRequirementStats.cs" />
     <Compile Include="MoveAndMagicStats.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

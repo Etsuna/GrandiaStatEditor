@@ -24,6 +24,39 @@ namespace GrandiaStatEditor
             return itemList;
         }
 
+        public class Mode1
+        {
+            public int Value { get; set; }
+            public string Text { get; set; }
+        }
+
+        public static List<Mode1> Mode1List()
+        {
+            var itemList = new List<Mode1>()
+            {
+                new Mode1() { Text = "Error", Value = 0},
+                new Mode1() { Text = "Error", Value = 1},
+            };
+
+            return itemList;
+        }
+
+        public class Mode2
+        {
+            public int Value { get; set; }
+            public string Text { get; set; }
+        }
+
+        public static List<Mode2> Mode2List()
+        {
+            var itemList = new List<Mode2>()
+            {
+                new Mode2() { Text = "Error", Value = 0},
+            };
+
+            return itemList;
+        }
+
         public class Mode3
         {
             public int Value { get; set; }

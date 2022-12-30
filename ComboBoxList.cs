@@ -61,6 +61,8 @@ namespace GrandiaStatEditor
             var itemList = new List<EffectType>()
             {
                 new EffectType() { Text = "Heal", Value = 0},
+                new EffectType() { Text = "Error", Value = 1},
+                new EffectType() { Text = "Error", Value = 2},
                 new EffectType() { Text = "Damage", Value = 3 },
                 new EffectType() { Text = "Prob_Damage", Value = 4 },
                 new EffectType() { Text = "Abnormal Status", Value = 5 },
@@ -91,6 +93,8 @@ namespace GrandiaStatEditor
             return itemList;
         }
 
+        //This part is sure cause found on EnemyDebug Menu, For Move & Magic Stats, need infos.
+        //Make it no selectable until something better.
         public class Target
         {
             public int Value { get; set; }
@@ -112,6 +116,72 @@ namespace GrandiaStatEditor
                 new Target() { Text = "MC / ME!", Value = 104},
                 new Target() { Text = "MC / ALL", Value = 107},
                 new Target() { Text = "MC / ME!", Value = 123},
+
+                //Need Proof
+                //ID : 1 - Target : 83
+                //ID : 2 - Target : 82
+                //ID : 3 - Target : 81
+                //ID : 4 - Target : 83
+                //ID : 5 - Target : 225
+                //ID : 6 - Target : 227
+                //ID : 7 - Target : 83
+                //ID : 8 - Target : 225
+                //ID : 9 - Target : 227
+                //ID : 10 - Target : 227
+                //ID : 11 - Target : 225
+                //ID : 12 - Target : 82
+                //ID : 13 - Target : 82
+                //ID : 14 - Target : 81
+                //ID : 15 - Target : 83
+                //ID : 16 - Target : 81
+                //ID : 17 - Target : 82
+                //ID : 18 - Target : 98
+                //ID : 19 - Target : 83
+                //ID : 21 - Target : 81
+                //ID : 22 - Target : 83
+                //ID : 23 - Target : 82
+                //ID : 24 - Target : 225
+                //ID : 25 - Target : 81
+                //ID : 26 - Target : 81
+                //ID : 27 - Target : 225
+                //ID : 28 - Target : 97
+                //ID : 29 - Target : 225
+                //ID : 30 - Target : 82
+                //ID : 31 - Target : 97
+                //ID : 32 - Target : 81
+                //ID : 33 - Target : 83
+                //ID : 34 - Target : 83
+                //ID : 35 - Target : 81
+                //ID : 36 - Target : 83
+                //ID : 37 - Target : 81
+                //ID : 38 - Target : 81
+                //ID : 39 - Target : 83
+                //ID : 40 - Target : 82
+                //ID : 41 - Target : 81
+                //ID : 42 - Target : 83
+                //ID : 43 - Target : 83
+                //ID : 44 - Target : 81
+                //ID : 45 - Target : 99
+                //ID : 46 - Target : 81
+                //ID : 47 - Target : 96
+                //ID : 48 - Target : 227
+                //ID : 49 - Target : 83
+                //ID : 75 - Target : 72
+                //ID : 92 - Target : 109
+                //ID : 93 - Target : 109
+                //ID : 97 - Target : 97
+                //ID : 99 - Target : 99
+                 new Target() { Text = "UNKNOW", Value = 72},
+                 new Target() { Text = "UNKNOW", Value = 81},
+                 new Target() { Text = "UNKNOW", Value = 82},
+                 new Target() { Text = "UNKNOW", Value = 83},
+                 new Target() { Text = "UNKNOW", Value = 96},
+                 new Target() { Text = "UNKNOW", Value = 97},
+                 new Target() { Text = "UNKNOW", Value = 98},
+                 new Target() { Text = "UNKNOW", Value = 99},
+                 new Target() { Text = "UNKNOW", Value = 109},
+                 new Target() { Text = "UNKNOW", Value = 225},
+                 new Target() { Text = "UNKNOW", Value = 227},
             };
 
             return itemList;
@@ -147,6 +217,31 @@ namespace GrandiaStatEditor
                 new ExtType() { Text = "Max HP Down", Value = 18},
                 new ExtType() { Text = "All Down", Value = 19},
                 new ExtType() { Text = "All Reset", Value = 20},
+            };
+
+            return itemList;
+        }
+
+        public class RequirementSource
+        {
+            public int Value { get; set; }
+            public string Text { get; set; }
+        }
+        public static List<RequirementSource> RequirementSourceList()
+        {
+            var itemList = new List<RequirementSource>()
+            {
+                new RequirementSource() { Text = "Non", Value = 0},
+                new RequirementSource() { Text = "Knife", Value = 1},
+                new RequirementSource() { Text = "Sword", Value = 2},
+                new RequirementSource() { Text = "Mace", Value = 3},
+                new RequirementSource() { Text = "Axe", Value = 4},
+                new RequirementSource() { Text = "Whip", Value = 5},
+                new RequirementSource() { Text = "Throw", Value = 6},
+                new RequirementSource() { Text = "Fire", Value = 8},
+                new RequirementSource() { Text = "Water", Value = 9},
+                new RequirementSource() { Text = "Wind", Value = 10},
+                new RequirementSource() { Text = "Earth", Value = 11},
             };
 
             return itemList;

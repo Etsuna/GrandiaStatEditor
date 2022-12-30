@@ -45,6 +45,7 @@ namespace GrandiaStatEditor
             this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -56,6 +57,7 @@ namespace GrandiaStatEditor
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(13, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -200,6 +202,16 @@ namespace GrandiaStatEditor
             this.infoToolStripMenuItem.Text = "Info...";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.AutoScroll = true;
+            this.tabPage4.BackColor = System.Drawing.Color.Lavender;
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1751, 896);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "MoveRequirement";
+            // 
             // Form1
             // 
             this.AccessibleName = "";
@@ -244,6 +256,7 @@ namespace GrandiaStatEditor
         private System.Windows.Forms.Button SaveTeamButton;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }
 

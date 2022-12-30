@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace GrandiaStatEditor
@@ -23,13 +24,13 @@ namespace GrandiaStatEditor
                     
                     var ID = reader.ReadByte();
                     var ID2 = reader.ReadByte();
-                    var MP = reader.ReadInt16();
+                    var MP_SP = reader.ReadInt16();
                     var CastSpeed = reader.ReadInt16();
                     var IpPower = reader.ReadInt16();
                     var Power = reader.ReadInt16();
                     var Target = reader.ReadByte();
                     var ExtCom = reader.ReadByte();
-                    var Xp = reader.ReadByte();
+                    var XP = reader.ReadByte();
                     var AreaRange = reader.ReadByte();
                     var Elemental = reader.ReadByte();
                     var Weapon = reader.ReadByte();
@@ -42,12 +43,12 @@ namespace GrandiaStatEditor
                     var IC = reader.ReadByte();
                     var Unknow = reader.ReadByte();
 
-                    listStats.Add("MP", MP.ToString());
+                    listStats.Add("MP_SP", MP_SP.ToString());
                     listStats.Add("CastSpeed", CastSpeed.ToString());
                     listStats.Add("IpPower", IpPower.ToString());
                     listStats.Add("Power", Power.ToString());
                     listStats.Add("Target", Target.ToString());
-                    listStats.Add("Xp", Xp.ToString());
+                    listStats.Add("XP", XP.ToString());
                     listStats.Add("AreaRange", AreaRange.ToString());
                     listStats.Add("Elemental", Elemental.ToString());
                     listStats.Add("Move", Move.ToString());
