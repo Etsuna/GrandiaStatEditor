@@ -49,6 +49,7 @@ namespace GrandiaStatEditor
             this.characterStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magicAndMoveStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveRequirementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -69,6 +70,7 @@ namespace GrandiaStatEditor
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Lavender;
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.SetPosition);
             this.tabPage1.Controls.Add(this.EnemiePosition);
             this.tabPage1.Controls.Add(this.button2);
@@ -84,7 +86,7 @@ namespace GrandiaStatEditor
             // SetPosition
             // 
             this.SetPosition.AutoSize = true;
-            this.SetPosition.Location = new System.Drawing.Point(101, 8);
+            this.SetPosition.Location = new System.Drawing.Point(15, 930);
             this.SetPosition.Name = "SetPosition";
             this.SetPosition.Size = new System.Drawing.Size(60, 13);
             this.SetPosition.TabIndex = 3;
@@ -94,7 +96,7 @@ namespace GrandiaStatEditor
             // EnemiePosition
             // 
             this.EnemiePosition.AutoSize = true;
-            this.EnemiePosition.Location = new System.Drawing.Point(81, 8);
+            this.EnemiePosition.Location = new System.Drawing.Point(3, 930);
             this.EnemiePosition.Name = "EnemiePosition";
             this.EnemiePosition.Size = new System.Drawing.Size(14, 13);
             this.EnemiePosition.TabIndex = 2;
@@ -175,21 +177,21 @@ namespace GrandiaStatEditor
             // newProjectToolStripMenuItem
             // 
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newProjectToolStripMenuItem.Text = "New Project...";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProjectToolStripMenuItem_Click);
             // 
             // loadProjectToolStripMenuItem
             // 
             this.loadProjectToolStripMenuItem.Name = "loadProjectToolStripMenuItem";
-            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadProjectToolStripMenuItem.Text = "Load Project...";
             this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.loadProjectToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.infoToolStripMenuItem.Text = "Info...";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
@@ -233,6 +235,16 @@ namespace GrandiaStatEditor
             this.moveRequirementToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.moveRequirementToolStripMenuItem.Text = "MoveRequirement";
             this.moveRequirementToolStripMenuItem.Click += new System.EventHandler(this.moveRequirementToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1410, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // Form1
             // 
@@ -283,6 +295,7 @@ namespace GrandiaStatEditor
         private System.Windows.Forms.ToolStripMenuItem characterStatsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem magicAndMoveStatsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveRequirementToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 
