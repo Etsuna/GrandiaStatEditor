@@ -810,6 +810,16 @@ namespace GrandiaStatEditor
                     else
                     {
                         TextBox textBox = new TextBox();
+                        switch(item.Key)
+                        {
+                            case "LV1":
+                            case "LV2":
+                            case "LV3":
+                                textBox.TextChanged += new EventHandler(TextBox_0to99_TextChanged);
+                                break;
+                            default:
+                                break;
+                        }
                         textBox.Name = $"{item.Key}TextBox";
                         textBox.Text = item.Value;
                         textBox.Location = new Point(100, 20 + y);
@@ -1507,7 +1517,7 @@ namespace GrandiaStatEditor
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '-';
         }
 
         private void TextBox_Resist_TextChanged(object sender, EventArgs e)
