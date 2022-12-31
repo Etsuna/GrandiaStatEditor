@@ -1,5 +1,6 @@
 ﻿using GrandiaStatEditor.Properties;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -32,6 +33,8 @@ namespace GrandiaStatEditor
             button2.Enabled = false;
         }
 
+        #region Data
+
         private void NewProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
@@ -52,6 +55,7 @@ namespace GrandiaStatEditor
                         CopyClass.CopyFileNewProject(windtTargetFile, Resources.windt);
 
                         tabControl1.Visible = true;
+                        saveToolStripMenuItem.Enabled = true;
 
                         ClearData();
 
@@ -95,6 +99,7 @@ namespace GrandiaStatEditor
                         if (load)
                         {
                             tabControl1.Visible = true;
+                            saveToolStripMenuItem.Enabled = true;
                             ClearData();
 
                             Count = 0;
@@ -129,7 +134,9 @@ namespace GrandiaStatEditor
             MoveAndMagicStats.MoveAndStatDictionary.Clear();
             MoveRequirementStats.MoveRequirementDictionary.Clear();
         }
+        #endregion
 
+        #region Form
         public void FormToLoad()
         {
             button1.Enabled = false;
@@ -409,7 +416,7 @@ namespace GrandiaStatEditor
                             textBox.TextChanged += new EventHandler(TextBox_0to12800_TextChanged);
                             break;
                         case "Power":
-                            textBox.TextChanged += new EventHandler(TextBox_0to32767_TextChanged);
+                            textBox.TextChanged += new EventHandler(TextBox_Minus32768to32767_TextChanged);
                             break;
                         default:
                             break;
@@ -674,7 +681,7 @@ namespace GrandiaStatEditor
                     else
                     {
                         TextBox textBox = new TextBox();
-                        switch(item.Key)
+                        switch (item.Key)
                         {
                             case "Power":
                                 textBox.TextChanged += new EventHandler(TextBox_Minus7to999_TextChanged);
@@ -751,19 +758,71 @@ namespace GrandiaStatEditor
                     label.Size = new Size(80, 20);
                     groupBox.Controls.Add(label);
 
-                    TextBox textBox = new TextBox();
-                    textBox.Name = $"{item.Key}TextBox";
-                    textBox.Text = item.Value;
-                    textBox.Location = new Point(100, 20 + y);
-                    textBox.Size = new Size(100, 20);
-                    textBox.KeyPress += new KeyPressEventHandler(textBox1_KeyPress);
-                    groupBox.Controls.Add(textBox);
+                    if (item.Key.Contains("Requirement"))
+                    {
+                        ComboBox comboBox = new ComboBox();
+                        switch (item.Key)
+                        {
+                            case "Requirement1":
+                            case "Requirement2":
+                            case "Requirement3":
+                                comboBox.DataSource = ComboBoxList.RequirementSourceList();
+                                break;
+                            default:
+                                break;
+                        }
+                        comboBox.Name = $"{value}_{item.Key}ComboBox";
+                        comboBox.ValueMember = "Value";
+                        comboBox.DisplayMember = "Text";
+                        comboBox.Location = new Point(100, 20 + y);
+                        comboBox.Size = new Size(100, 20);
+                        groupBox.Controls.Add(comboBox);
+                        comboBox.CreateControl();
+                        comboBox.SelectedValue = int.Parse(item.Value);
+                    }
+                    else if (item.Key.Equals("Who"))
+                    {
+                        string[] characterNames = { "Justin", "Feena", "Sue", "Gadwin", "Rapp", "Milda", "Guido", "Liete" };
+
+                        foreach (string characterName in characterNames)
+                        {
+                            CheckBox checkBox = new CheckBox();
+                            checkBox.Name = $"{value}_{item.Key}CheckBox";
+                            checkBox.Text = characterName;
+                            checkBox.Location = new Point(100, 20 + y);
+                            checkBox.Size = new Size(100, 20);
+
+                            BitArray bits = new BitArray(new int[] { int.Parse(item.Value) });
+                            Console.WriteLine(bits);
+                            if (bits.Get(Array.IndexOf(characterNames, characterName)))
+                            {
+                                checkBox.Checked = true;
+                            }
+                            else
+                            {
+                                checkBox.Checked = false;
+                            }
+
+                            groupBox.Controls.Add(checkBox);
+                            y += 30;
+                        }
+                    }
+                    else
+                    {
+                        TextBox textBox = new TextBox();
+                        textBox.Name = $"{item.Key}TextBox";
+                        textBox.Text = item.Value;
+                        textBox.Location = new Point(100, 20 + y);
+                        textBox.Size = new Size(100, 20);
+                        textBox.KeyPress += new KeyPressEventHandler(textBox1_KeyPress);
+                        groupBox.Controls.Add(textBox);
+                    }
 
                     y += 30;
                 }
                 count++;
 
-                if (count == 3)
+                if (count == 2)
                 {
                     x += 210;
                     y2 = 0;
@@ -771,11 +830,14 @@ namespace GrandiaStatEditor
                 }
                 else
                 {
-                    y2 += 250;
+                    y2 += 450;
                 }
 
             }
         }
+        #endregion
+
+        #region Update Value
 
         public void UpdateValue(KeyValuePair<int, Dictionary<string, string>> FirstValue)
         {
@@ -1115,102 +1177,116 @@ namespace GrandiaStatEditor
                 }
             }
         }
+        #endregion
 
-        private void SaveEnemyButton_Click(object sender, EventArgs e)
+        #region Region Save
+        private void SaveEnemyStats()
         {
-            Dictionary<string, string> GetValueToList = new Dictionary<string, string>();
+            DialogResult result = MessageBox.Show("Do you want to save the enemyStats file?", "Save", MessageBoxButtons.YesNo);
 
-            // Get the tabpage that contains the groups
-            TabPage tabPage = tabControl1.TabPages[0];
-
-            // Get all the controls in the tabpage
-            List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
-
-            // Get the groupboxes in the tabpage
-            List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
-
-            // Initialize a list to hold the textboxes
-            List<TextBox> textBoxes = new List<TextBox>();
-            List<ComboBox> comboBoxes = new List<ComboBox>();
-
-            // Get the textboxes in each groupbox
-            foreach (GroupBox groupBox in groupBoxes)
+            if (result == DialogResult.Yes)
             {
-                textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
-                comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+                Dictionary<string, string> GetValueToList = new Dictionary<string, string>();
 
-            }
+                // Get the tabpage that contains the groups
+                TabPage tabPage = tabControl1.TabPages[0];
 
-            // Edit the text of the textboxes
-            foreach (TextBox textBox in textBoxes)
-            {
-                if (!string.IsNullOrWhiteSpace(textBox.Text))
+                // Get all the controls in the tabpage
+                List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
+
+                // Get the groupboxes in the tabpage
+                List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
+
+                // Initialize a list to hold the textboxes
+                List<TextBox> textBoxes = new List<TextBox>();
+                List<ComboBox> comboBoxes = new List<ComboBox>();
+
+                // Get the textboxes in each groupbox
+                foreach (GroupBox groupBox in groupBoxes)
                 {
-                    GetValueToList.Add(textBox.Name.Replace("_TextBox", "").Replace("TextBox", ""), textBox.Text);
+                    textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
+                    comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
                 }
-            }
 
-            // Edit the text of the comboboxes
-            foreach (ComboBox comboBox in comboBoxes)
-            {
-                if (comboBox.SelectedItem != null)
+                // Edit the text of the textboxes
+                foreach (TextBox textBox in textBoxes)
                 {
-                    GetValueToList.Add(comboBox.Name.Replace("_ComboBox", "").Replace("ComboBox", ""), comboBox.SelectedValue.ToString());
-                }
-            }
-
-            WriteDatas.WriteMdat(SelectedFolder, SetPosition.Text, GetValueToList);
-        }
-
-        private void SaveTeamButton_Click(object sender, EventArgs e)
-        {
-            // Get the tabpage that contains the groups
-            TabPage tabPage = tabControl1.TabPages[1];
-
-            // Get all the controls in the tabpage
-            List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
-
-            // Get the groupboxes in the tabpage
-            List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
-
-            // Initialize a list to hold the textboxes
-            List<TextBox> textBoxes = new List<TextBox>();
-            List<ComboBox> comboBoxes = new List<ComboBox>();
-
-            // Get the textboxes in each groupbox
-            foreach (GroupBox groupBox in groupBoxes)
-            {
-                textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
-                comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
-
-                foreach (TextBox textBoxe in textBoxes)
-                {
-                    var groupKey = groupBox.Name.Replace("GroupBox", "");
-                    var itemKey = textBoxe.Name.Replace("TextBox", "");
-                    var ItemValue = textBoxe.Text.Replace("TextBox", "");
-
-                    if (CharactersStats.CharactersDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                    if (!string.IsNullOrWhiteSpace(textBox.Text))
                     {
-                        if (innerDict.TryGetValue(itemKey, out string value))
-                        {
-                            // Update the value for the key "innerKey" in the inner dictionary
-                            innerDict[itemKey] = ItemValue;
-                        }
+                        GetValueToList.Add(textBox.Name.Replace("_TextBox", "").Replace("TextBox", ""), textBox.Text);
                     }
                 }
 
+                // Edit the text of the comboboxes
                 foreach (ComboBox comboBox in comboBoxes)
                 {
-                    var groupKey = groupBox.Name.Replace("GroupBox", "");
-                    var itemKey = comboBox.Name.Replace("ComboBox", "");
-                    var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
-
-                    if (CharactersStats.CharactersDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                    if (comboBox.SelectedItem != null)
                     {
-                        if (innerDict.TryGetValue(itemKey, out string value))
+                        GetValueToList.Add(comboBox.Name.Replace("_ComboBox", "").Replace("ComboBox", ""), comboBox.SelectedValue.ToString());
+                    }
+                }
+
+                WriteDatas.WriteMdat(SelectedFolder, SetPosition.Text, GetValueToList);
+            }
+        }
+
+        private void SaveCharacterStats()
+        {
+            DialogResult result = MessageBox.Show("Do you want to save the characterStats file?", "Save", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                // Get the tabpage that contains the groups
+                TabPage tabPage = tabControl1.TabPages[1];
+
+                // Get all the controls in the tabpage
+                List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
+
+                // Get the groupboxes in the tabpage
+                List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
+
+                // Initialize a list to hold the textboxes
+                List<TextBox> textBoxes = new List<TextBox>();
+                List<ComboBox> comboBoxes = new List<ComboBox>();
+
+                // Get the textboxes in each groupbox
+                foreach (GroupBox groupBox in groupBoxes)
+                {
+                    textBoxes.Clear();
+                    comboBoxes.Clear();
+                    textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
+                    comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+
+                    var groupKey = groupBox.Name.Replace("GroupBox", "");
+
+                    foreach (TextBox textBoxe in textBoxes)
+                    {
+
+                        var itemKey = textBoxe.Name.Replace("TextBox", "");
+                        var ItemValue = textBoxe.Text.Replace("TextBox", "");
+
+                        if (CharactersStats.CharactersDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
                         {
-                            // Update the value for the key "innerKey" in the inner dictionary
-                            innerDict[itemKey] = ItemValue;
+                            if (innerDict.TryGetValue(itemKey, out string value))
+                            {
+                                // Update the value for the key "innerKey" in the inner dictionary
+                                innerDict[itemKey] = ItemValue;
+                            }
+                        }
+                    }
+
+                    foreach (ComboBox comboBox in comboBoxes)
+                    {
+                        var itemKey = comboBox.Name.Replace("ComboBox", "");
+                        var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
+
+                        if (CharactersStats.CharactersDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                        {
+                            if (innerDict.TryGetValue(itemKey, out string value))
+                            {
+                                // Update the value for the key "innerKey" in the inner dictionary
+                                innerDict[itemKey] = ItemValue;
+                            }
                         }
                     }
                 }
@@ -1219,61 +1295,193 @@ namespace GrandiaStatEditor
             }
         }
 
-        private void SaveMoveAndMagicButton_Click(object sender, EventArgs e)
+        private void SaveMagicAndModeStats()
         {
-            // Get the tabpage that contains the groups
-            TabPage tabPage = tabControl1.TabPages[2];
+            DialogResult result = MessageBox.Show("Do you want to save the magicAndMoveStats file?", "Save", MessageBoxButtons.YesNo);
 
-            // Get all the controls in the tabpage
-            List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
-
-            // Get the groupboxes in the tabpage
-            List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
-
-            // Initialize a list to hold the textboxes
-            List<TextBox> textBoxes = new List<TextBox>();
-            List<ComboBox> comboBoxes = new List<ComboBox>();
-
-            // Get the textboxes in each groupbox
-            foreach (GroupBox groupBox in groupBoxes)
+            if (result == DialogResult.Yes)
             {
-                textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
-                comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+                // Get the tabpage that contains the groups
+                TabPage tabPage = tabControl1.TabPages[2];
 
-                foreach (TextBox textBoxe in textBoxes)
+                // Get all the controls in the tabpage
+                List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
+
+                // Get the groupboxes in the tabpage
+                List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
+
+                // Initialize a list to hold the textboxes
+                List<TextBox> textBoxes = new List<TextBox>();
+                List<ComboBox> comboBoxes = new List<ComboBox>();
+
+                // Get the textboxes in each groupbox
+                foreach (GroupBox groupBox in groupBoxes)
                 {
-                    var groupKey = groupBox.Name.Replace("GroupBox", "");
-                    var itemKey = textBoxe.Name.Replace("TextBox", "");
-                    var ItemValue = textBoxe.Text.Replace("TextBox", "");
+                    textBoxes.Clear();
+                    comboBoxes.Clear();
+                    textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
+                    comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
 
-                    if (MoveAndMagicStats.MoveAndStatDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                    var groupKey = groupBox.Name.Replace("GroupBox", "");
+
+                    foreach (TextBox textBoxe in textBoxes)
                     {
-                        if (innerDict.TryGetValue(itemKey, out string value))
+                        var itemKey = textBoxe.Name.Replace("TextBox", "");
+                        var ItemValue = textBoxe.Text.Replace("TextBox", "");
+
+                        if (MoveAndMagicStats.MoveAndStatDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
                         {
-                            // Update the value for the key "innerKey" in the inner dictionary
-                            innerDict[itemKey] = ItemValue;
+                            if (innerDict.TryGetValue(itemKey, out string value))
+                            {
+                                // Update the value for the key "innerKey" in the inner dictionary
+                                innerDict[itemKey] = ItemValue;
+                            }
+                        }
+                    }
+
+                    foreach (ComboBox comboBox in comboBoxes)
+                    {
+
+                        var itemKey = comboBox.Name.Replace("ComboBox", "").Replace($"{groupKey}_", "");
+                        var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
+
+                        if (MoveAndMagicStats.MoveAndStatDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                        {
+                            if (innerDict.TryGetValue(itemKey, out string value))
+                            {
+                                // Update the value for the key "innerKey" in the inner dictionary
+                                innerDict[itemKey] = ItemValue;
+                            }
                         }
                     }
                 }
-
-                foreach (ComboBox comboBox in comboBoxes)
-                {
-                    var groupKey = groupBox.Name.Replace("GroupBox", "");
-                    var itemKey = comboBox.Name.Replace("ComboBox", "").Replace($"{groupKey}_", "");
-                    var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
-
-                    if (MoveAndMagicStats.MoveAndStatDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
-                    {
-                        if (innerDict.TryGetValue(itemKey, out string value))
-                        {
-                            // Update the value for the key "innerKey" in the inner dictionary
-                            innerDict[itemKey] = ItemValue;
-                        }
-                    }
-                }
-
                 WriteDatas.WriteWindt(SelectedFolder);
             }
+        }
+
+        private void SaveMoveRequirement()
+        {
+            DialogResult result = MessageBox.Show("Do you want to save the moveRequirement file?", "Save", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                // Get the tabpage that contains the groups
+                TabPage tabPage = tabControl1.TabPages[3];
+
+                // Get all the controls in the tabpage
+                List<Control> controls = tabPage.Controls.Cast<Control>().ToList();
+
+                // Get the groupboxes in the tabpage
+                List<GroupBox> groupBoxes = controls.OfType<GroupBox>().ToList();
+
+                // Initialize a list to hold the textboxes
+                List<TextBox> textBoxes = new List<TextBox>();
+                List<ComboBox> comboBoxes = new List<ComboBox>();
+                List<CheckBox> checkBoxes = new List<CheckBox>();
+
+                // Get the textboxes in each groupbox
+                foreach (GroupBox groupBox in groupBoxes)
+                {
+                    textBoxes.Clear();
+                    comboBoxes.Clear();
+                    checkBoxes.Clear();
+                    textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
+                    comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+                    checkBoxes.AddRange(groupBox.Controls.OfType<CheckBox>());
+
+                    var groupKey = groupBox.Name.Replace("GroupBox", "");
+
+                    foreach (TextBox textBoxe in textBoxes)
+                    {
+                        var itemKey = textBoxe.Name.Replace("TextBox", "");
+                        var ItemValue = textBoxe.Text.Replace("TextBox", "");
+
+                        if (MoveRequirementStats.MoveRequirementDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                        {
+                            if (innerDict.TryGetValue(itemKey, out string value))
+                            {
+                                // Update the value for the key "innerKey" in the inner dictionary
+                                innerDict[itemKey] = ItemValue;
+                            }
+                        }
+                    }
+
+                    foreach (ComboBox comboBox in comboBoxes)
+                    {
+                        var itemKey = comboBox.Name.Replace("ComboBox", "").Replace($"{groupKey}_", "");
+                        var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
+
+                        if (MoveRequirementStats.MoveRequirementDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
+                        {
+                            if (innerDict.TryGetValue(itemKey, out string value))
+                            {
+                                // Update the value for the key "innerKey" in the inner dictionary
+                                innerDict[itemKey] = ItemValue;
+                            }
+                        }
+                    }
+
+                    List<int> arrayList = new List<int>();
+                    arrayList.Clear();
+                    foreach (CheckBox checkBox in checkBoxes)
+                    {
+
+                        var itemKey = checkBox.Name.Replace("CheckBox", "").Replace($"{groupKey}_", "");
+                        var isCheck = checkBox.Checked;
+                        Console.WriteLine(isCheck);
+                        if (isCheck)
+                        {
+                            arrayList.Add(1);
+                        }
+                        else
+                        {
+                            arrayList.Add(0);
+                        }
+                    }
+
+                    arrayList.Reverse();
+                    string binaryString = string.Join("", arrayList.Select(x => x.ToString()));
+                    string hexaString = Convert.ToInt32(binaryString, 2).ToString("X");
+                    int decimalValue = Convert.ToInt32(hexaString, 16);
+
+                    if (MoveRequirementStats.MoveRequirementDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDictSpecial))
+                    {
+                        if (innerDictSpecial.TryGetValue("Who", out string value))
+                        {
+                            // Update the value for the key "innerKey" in the inner dictionary
+                            innerDictSpecial["Who"] = decimalValue.ToString();
+                        }
+                    }
+                }
+                WriteDatas.WriteWindt2(SelectedFolder);
+            }
+        }
+        #endregion
+
+        #region WindowsForm
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void enemyStatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveEnemyStats();
+        }
+
+        private void characterStatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveCharacterStats();
+        }
+
+        private void magicAndMoveStatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveMagicAndModeStats();
+        }
+
+        private void moveRequirementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveMoveRequirement();
         }
 
         private void loadProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1290,7 +1498,7 @@ namespace GrandiaStatEditor
         {
             ChangeModeAttack(number);
         }
-       
+
 
         private void EffectType_MagicAndMove_ComboBox_SelectedIndexChanged(object sender, EventArgs e, string name)
         {
@@ -1302,14 +1510,12 @@ namespace GrandiaStatEditor
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-
         private void TextBox_Resist_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1317,14 +1523,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 14)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between -7 and 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1333,8 +1537,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1342,14 +1545,12 @@ namespace GrandiaStatEditor
 
             if (result < -7 || result > 999)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between -7 and 999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1358,8 +1559,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1367,14 +1567,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 3)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1383,8 +1581,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1392,14 +1589,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 4)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 4", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1408,8 +1603,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1417,14 +1611,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 7)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 7", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1433,8 +1625,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1442,14 +1633,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 15)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 15", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1458,8 +1647,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1467,14 +1655,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 99)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 99", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1483,8 +1669,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1492,14 +1677,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 100)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 100", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1508,8 +1691,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1517,14 +1699,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 255)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 255", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1533,8 +1713,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1542,14 +1721,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 999)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1558,8 +1735,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1567,14 +1743,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 9999)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 9999", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1583,8 +1757,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1592,39 +1765,34 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 12800)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 12800", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
-        private void TextBox_0to32767_TextChanged(object sender, EventArgs e)
+        private void TextBox_Minus32768to32767_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
             var result = int.Parse(textBox.Text);
 
-            if (result < 0 || result > 32767)
+            if (result < -32768 || result > 32767)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 32767", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1633,8 +1801,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1642,14 +1809,12 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 65535)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 65535", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SaveEnemyButton.Enabled = true;
-            SaveTeamButton.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
             textBox.BackColor = Color.White;
         }
 
@@ -1658,8 +1823,7 @@ namespace GrandiaStatEditor
             TextBox textBox = sender as TextBox;
             if (textBox.Text.Equals("-") || string.IsNullOrWhiteSpace(textBox.Text))
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 return;
             }
@@ -1667,20 +1831,17 @@ namespace GrandiaStatEditor
 
             if (result < 0 || result > 4294967295)
             {
-                SaveEnemyButton.Enabled = false;
-                SaveTeamButton.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
                 textBox.BackColor = Color.Red;
                 MessageBox.Show($"This value must be between 0 and 4294967295", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                SaveEnemyButton.Enabled = true;
-                SaveTeamButton.Enabled = true;
+                saveToolStripMenuItem.Enabled = true;
                 textBox.BackColor = Color.White;
             }
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -1733,7 +1894,6 @@ namespace GrandiaStatEditor
         {
             this.SetPosition.Text = text;
         }
-
-        
+        #endregion
     }
 }

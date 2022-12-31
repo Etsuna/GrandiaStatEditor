@@ -578,5 +578,42 @@ namespace GrandiaStatEditor
                 }
             };
         }
+
+        public static void WriteWindt2(string path)
+        {
+            var filePath = Path.Combine(path, "windt.bin");
+            long position = 0x990F;
+
+            using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
+            {
+                stream.Seek(position, SeekOrigin.Begin);
+
+                foreach (var value in MoveAndMagicStats.MoveAndStatDictionary.Keys)
+                {
+                    Dictionary<string, string> innerDictionary = MoveRequirementStats.MoveRequirementDictionary[value];
+
+                    var Requirement1 = ByteConverterClass.IntToByte(innerDictionary["Requirement1"]);
+                    stream.Write(Requirement1, 0, Requirement1.Length);
+
+                    var LV1 = ByteConverterClass.IntToByte(innerDictionary["LV1"]);
+                    stream.Write(LV1, 0, LV1.Length);
+
+                    var Requirement2 = ByteConverterClass.IntToByte(innerDictionary["Requirement2"]);
+                    stream.Write(Requirement2, 0, Requirement2.Length);
+
+                    var LV2 = ByteConverterClass.IntToByte(innerDictionary["LV2"]);
+                    stream.Write(LV2, 0, LV2.Length);
+
+                    var Requirement3 = ByteConverterClass.IntToByte(innerDictionary["Requirement3"]);
+                    stream.Write(Requirement3, 0, Requirement3.Length);
+
+                    var LV3 = ByteConverterClass.IntToByte(innerDictionary["LV3"]);
+                    stream.Write(LV3, 0, LV3.Length);
+
+                    var Who = ByteConverterClass.IntToByte(innerDictionary["Who"]);
+                    stream.Write(Who, 0, Who.Length);
+                }
+            };
+        }
     }
 }

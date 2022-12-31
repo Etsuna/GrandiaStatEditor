@@ -32,25 +32,25 @@ namespace GrandiaStatEditor
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.SaveEnemyButton = new System.Windows.Forms.Button();
             this.SetPosition = new System.Windows.Forms.Label();
             this.EnemiePosition = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.SaveTeamButton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.SaveMoveAndMagicButton = new System.Windows.Forms.Button();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enemyStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.characterStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magicAndMoveStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveRequirementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,13 +63,12 @@ namespace GrandiaStatEditor
             this.tabControl1.Location = new System.Drawing.Point(13, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1759, 922);
+            this.tabControl1.Size = new System.Drawing.Size(1759, 972);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Lavender;
-            this.tabPage1.Controls.Add(this.SaveEnemyButton);
             this.tabPage1.Controls.Add(this.SetPosition);
             this.tabPage1.Controls.Add(this.EnemiePosition);
             this.tabPage1.Controls.Add(this.button2);
@@ -77,20 +76,10 @@ namespace GrandiaStatEditor
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1751, 896);
+            this.tabPage1.Size = new System.Drawing.Size(1751, 946);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "EnemyStats";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // SaveEnemyButton
-            // 
-            this.SaveEnemyButton.Location = new System.Drawing.Point(1620, 817);
-            this.SaveEnemyButton.Name = "SaveEnemyButton";
-            this.SaveEnemyButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveEnemyButton.TabIndex = 4;
-            this.SaveEnemyButton.Text = "Save";
-            this.SaveEnemyButton.UseVisualStyleBackColor = true;
-            this.SaveEnemyButton.Click += new System.EventHandler(this.SaveEnemyButton_Click);
             // 
             // SetPosition
             // 
@@ -135,39 +124,38 @@ namespace GrandiaStatEditor
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.Color.Lavender;
-            this.tabPage2.Controls.Add(this.SaveTeamButton);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1751, 896);
+            this.tabPage2.Size = new System.Drawing.Size(1751, 946);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CharacterStats";
-            // 
-            // SaveTeamButton
-            // 
-            this.SaveTeamButton.Location = new System.Drawing.Point(20, 6);
-            this.SaveTeamButton.Name = "SaveTeamButton";
-            this.SaveTeamButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveTeamButton.TabIndex = 0;
-            this.SaveTeamButton.Text = "Save";
-            this.SaveTeamButton.UseVisualStyleBackColor = true;
-            this.SaveTeamButton.Click += new System.EventHandler(this.SaveTeamButton_Click);
             // 
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
             this.tabPage3.BackColor = System.Drawing.Color.Lavender;
-            this.tabPage3.Controls.Add(this.SaveMoveAndMagicButton);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1751, 896);
+            this.tabPage3.Size = new System.Drawing.Size(1751, 946);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MoveAndMagicStats";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.AutoScroll = true;
+            this.tabPage4.BackColor = System.Drawing.Color.Lavender;
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1751, 946);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "MoveRequirement";
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projectToolStripMenuItem});
+            this.projectToolStripMenuItem,
+            this.saveToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1784, 24);
@@ -205,34 +193,57 @@ namespace GrandiaStatEditor
             this.infoToolStripMenuItem.Text = "Info...";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
-            // tabPage4
+            // saveToolStripMenuItem
             // 
-            this.tabPage4.AutoScroll = true;
-            this.tabPage4.BackColor = System.Drawing.Color.Lavender;
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1751, 896);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "MoveRequirement";
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enemyStatsToolStripMenuItem,
+            this.characterStatsToolStripMenuItem,
+            this.magicAndMoveStatsToolStripMenuItem,
+            this.moveRequirementToolStripMenuItem});
+            this.saveToolStripMenuItem.Enabled = false;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.saveToolStripMenuItem.Text = "Save...";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
-            // SaveMoveAndMagicButton
+            // enemyStatsToolStripMenuItem
             // 
-            this.SaveMoveAndMagicButton.Location = new System.Drawing.Point(20, 6);
-            this.SaveMoveAndMagicButton.Name = "SaveMoveAndMagicButton";
-            this.SaveMoveAndMagicButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveMoveAndMagicButton.TabIndex = 0;
-            this.SaveMoveAndMagicButton.Text = "Save";
-            this.SaveMoveAndMagicButton.UseVisualStyleBackColor = true;
-            this.SaveMoveAndMagicButton.Click += new System.EventHandler(this.SaveMoveAndMagicButton_Click);
+            this.enemyStatsToolStripMenuItem.Name = "enemyStatsToolStripMenuItem";
+            this.enemyStatsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.enemyStatsToolStripMenuItem.Text = "EnemyStats";
+            this.enemyStatsToolStripMenuItem.Click += new System.EventHandler(this.enemyStatsToolStripMenuItem_Click);
+            // 
+            // characterStatsToolStripMenuItem
+            // 
+            this.characterStatsToolStripMenuItem.Name = "characterStatsToolStripMenuItem";
+            this.characterStatsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.characterStatsToolStripMenuItem.Text = "CharacterStats";
+            this.characterStatsToolStripMenuItem.Click += new System.EventHandler(this.characterStatsToolStripMenuItem_Click);
+            // 
+            // magicAndMoveStatsToolStripMenuItem
+            // 
+            this.magicAndMoveStatsToolStripMenuItem.Name = "magicAndMoveStatsToolStripMenuItem";
+            this.magicAndMoveStatsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.magicAndMoveStatsToolStripMenuItem.Text = "MagicAndMoveStats";
+            this.magicAndMoveStatsToolStripMenuItem.Click += new System.EventHandler(this.magicAndMoveStatsToolStripMenuItem_Click);
+            // 
+            // moveRequirementToolStripMenuItem
+            // 
+            this.moveRequirementToolStripMenuItem.Name = "moveRequirementToolStripMenuItem";
+            this.moveRequirementToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.moveRequirementToolStripMenuItem.Text = "MoveRequirement";
+            this.moveRequirementToolStripMenuItem.Click += new System.EventHandler(this.moveRequirementToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AccessibleName = "";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1784, 961);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ClientSize = new System.Drawing.Size(1784, 1011);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -244,8 +255,6 @@ namespace GrandiaStatEditor
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -266,12 +275,14 @@ namespace GrandiaStatEditor
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadProjectToolStripMenuItem;
-        private System.Windows.Forms.Button SaveEnemyButton;
-        private System.Windows.Forms.Button SaveTeamButton;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button SaveMoveAndMagicButton;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enemyStatsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem characterStatsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem magicAndMoveStatsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moveRequirementToolStripMenuItem;
     }
 }
 
