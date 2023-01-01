@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ByteConverterClass.cs" />
     <Compile Include="CharactersStats.cs" />
+    <Compile Include="BBGPositionList.cs" />
     <Compile Include="CopyClass.cs" />
     <Compile Include="ModeClass.cs" />
     <Compile Include="ComboBoxList.cs" />

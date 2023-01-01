@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace GrandiaStatEditor
 {
@@ -531,35 +533,12 @@ namespace GrandiaStatEditor
             var filePath = Path.Combine(path, "BATLE");
             foreach (string file in Directory.GetFiles(filePath, "*.bbg"))
             {
-                byte[] searchSequence = new byte[] { 0x00, 0x18, 0x00, 0x00, 0x00, 0x18, 0x0C, 0x00, 0x00, 0xB0, 0x14, 0x00, 0x00, 0x30, 0x18, 0x00, 0x00, 0x14, 0x50, 0x00, 0x00, 0x10, 0x56, 0x00, 0x00 };
-
-                using (FileStream stream = new FileStream(file, FileMode.Open))
-                using (BinaryReader reader = new BinaryReader(stream))
+                long position = BBGPositionList.MagicAndMoveBBGList().Where(item => item.Text == Path.GetFileName(file)).Select(item => item.Value).FirstOrDefault();
+                using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate))
                 {
-                    long position = 0;
-                    while (reader.BaseStream.Position != reader.BaseStream.Length)
-                    {
-                        byte b = reader.ReadByte();
-                        if (b == searchSequence[position])
-                        {
-                            position++;
-                            if (position == searchSequence.Length)
-                            {
-                                // Sequence found
-                                long endPosition = reader.BaseStream.Position;
-
-                                // Write new data to file
-                                stream.Seek(endPosition, SeekOrigin.Begin);
-                                WindtDataWrite(stream);
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            position = 0;
-                        }
-                    }
-                }
+                    stream.Seek(position, SeekOrigin.Begin);
+                    WindtDataWrite(stream);
+                };
             }
         }
 
@@ -575,43 +554,18 @@ namespace GrandiaStatEditor
             };
         }
 
-        
 
         public static void WriteBBG2(string path)
         {
             var filePath = Path.Combine(path, "BATLE");
             foreach (string file in Directory.GetFiles(filePath, "*.bbg"))
             {
-                byte[] searchSequence = new byte[] { 0x64, 0x00, 0x64, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-
-                using (FileStream stream = new FileStream(file, FileMode.Open))
-                using (BinaryReader reader = new BinaryReader(stream))
+                long position = BBGPositionList.MoveRequirementBBGList().Where(item => item.Text == Path.GetFileName(file)).Select(item => item.Value).FirstOrDefault();
+                using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate))
                 {
-                    long position = 0;
-                    while (reader.BaseStream.Position != reader.BaseStream.Length)
-                    {
-                        byte b = reader.ReadByte();
-                        if (b == searchSequence[position])
-                        {
-                            position++;
-                            if (position == searchSequence.Length)
-                            {
-                                // Sequence found
-                                long endPosition = reader.BaseStream.Position;
-
-                                // Write new data to file
-                                stream.Seek(endPosition, SeekOrigin.Begin);
-                                Windt2DataWrite(stream);
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            position = 0;
-                        }
-                    }
-                }
-
+                    stream.Seek(position, SeekOrigin.Begin);
+                    Windt2DataWrite(stream);
+                };
             }
         }
 

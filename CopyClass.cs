@@ -22,7 +22,7 @@ namespace GrandiaStatEditor
                     if(filename.Equals("windt.bin"))
                     {
                         var folderPath = Path.GetDirectoryName(path);
-                        folderPath = Path.Combine("..", "BATLE");
+                        folderPath = Path.Combine(folderPath, "..", "BATLE");
                         if (!Directory.Exists(folderPath))
                         {
                             Directory.CreateDirectory(folderPath);
@@ -75,7 +75,7 @@ namespace GrandiaStatEditor
                     if (filename.Equals("windt.bin"))
                     {
                         var folderPath = Path.GetDirectoryName(path);
-                        folderPath = Path.Combine("..", "BATLE");
+                        folderPath = Path.Combine(folderPath, "..", "BATLE");
                         if (!Directory.Exists(folderPath))
                         {
                             Directory.CreateDirectory(folderPath);
