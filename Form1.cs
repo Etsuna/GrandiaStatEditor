@@ -793,7 +793,6 @@ namespace GrandiaStatEditor
                             checkBox.Size = new Size(100, 20);
 
                             BitArray bits = new BitArray(new int[] { int.Parse(item.Value) });
-                            Console.WriteLine(bits);
                             if (bits.Get(Array.IndexOf(characterNames, characterName)))
                             {
                                 checkBox.Checked = true;
@@ -1238,6 +1237,8 @@ namespace GrandiaStatEditor
 
                 WriteDatas.WriteMdat(SelectedFolder, SetPosition.Text, GetValueToList);
             }
+
+            MessageBox.Show("Save enemyStats Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void SaveCharacterStats()
@@ -1302,6 +1303,8 @@ namespace GrandiaStatEditor
                 }
 
                 WriteDatas.WriteMchar(SelectedFolder);
+
+                MessageBox.Show("Save CharacterStats Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1366,6 +1369,9 @@ namespace GrandiaStatEditor
                     }
                 }
                 WriteDatas.WriteWindt(SelectedFolder);
+                WriteDatas.WriteBBG(SelectedFolder);
+
+                MessageBox.Show("Save MagicAndMoveStats & BBG files Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1438,7 +1444,6 @@ namespace GrandiaStatEditor
 
                         var itemKey = checkBox.Name.Replace("CheckBox", "").Replace($"{groupKey}_", "");
                         var isCheck = checkBox.Checked;
-                        Console.WriteLine(isCheck);
                         if (isCheck)
                         {
                             arrayList.Add(1);
@@ -1463,7 +1468,11 @@ namespace GrandiaStatEditor
                         }
                     }
                 }
+                WriteDatas.WriteBBG2(SelectedFolder);
                 WriteDatas.WriteWindt2(SelectedFolder);
+
+                MessageBox.Show("Save MoveRequirement Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
         #endregion

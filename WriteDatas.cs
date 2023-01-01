@@ -512,7 +512,6 @@ namespace GrandiaStatEditor
                     stream.ReadByte();
                 }
             };
-
         }
 
         public static void WriteWindt(string path)
@@ -523,60 +522,45 @@ namespace GrandiaStatEditor
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
                 stream.Seek(position, SeekOrigin.Begin);
-
-                foreach (var value in MoveAndMagicStats.MoveAndStatDictionary.Keys)
-                {
-                    Dictionary<string, string> innerDictionary = MoveAndMagicStats.MoveAndStatDictionary[value];
-
-                    stream.ReadByte();
-                    stream.ReadByte();
-
-                    var MP_SP = ByteConverterClass.Int16ToBytes(innerDictionary["MP_SP"]);
-                    stream.Write(MP_SP, 0, MP_SP.Length);
-
-                    var CastSpeed = ByteConverterClass.Int16ToBytes(innerDictionary["CastSpeed"]);
-                    stream.Write(CastSpeed, 0, CastSpeed.Length);
-
-                    var IpPower = ByteConverterClass.Int16ToBytes(innerDictionary["IpPower"]);
-                    stream.Write(IpPower, 0, IpPower.Length);
-
-                    var Power = ByteConverterClass.Int16ToBytes(innerDictionary["Power"]);
-                    stream.Write(Power, 0, Power.Length);
-
-                    var Target = ByteConverterClass.IntToByte(innerDictionary["Target"]);
-                    stream.Write(Target, 0, Target.Length);
-
-                    stream.ReadByte();
-
-                    var XP = ByteConverterClass.IntToByte(innerDictionary["XP"]);
-                    stream.Write(XP, 0, XP.Length);
-
-                    var AreaRange = ByteConverterClass.IntToByte(innerDictionary["AreaRange"]);
-                    stream.Write(AreaRange, 0, AreaRange.Length);
-
-                    var Elemental = ByteConverterClass.IntToByte(innerDictionary["Elemental"]);
-                    stream.Write(Elemental, 0, Elemental.Length);
-
-                    stream.ReadByte();
-
-                    var Move = ByteConverterClass.IntToByte(innerDictionary["Move"]);
-                    stream.Write(Move, 0, Move.Length);
-
-                    var CriticalPourcent = ByteConverterClass.IntToByte(innerDictionary["CriticalPourcent"]);
-                    stream.Write(CriticalPourcent, 0, CriticalPourcent.Length);
-
-                    var EffectType = ByteConverterClass.IntToByte(innerDictionary["EffectType"]);
-                    stream.Write(EffectType, 0, EffectType.Length);
-
-                    var Mode = ByteConverterClass.IntToByte(innerDictionary["Mode"]);
-                    stream.Write(Mode, 0, Mode.Length);
-
-                    stream.ReadByte();
-                    stream.ReadByte();
-                    stream.ReadByte();
-                    stream.ReadByte();
-                }
+                WindtDataWrite(stream);
             };
+        }
+
+        public static void WriteBBG(string path)
+        {
+            var filePath = Path.Combine(path, "BATLE");
+            foreach (string file in Directory.GetFiles(filePath, "*.bbg"))
+            {
+                byte[] searchSequence = new byte[] { 0x00, 0x18, 0x00, 0x00, 0x00, 0x18, 0x0C, 0x00, 0x00, 0xB0, 0x14, 0x00, 0x00, 0x30, 0x18, 0x00, 0x00, 0x14, 0x50, 0x00, 0x00, 0x10, 0x56, 0x00, 0x00 };
+
+                using (FileStream stream = new FileStream(file, FileMode.Open))
+                using (BinaryReader reader = new BinaryReader(stream))
+                {
+                    long position = 0;
+                    while (reader.BaseStream.Position != reader.BaseStream.Length)
+                    {
+                        byte b = reader.ReadByte();
+                        if (b == searchSequence[position])
+                        {
+                            position++;
+                            if (position == searchSequence.Length)
+                            {
+                                // Sequence found
+                                long endPosition = reader.BaseStream.Position;
+
+                                // Write new data to file
+                                stream.Seek(endPosition, SeekOrigin.Begin);
+                                WindtDataWrite(stream);
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            position = 0;
+                        }
+                    }
+                }
+            }
         }
 
         public static void WriteWindt2(string path)
@@ -587,33 +571,133 @@ namespace GrandiaStatEditor
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
                 stream.Seek(position, SeekOrigin.Begin);
-
-                foreach (var value in MoveAndMagicStats.MoveAndStatDictionary.Keys)
-                {
-                    Dictionary<string, string> innerDictionary = MoveRequirementStats.MoveRequirementDictionary[value];
-
-                    var Requirement1 = ByteConverterClass.IntToByte(innerDictionary["Requirement1"]);
-                    stream.Write(Requirement1, 0, Requirement1.Length);
-
-                    var LV1 = ByteConverterClass.IntToByte(innerDictionary["LV1"]);
-                    stream.Write(LV1, 0, LV1.Length);
-
-                    var Requirement2 = ByteConverterClass.IntToByte(innerDictionary["Requirement2"]);
-                    stream.Write(Requirement2, 0, Requirement2.Length);
-
-                    var LV2 = ByteConverterClass.IntToByte(innerDictionary["LV2"]);
-                    stream.Write(LV2, 0, LV2.Length);
-
-                    var Requirement3 = ByteConverterClass.IntToByte(innerDictionary["Requirement3"]);
-                    stream.Write(Requirement3, 0, Requirement3.Length);
-
-                    var LV3 = ByteConverterClass.IntToByte(innerDictionary["LV3"]);
-                    stream.Write(LV3, 0, LV3.Length);
-
-                    var Who = ByteConverterClass.IntToByte(innerDictionary["Who"]);
-                    stream.Write(Who, 0, Who.Length);
-                }
+                Windt2DataWrite(stream);
             };
+        }
+
+        
+
+        public static void WriteBBG2(string path)
+        {
+            var filePath = Path.Combine(path, "BATLE");
+            foreach (string file in Directory.GetFiles(filePath, "*.bbg"))
+            {
+                byte[] searchSequence = new byte[] { 0x64, 0x00, 0x64, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+
+                using (FileStream stream = new FileStream(file, FileMode.Open))
+                using (BinaryReader reader = new BinaryReader(stream))
+                {
+                    long position = 0;
+                    while (reader.BaseStream.Position != reader.BaseStream.Length)
+                    {
+                        byte b = reader.ReadByte();
+                        if (b == searchSequence[position])
+                        {
+                            position++;
+                            if (position == searchSequence.Length)
+                            {
+                                // Sequence found
+                                long endPosition = reader.BaseStream.Position;
+
+                                // Write new data to file
+                                stream.Seek(endPosition, SeekOrigin.Begin);
+                                Windt2DataWrite(stream);
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            position = 0;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        private static void WindtDataWrite(FileStream stream)
+        {
+            foreach (var value in MoveAndMagicStats.MoveAndStatDictionary.Keys)
+            {
+                Dictionary<string, string> innerDictionary = MoveAndMagicStats.MoveAndStatDictionary[value];
+
+                stream.ReadByte();
+                stream.ReadByte();
+
+                var MP_SP = ByteConverterClass.Int16ToBytes(innerDictionary["MP_SP"]);
+                stream.Write(MP_SP, 0, MP_SP.Length);
+
+                var CastSpeed = ByteConverterClass.Int16ToBytes(innerDictionary["CastSpeed"]);
+                stream.Write(CastSpeed, 0, CastSpeed.Length);
+
+                var IpPower = ByteConverterClass.Int16ToBytes(innerDictionary["IpPower"]);
+                stream.Write(IpPower, 0, IpPower.Length);
+
+                var Power = ByteConverterClass.Int16ToBytes(innerDictionary["Power"]);
+                stream.Write(Power, 0, Power.Length);
+
+                var Target = ByteConverterClass.IntToByte(innerDictionary["Target"]);
+                stream.Write(Target, 0, Target.Length);
+
+                stream.ReadByte();
+
+                var XP = ByteConverterClass.IntToByte(innerDictionary["XP"]);
+                stream.Write(XP, 0, XP.Length);
+
+                var AreaRange = ByteConverterClass.IntToByte(innerDictionary["AreaRange"]);
+                stream.Write(AreaRange, 0, AreaRange.Length);
+
+                var Elemental = ByteConverterClass.IntToByte(innerDictionary["Elemental"]);
+                stream.Write(Elemental, 0, Elemental.Length);
+
+                stream.ReadByte();
+
+                var Move = ByteConverterClass.IntToByte(innerDictionary["Move"]);
+                stream.Write(Move, 0, Move.Length);
+
+                var CriticalPourcent = ByteConverterClass.IntToByte(innerDictionary["CriticalPourcent"]);
+                stream.Write(CriticalPourcent, 0, CriticalPourcent.Length);
+
+                var EffectType = ByteConverterClass.IntToByte(innerDictionary["EffectType"]);
+                stream.Write(EffectType, 0, EffectType.Length);
+
+                var Mode = ByteConverterClass.IntToByte(innerDictionary["Mode"]);
+                stream.Write(Mode, 0, Mode.Length);
+
+                stream.ReadByte();
+                stream.ReadByte();
+                stream.ReadByte();
+                stream.ReadByte();
+            }
+        }
+
+        private static void Windt2DataWrite(FileStream stream)
+        {
+            foreach (var value in MoveAndMagicStats.MoveAndStatDictionary.Keys)
+            {
+                Dictionary<string, string> innerDictionary = MoveRequirementStats.MoveRequirementDictionary[value];
+
+                var Requirement1 = ByteConverterClass.IntToByte(innerDictionary["Requirement1"]);
+                stream.Write(Requirement1, 0, Requirement1.Length);
+
+                var LV1 = ByteConverterClass.IntToByte(innerDictionary["LV1"]);
+                stream.Write(LV1, 0, LV1.Length);
+
+                var Requirement2 = ByteConverterClass.IntToByte(innerDictionary["Requirement2"]);
+                stream.Write(Requirement2, 0, Requirement2.Length);
+
+                var LV2 = ByteConverterClass.IntToByte(innerDictionary["LV2"]);
+                stream.Write(LV2, 0, LV2.Length);
+
+                var Requirement3 = ByteConverterClass.IntToByte(innerDictionary["Requirement3"]);
+                stream.Write(Requirement3, 0, Requirement3.Length);
+
+                var LV3 = ByteConverterClass.IntToByte(innerDictionary["LV3"]);
+                stream.Write(LV3, 0, LV3.Length);
+
+                var Who = ByteConverterClass.IntToByte(innerDictionary["Who"]);
+                stream.Write(Who, 0, Who.Length);
+            }
         }
     }
 }
