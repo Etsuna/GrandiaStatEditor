@@ -10,7 +10,7 @@ namespace GrandiaStatEditor
 
         public static void ReadCharatersData(string path)
         {
-            string mcharFilePath = Path.Combine(path, "mchar.dat");
+            string mcharFilePath = Path.Combine(path,"BIN", "mchar.dat");
 
             List<string> charatersList = new List<string>() { "JUSTIN", "FEENA", "SUE", "GADWIN", "RAPP", "MILDA", "GUIDO", "LIETE" };
 

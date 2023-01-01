@@ -12,7 +12,7 @@ namespace GrandiaStatEditor
 
         public static void ReadEnemiesData(string path)
         {
-            string mdatFilePath = Path.Combine(path, "M_DAT.bin");
+            string mdatFilePath = Path.Combine(path,"BATLE", "M_DAT.bin");
 
             var enemyListPosition = EnemyListClass.EnemyList();
 

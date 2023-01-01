@@ -46,9 +46,9 @@ namespace GrandiaStatEditor
                     if (result == DialogResult.OK)
                     {
                         SelectedFolder = dialog.SelectedPath;
-                        var mdatTargetFile = Path.Combine(SelectedFolder, "M_DAT.BIN");
-                        var mcharTargetFile = Path.Combine(SelectedFolder, "mchar.dat");
-                        var windtTargetFile = Path.Combine(SelectedFolder, "windt.bin");
+                        var mdatTargetFile = Path.Combine(SelectedFolder, "BATLE", "M_DAT.BIN");
+                        var mcharTargetFile = Path.Combine(SelectedFolder, "BIN", "mchar.dat");
+                        var windtTargetFile = Path.Combine(SelectedFolder, "FIELD", "windt.bin");
 
                         CopyClass.CopyFileNewProject(mdatTargetFile, Resources.M_DAT);
                         CopyClass.CopyFileNewProject(mcharTargetFile, Resources.mchar);
@@ -87,9 +87,9 @@ namespace GrandiaStatEditor
 
                         SelectedFolder = dialog.SelectedPath;
 
-                        var mdatTargetFile = Path.Combine(SelectedFolder, "M_DAT.BIN");
-                        var mcharTargetFile = Path.Combine(SelectedFolder, "mchar.dat");
-                        var windtTargetFile = Path.Combine(SelectedFolder, "windt.bin");
+                        var mdatTargetFile = Path.Combine(SelectedFolder, "BATLE", "M_DAT.BIN");
+                        var mcharTargetFile = Path.Combine(SelectedFolder, "BIN", "mchar.dat");
+                        var windtTargetFile = Path.Combine(SelectedFolder, "FIELD", "windt.bin");
                         var load = true;
 
                         load = CopyClass.CopyFileLoadProject(mdatTargetFile, Resources.M_DAT, load);

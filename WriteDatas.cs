@@ -7,7 +7,7 @@ namespace GrandiaStatEditor
     {
         public static void WriteMdat(string path, string setPosition, Dictionary<string, string> dataList)
         {
-            var filePath = Path.Combine(path, "M_DAT.BIN");
+            var filePath = Path.Combine(path, "BATLE", "M_DAT.BIN");
 
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
@@ -327,7 +327,7 @@ namespace GrandiaStatEditor
 
         public static void WriteMchar(string path)
         {
-            var filePath = Path.Combine(path, "mchar.dat");
+            var filePath = Path.Combine(path, "BIN", "mchar.dat");
             long position = 0x08;
 
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
@@ -517,7 +517,7 @@ namespace GrandiaStatEditor
 
         public static void WriteWindt(string path)
         {
-            var filePath = Path.Combine(path, "windt.bin");
+            var filePath = Path.Combine(path, "FIELD", "windt.bin");
             long position = 0x8D08;
 
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
@@ -581,7 +581,7 @@ namespace GrandiaStatEditor
 
         public static void WriteWindt2(string path)
         {
-            var filePath = Path.Combine(path, "windt.bin");
+            var filePath = Path.Combine(path, "FIELD", "windt.bin");
             long position = 0x990F;
 
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
