@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace GrandiaStatEditor
@@ -18,6 +19,12 @@ namespace GrandiaStatEditor
         public int Count { get; set; } = 0;
 
         public string SelectedFolder { get; set; }
+
+        //Hash BIN CD1
+        public const string FileHashBinCD1 = "b747f0978466588e198067aba8cd81f2";
+
+        //Hash BIN CD2
+        public const string FileHashBinCD2 = "bfd84253d3d3e8acac7cc26d6336d3af";
 
         public Form1()
         {
@@ -69,13 +76,13 @@ namespace GrandiaStatEditor
                             foreach (string file in Directory.GetFiles(dir))
                             {
                                 var fileName = Path.GetFileName(file);
-                                if(fileName.StartsWith("P"))
+                                if (fileName.StartsWith("P"))
                                 {
                                     fileName = fileName.Replace("P", "");
                                     File.Copy(file, Path.Combine(dir, fileName), true);
                                     File.Delete(file);
                                 }
-                                else if(fileName.StartsWith("X"))
+                                else if (fileName.StartsWith("X"))
                                 {
                                     fileName = fileName.Replace("X", "B");
                                     File.Copy(file, Path.Combine(dir, fileName), true);
@@ -839,7 +846,7 @@ namespace GrandiaStatEditor
                     else
                     {
                         TextBox textBox = new TextBox();
-                        switch(item.Key)
+                        switch (item.Key)
                         {
                             case "LV1":
                             case "LV2":
@@ -1502,7 +1509,7 @@ namespace GrandiaStatEditor
                         }
                     }
                 }
-                
+
                 WriteDatas.WriteBBG2(SelectedFolder, "PC");
                 WriteDatas.WriteWindt2(SelectedFolder, "PC", 0x990F);
 
@@ -1519,6 +1526,62 @@ namespace GrandiaStatEditor
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void importToISOBINFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(SelectedFolder))
+            {
+                LoadProject();
+            }
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                Filter = "ISO Files|*.iso|BIN Files|*.bin|All Files|*.*",
+                Title = "Select a File"
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog1.FileName;
+                string fileExtension = Path.GetExtension(filePath).ToLower();
+
+                if (fileExtension == ".iso" || fileExtension == ".bin")
+                {
+                    string fileHash = GetMD5HashFromFile(filePath);
+
+                    switch (fileHash)
+                    {
+                        case FileHashBinCD1:
+                            ImportToPSXImageClass.ImportToPSXImage(SelectedFolder, filePath, "CD1");
+                            break;
+                        case FileHashBinCD2:
+                            ImportToPSXImageClass.ImportToPSXImage(SelectedFolder, filePath, "CD2");
+                            break;
+                        default:
+                            MessageBox.Show($"The MD5 for this file is not good. Please select a good BIN or ISO file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
+
+                    MessageBox.Show($"Import to PSX File {filePath} Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"Select a BIN or ISO File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        static string GetMD5HashFromFile(string fileName)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(fileName))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
         }
 
         private void enemyStatsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1952,5 +2015,7 @@ namespace GrandiaStatEditor
             this.SetPosition.Text = text;
         }
         #endregion
+
+
     }
 }

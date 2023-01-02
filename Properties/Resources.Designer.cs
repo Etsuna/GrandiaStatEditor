@@ -1243,6 +1243,16 @@ namespace GrandiaStatEditor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
+        internal static byte[] psx_mode2_en {
+            get {
+                object obj = ResourceManager.GetObject("psx_mode2_en", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
         internal static byte[] PWINDT {
             get {
                 object obj = ResourceManager.GetObject("PWINDT", resourceCulture);

@@ -32,6 +32,7 @@ namespace GrandiaStatEditor
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.SetPosition = new System.Windows.Forms.Label();
             this.EnemiePosition = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,7 +50,8 @@ namespace GrandiaStatEditor
             this.characterStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magicAndMoveStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveRequirementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pSXImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToISOBINFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -82,6 +84,16 @@ namespace GrandiaStatEditor
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "EnemyStats";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1410, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // SetPosition
             // 
@@ -157,7 +169,8 @@ namespace GrandiaStatEditor
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.projectToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.pSXImportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1784, 24);
@@ -177,21 +190,21 @@ namespace GrandiaStatEditor
             // newProjectToolStripMenuItem
             // 
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newProjectToolStripMenuItem.Text = "New Project...";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProjectToolStripMenuItem_Click);
             // 
             // loadProjectToolStripMenuItem
             // 
             this.loadProjectToolStripMenuItem.Name = "loadProjectToolStripMenuItem";
-            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.loadProjectToolStripMenuItem.Text = "Load Project...";
             this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.loadProjectToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.infoToolStripMenuItem.Text = "Info...";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
@@ -236,15 +249,20 @@ namespace GrandiaStatEditor
             this.moveRequirementToolStripMenuItem.Text = "MoveRequirement";
             this.moveRequirementToolStripMenuItem.Click += new System.EventHandler(this.moveRequirementToolStripMenuItem_Click);
             // 
-            // label1
+            // pSXImportToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1410, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.pSXImportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToISOBINFileToolStripMenuItem});
+            this.pSXImportToolStripMenuItem.Name = "pSXImportToolStripMenuItem";
+            this.pSXImportToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.pSXImportToolStripMenuItem.Text = "PSX Import";
+            // 
+            // importToISOBINFileToolStripMenuItem
+            // 
+            this.importToISOBINFileToolStripMenuItem.Name = "importToISOBINFileToolStripMenuItem";
+            this.importToISOBINFileToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.importToISOBINFileToolStripMenuItem.Text = "Import to ISO/BIN file...";
+            this.importToISOBINFileToolStripMenuItem.Click += new System.EventHandler(this.importToISOBINFileToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -296,6 +314,8 @@ namespace GrandiaStatEditor
         private System.Windows.Forms.ToolStripMenuItem magicAndMoveStatsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveRequirementToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem pSXImportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToISOBINFileToolStripMenuItem;
     }
 }
 

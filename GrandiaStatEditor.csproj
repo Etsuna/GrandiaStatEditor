@@ -53,6 +53,7 @@
     <Compile Include="CharactersStats.cs" />
     <Compile Include="BBGPositionList.cs" />
     <Compile Include="CopyClass.cs" />
+    <Compile Include="ImportToPSXImageClass.cs" />
     <Compile Include="ModeClass.cs" />
     <Compile Include="ComboBoxList.cs" />
     <Compile Include="EnemyListClass.cs" />
@@ -335,6 +336,7 @@
   <ItemGroup>
     <Content Include="GrandiaStatEditorIcon.ico" />
     <Content Include="GrandiaStatEditorIcon.ico" />
+    <AdditionalFiles Include="Resources\psx-mode2\psx-mode2-en.exe" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

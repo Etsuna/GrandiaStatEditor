@@ -472,6 +472,9 @@
   <data name="PM_DAT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PS1\PM_DAT.BIN;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="psx_mode2_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\psx-mode2\psx-mode2-en.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="PWINDT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PS1\PWINDT.BIN;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
