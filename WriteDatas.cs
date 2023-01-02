@@ -7,9 +7,10 @@ namespace GrandiaStatEditor
 {
     public class WriteDatas
     {
-        public static void WriteMdat(string path, string setPosition, Dictionary<string, string> dataList)
+        public static void WriteMdat(string path, string folder, string setPosition, Dictionary<string, string> dataList)
         {
-            var filePath = Path.Combine(path, "PC", "BATLE", "M_DAT.BIN");
+            //Folder PC or PS
+            var filePath = Path.Combine(path, folder, "BATLE", "M_DAT.BIN");
 
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
@@ -327,9 +328,10 @@ namespace GrandiaStatEditor
             }
         }
 
-        public static void WriteMchar(string path)
+        public static void WriteMchar(string path, string folder)
         {
-            var filePath = Path.Combine(path, "PC", "BIN", "mchar.dat");
+            //Folder PC or PS
+            var filePath = Path.Combine(path, folder, "BIN", "mchar.dat");
             long position = 0x08;
 
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
@@ -516,10 +518,9 @@ namespace GrandiaStatEditor
             };
         }
 
-        public static void WriteWindt(string path)
+        public static void WriteWindt(string path, string folder, long position)
         {
-            var filePath = Path.Combine(path, "PC", "FIELD", "windt.bin");
-            long position = 0x8D08;
+            var filePath = Path.Combine(path, folder, "FIELD", "windt.bin");
 
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
@@ -528,9 +529,9 @@ namespace GrandiaStatEditor
             };
         }
 
-        public static void WriteBBG(string path)
+        public static void WriteBBG(string path, string folder)
         {
-            var filePath = Path.Combine(path, "BATLE");
+            var filePath = Path.Combine(path, folder, "BATLE");
             foreach (string file in Directory.GetFiles(filePath, "*.bbg"))
             {
                 long position = BBGPositionList.MagicAndMoveBBGList().Where(item => item.Text == Path.GetFileName(file)).Select(item => item.Value).FirstOrDefault();
@@ -542,10 +543,9 @@ namespace GrandiaStatEditor
             }
         }
 
-        public static void WriteWindt2(string path)
+        public static void WriteWindt2(string path, string folder, long position)
         {
-            var filePath = Path.Combine(path, "PC", "FIELD", "windt.bin");
-            long position = 0x990F;
+            var filePath = Path.Combine(path, folder, "FIELD", "windt.bin");
 
             using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
@@ -555,9 +555,9 @@ namespace GrandiaStatEditor
         }
 
 
-        public static void WriteBBG2(string path)
+        public static void WriteBBG2(string path, string folder)
         {
-            var filePath = Path.Combine(path, "BATLE");
+            var filePath = Path.Combine(path, folder, "BATLE");
             foreach (string file in Directory.GetFiles(filePath, "*.bbg"))
             {
                 long position = BBGPositionList.MoveRequirementBBGList().Where(item => item.Text == Path.GetFileName(file)).Select(item => item.Value).FirstOrDefault();

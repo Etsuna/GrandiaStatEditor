@@ -1265,7 +1265,8 @@ namespace GrandiaStatEditor
                     }
                 }
 
-                WriteDatas.WriteMdat(SelectedFolder, SetPosition.Text, GetValueToList);
+                WriteDatas.WriteMdat(SelectedFolder, "PC", SetPosition.Text, GetValueToList);
+                WriteDatas.WriteMdat(SelectedFolder, "PS", SetPosition.Text, GetValueToList);
             }
 
             MessageBox.Show("Save enemyStats Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1332,7 +1333,8 @@ namespace GrandiaStatEditor
                     }
                 }
 
-                WriteDatas.WriteMchar(SelectedFolder);
+                WriteDatas.WriteMchar(SelectedFolder, "PC");
+                WriteDatas.WriteMchar(SelectedFolder, "PS");
 
                 MessageBox.Show("Save CharacterStats Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -1398,8 +1400,10 @@ namespace GrandiaStatEditor
                         }
                     }
                 }
-                WriteDatas.WriteWindt(SelectedFolder);
-                WriteDatas.WriteBBG(SelectedFolder);
+                WriteDatas.WriteWindt(SelectedFolder, "PC", 0x8D08);
+                WriteDatas.WriteBBG(SelectedFolder, "PC");
+                WriteDatas.WriteWindt(SelectedFolder, "PS", 0xBB10);
+                WriteDatas.WriteBBG(SelectedFolder, "PS");
 
                 MessageBox.Show("Save MagicAndMoveStats & BBG files Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -1498,8 +1502,12 @@ namespace GrandiaStatEditor
                         }
                     }
                 }
-                WriteDatas.WriteBBG2(SelectedFolder);
-                WriteDatas.WriteWindt2(SelectedFolder);
+                
+                WriteDatas.WriteBBG2(SelectedFolder, "PC");
+                WriteDatas.WriteWindt2(SelectedFolder, "PC", 0x990F);
+
+                WriteDatas.WriteBBG2(SelectedFolder, "PS");
+                WriteDatas.WriteWindt2(SelectedFolder, "PS", 0xC717);
 
                 MessageBox.Show("Save MoveRequirement Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
