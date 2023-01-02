@@ -72,14 +72,15 @@ namespace GrandiaStatEditor
                                 if(fileName.StartsWith("P"))
                                 {
                                     fileName = fileName.Replace("P", "");
-                                    File.Move(file, Path.Combine(dir, fileName));
+                                    File.Copy(file, Path.Combine(dir, fileName), true);
+                                    File.Delete(file);
                                 }
                                 else if(fileName.StartsWith("X"))
                                 {
                                     fileName = fileName.Replace("X", "B");
-                                    File.Move(file, Path.Combine(dir, fileName));
+                                    File.Copy(file, Path.Combine(dir, fileName), true);
+                                    File.Delete(file);
                                 }
-                               
                             }
                         }
 
