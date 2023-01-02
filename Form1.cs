@@ -46,13 +46,42 @@ namespace GrandiaStatEditor
                     if (result == DialogResult.OK)
                     {
                         SelectedFolder = dialog.SelectedPath;
-                        var mdatTargetFile = Path.Combine(SelectedFolder, "BATLE", "M_DAT.BIN");
-                        var mcharTargetFile = Path.Combine(SelectedFolder, "BIN", "mchar.dat");
-                        var windtTargetFile = Path.Combine(SelectedFolder, "FIELD", "windt.bin");
+                        var mdatTargetFile = Path.Combine(SelectedFolder, "PC", "BATLE", "M_DAT.BIN");
+                        var mcharTargetFile = Path.Combine(SelectedFolder, "PC", "BIN", "mchar.dat");
+                        var windtTargetFile = Path.Combine(SelectedFolder, "PC", "FIELD", "windt.bin");
+
+                        var mdatTargetFilePSX = Path.Combine(SelectedFolder, "PS", "BATLE", "PM_DAT.BIN");
+                        var mcharTargetFilePSX = Path.Combine(SelectedFolder, "PS", "BIN", "PMCHAR.DAT");
+                        var windtTargetFilePSX = Path.Combine(SelectedFolder, "PS", "FIELD", "PWINDT.BIN");
 
                         CopyClass.CopyFileNewProject(mdatTargetFile, Resources.M_DAT);
                         CopyClass.CopyFileNewProject(mcharTargetFile, Resources.mchar);
                         CopyClass.CopyFileNewProject(windtTargetFile, Resources.windt);
+
+                        CopyClass.CopyFileNewProject(mdatTargetFilePSX, Resources.PM_DAT);
+                        CopyClass.CopyFileNewProject(mcharTargetFilePSX, Resources.PMCHAR);
+                        CopyClass.CopyFileNewProject(windtTargetFilePSX, Resources.PWINDT);
+
+                        string rootFolder = Path.Combine(SelectedFolder, "PS");
+
+                        foreach (string dir in Directory.GetDirectories(rootFolder))
+                        {
+                            foreach (string file in Directory.GetFiles(dir))
+                            {
+                                var fileName = Path.GetFileName(file);
+                                if(fileName.StartsWith("P"))
+                                {
+                                    fileName = fileName.Replace("P", "");
+                                    File.Move(file, Path.Combine(dir, fileName));
+                                }
+                                else if(fileName.StartsWith("X"))
+                                {
+                                    fileName = fileName.Replace("X", "B");
+                                    File.Move(file, Path.Combine(dir, fileName));
+                                }
+                               
+                            }
+                        }
 
                         tabControl1.Visible = true;
                         saveToolStripMenuItem.Enabled = true;
@@ -87,9 +116,9 @@ namespace GrandiaStatEditor
 
                         SelectedFolder = dialog.SelectedPath;
 
-                        var mdatTargetFile = Path.Combine(SelectedFolder, "BATLE", "M_DAT.BIN");
-                        var mcharTargetFile = Path.Combine(SelectedFolder, "BIN", "mchar.dat");
-                        var windtTargetFile = Path.Combine(SelectedFolder, "FIELD", "windt.bin");
+                        var mdatTargetFile = Path.Combine(SelectedFolder, "PC", "BATLE", "M_DAT.BIN");
+                        var mcharTargetFile = Path.Combine(SelectedFolder, "PC", "BIN", "mchar.dat");
+                        var windtTargetFile = Path.Combine(SelectedFolder, "PC", "FIELD", "windt.bin");
                         var load = true;
 
                         load = CopyClass.CopyFileLoadProject(mdatTargetFile, Resources.M_DAT, load);

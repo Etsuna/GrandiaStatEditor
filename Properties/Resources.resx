@@ -119,354 +119,702 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="B001" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b001.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b001.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B002" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b002.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b002.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B003" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b003.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b003.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B004" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b004.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b004.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B005" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b005.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b005.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B006" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b006.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b006.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B007" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b007.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b007.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B008" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b008.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b008.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B009" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b009.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b009.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B010" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b010.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b010.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B011" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b011.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b011.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b012.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b012.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B013" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b013.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b013.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B014" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b014.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b014.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B015" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b015.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b015.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B018" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b018.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b018.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B019" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b019.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b019.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B020" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b020.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b020.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B021" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b021.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b021.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B022" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b022.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b022.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B023" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b023.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b023.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B024" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b024.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b024.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B025" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b025.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b025.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B027" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b027.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b027.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B028" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b028.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b028.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B029" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b029.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b029.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B030" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b030.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b030.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B031" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b031.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b031.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B032" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b032.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b032.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B033" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b033.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b033.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B034" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b034.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b034.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B035" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b035.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b035.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B036" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b036.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b036.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B037" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b037.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b037.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B038" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b038.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b038.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B039" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b039.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b039.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B040" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b040.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b040.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B041" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b041.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b041.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B042" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b042.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b042.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B043" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b043.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b043.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B044" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b044.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b044.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B046" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b046.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b046.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B047" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b047.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b047.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B049" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b049.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b049.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B050" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b050.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b050.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B051" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b051.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b051.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B052" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b052.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b052.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B053" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b053.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b053.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B054" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b054.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b054.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B055" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b055.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b055.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B056" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b056.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b056.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B057" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b057.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b057.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B058" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b058.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b058.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B059" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b059.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b059.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B060" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b060.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b060.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B061" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b061.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b061.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B062" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b062.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b062.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B063" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b063.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b063.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B064" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b064.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b064.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B065" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b065.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b065.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B066" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b066.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b066.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B067" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b067.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b067.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B068" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b068.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b068.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B069" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b069.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b069.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B070" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b070.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b070.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B071" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b071.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b071.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B072" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b072.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b072.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B073" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b073.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b073.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B074" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b074.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b074.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B075" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b075.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b075.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B076" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b076.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b076.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B077" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b077.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b077.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B078" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b078.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b078.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B079" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b079.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b079.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B080" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b080.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b080.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B081" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b081.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b081.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B082" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b082.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b082.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B083" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b083.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b083.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B084" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b084.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b084.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B085" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b085.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b085.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B086" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b086.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b086.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B087" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b087.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b087.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B088" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b088.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b088.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B089" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b089.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b089.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B090" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b090.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b090.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B091" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b091.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b091.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B092" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b092.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b092.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B093" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b093.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b093.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B094" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b094.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b094.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B097" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b097.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b097.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B098" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b098.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b098.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B101" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b101.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b101.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B102" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b102.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b102.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B103" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b103.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b103.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B104" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b104.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b104.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B105" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b105.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b105.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B106" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b106.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b106.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B107" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b107.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b107.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B109" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b109.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b109.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B110" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b110.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b110.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B111" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b111.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b111.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B112" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b112.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b112.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B113" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b113.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b113.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B114" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b114.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b114.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B115" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b115.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b115.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B116" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b116.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b116.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B117" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b117.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b117.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B120" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b120.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b120.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B121" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b121.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b121.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B122" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b122.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b122.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B123" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b123.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b123.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B124" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b124.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b124.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="B125" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\b125.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\b125.bbg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="GrandiaStatEditorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\grandiastateditoricon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mchar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mchar.dat;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\mchar.dat;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="M_DAT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\m_dat.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\m_dat.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PMCHAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\PMCHAR.DAT;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PM_DAT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\PM_DAT.BIN;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PWINDT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\PWINDT.BIN;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="windt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\windt.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\resources\pc\windt.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X001.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X002.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X003" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X003.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X004" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X004.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X005.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X006.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X007.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X008.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X009" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X009.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X010.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X011.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X012" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X012.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X013" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X013.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X014" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X014.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X015" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X015.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X018.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X019" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X019.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X020" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X020.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X021.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X022" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X022.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X023" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X023.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X024.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X025" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X025.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X027" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X027.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X028" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X028.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X029" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X029.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X030" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X030.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X031.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X032" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X032.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X033" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X033.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X034" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X034.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X035" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X035.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X036" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X036.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X037" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X037.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X038" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X038.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X039" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X039.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X040" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X040.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X041" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X041.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X042" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X042.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X043" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X043.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X044" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X044.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X046" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X046.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X047" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X047.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X049" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X049.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X050.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X051" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X051.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X052" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X052.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X053" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X053.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X054" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X054.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X055" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X055.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X056" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X056.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X057" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X057.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X058" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X058.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X059" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X059.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X060" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X060.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X061" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X061.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X062" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X062.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X063" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X063.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X064" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X064.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X065" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X065.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X066" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X066.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X067" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X067.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X068" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X068.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X069" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X069.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X070" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X070.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X071" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X071.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X072" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X072.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X073" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X073.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X074" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X074.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X075" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X075.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X076" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X076.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X077" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X077.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X078" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X078.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X079" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X079.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X080" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X080.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X081" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X081.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X082" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X082.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X083" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X083.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X084" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X084.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X085" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X085.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X086" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X086.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X087" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X087.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X088" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X088.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X089" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X089.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X090" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X090.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X091" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X091.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X092" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X092.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X093" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X093.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X094" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X094.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X097" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X097.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X098" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X098.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X101.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X102" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X102.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X103" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X103.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X104" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X104.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X105" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X105.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X106" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X106.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X107" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X107.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X109" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X109.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X110.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X111" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X111.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X112" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X112.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X113" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X113.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X114" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X114.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X115" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X115.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X116" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X116.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X117" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X117.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X120.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X121.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X122" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X122.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X123" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X123.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X124" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X124.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="X125" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PS1\X125.BBG;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -1,9 +1,6 @@
 ﻿using GrandiaStatEditor.Properties;
-using System.Collections;
 using System.IO;
 using System.Reflection;
-using System.Resources;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,9 +21,16 @@ namespace GrandiaStatEditor
                     Task t = Task.Run(() => File.WriteAllBytes(path, resource));
                     t.Wait();
 
-                    if (filename.Equals("windt.bin"))
+                    switch (filename)
                     {
-                        CreateBBGFile(path);
+                        case "windt.bin":
+                            CreateBBGFile(path);
+                            break;
+                        case "PWINDT.BIN":
+                            CreateBBGFilePSX(path);
+                            break;
+                        default:
+                            break;
                     }
                 }
             }
@@ -38,9 +42,16 @@ namespace GrandiaStatEditor
                 Task t = Task.Run(() => File.WriteAllBytes(path, resource));
                 t.Wait();
 
-                if (filename.Equals("windt.bin"))
+                switch (filename)
                 {
-                    CreateBBGFile(path);
+                    case "windt.bin":
+                        CreateBBGFile(path);
+                        break;
+                    case "PWINDT.BIN":
+                        CreateBBGFilePSX(path);
+                        break;
+                    default:
+                        break;
                 }
 
             }
@@ -59,9 +70,16 @@ namespace GrandiaStatEditor
                     Task t = Task.Run(() => File.WriteAllBytes(path, resource));
                     t.Wait();
 
-                    if (filename.Equals("windt.bin"))
+                    switch(filename)
                     {
-                        CreateBBGFile(path);
+                        case "windt.bin":
+                            CreateBBGFile(path);
+                            break;
+                        case "PWINDT.BIN":
+                            CreateBBGFilePSX(path);
+                            break;
+                        default:
+                            break;
                     }
                 }
                 else
@@ -86,6 +104,29 @@ namespace GrandiaStatEditor
             foreach (PropertyInfo property in properties)
             {
                 if (property.Name.StartsWith("B") && int.TryParse(property.Name.Substring(1), out int num) && num >= 1 && num <= 125)
+                {
+                    byte[] fileContent = (byte[])property.GetValue(null, null);
+                    string fileName = property.Name + ".BBG";
+                    string targetFilePath = Path.Combine(folderPath, fileName);
+                    File.WriteAllBytes(targetFilePath, fileContent);
+                }
+            }
+        }
+
+        private static void CreateBBGFilePSX(string path)
+        {
+            var folderPath = Path.GetDirectoryName(path);
+            folderPath = Path.Combine(folderPath, "..", "BATLE");
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            PropertyInfo[] properties = typeof(Resources).GetProperties(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
+
+            foreach (PropertyInfo property in properties)
+            {
+                if (property.Name.StartsWith("X") && int.TryParse(property.Name.Substring(1), out int num) && num >= 1 && num <= 125)
                 {
                     byte[] fileContent = (byte[])property.GetValue(null, null);
                     string fileName = property.Name + ".BBG";

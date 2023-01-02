@@ -9,7 +9,7 @@ namespace GrandiaStatEditor
 
         public static void ReadMoveAndMagicData(string path)
         {
-            string windtFilePath = Path.Combine(path, "FIELD", "windt.bin");
+            string windtFilePath = Path.Combine(path, "PC", "FIELD", "windt.bin");
 
             long position = 0x8D08;
             using (FileStream s = new FileStream(windtFilePath, FileMode.Open))

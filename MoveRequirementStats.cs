@@ -9,7 +9,7 @@ namespace GrandiaStatEditor
 
         public static void ReadMoveRequirementData(string path)
         {
-            string windtFilePath = Path.Combine(path,"FIELD", "windt.bin");
+            string windtFilePath = Path.Combine(path, "PC", "FIELD", "windt.bin");
 
             long position = 0x990F;
             using (FileStream s = new FileStream(windtFilePath, FileMode.Open))
