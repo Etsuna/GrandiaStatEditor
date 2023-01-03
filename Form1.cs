@@ -21,10 +21,10 @@ namespace GrandiaStatEditor
         public string SelectedFolder { get; set; }
 
         //Hash BIN CD1
-        public const string FileHashBinCD1 = "b747f0978466588e198067aba8cd81f2";
+        public const string FileHashCD1 = "b747f0978466588e198067aba8cd81f2";
 
         //Hash BIN CD2
-        public const string FileHashBinCD2 = "bfd84253d3d3e8acac7cc26d6336d3af";
+        public const string FileHashCD2 = "bfd84253d3d3e8acac7cc26d6336d3af";
 
         public Form1()
         {
@@ -1552,10 +1552,10 @@ namespace GrandiaStatEditor
 
                     switch (fileHash)
                     {
-                        case FileHashBinCD1:
+                        case FileHashCD1:
                             ImportToPSXImageClass.ImportToPSXImage(SelectedFolder, filePath, "CD1");
                             break;
-                        case FileHashBinCD2:
+                        case FileHashCD2:
                             ImportToPSXImageClass.ImportToPSXImage(SelectedFolder, filePath, "CD2");
                             break;
                         default:
@@ -2015,7 +2015,5 @@ namespace GrandiaStatEditor
             this.SetPosition.Text = text;
         }
         #endregion
-
-
     }
 }
