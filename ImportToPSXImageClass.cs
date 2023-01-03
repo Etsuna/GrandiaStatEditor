@@ -39,7 +39,8 @@ namespace GrandiaStatEditor
                     FileName = exeFile,
                     Arguments = argument,
                     UseShellExecute = false,
-                    RedirectStandardOutput = true
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true
                 };
 
                 Console.WriteLine(argument);
