@@ -520,11 +520,25 @@ namespace GrandiaStatEditor
         {
             var itemList = new List<MagicMoveLevel>()
             {
-                new MagicMoveLevel() { Text = "Move", Value = 0},
                 new MagicMoveLevel() { Text = "Level 1", Value = 1},
                 new MagicMoveLevel() { Text = "Level 2", Value = 2},
                 new MagicMoveLevel() { Text = "Level 3", Value = 3},
-                new MagicMoveLevel() { Text = "Move 2", Value = 4},
+            };
+
+            return itemList;
+        }
+
+        public class MagicMoveLevel2
+        {
+            public int Value { get; set; }
+            public string Text { get; set; }
+        }
+        public static List<MagicMoveLevel2> MagicMoveLevel2List()
+        {
+            var itemList = new List<MagicMoveLevel2>()
+            {
+                new MagicMoveLevel2() { Text = "Move", Value = 0},
+                new MagicMoveLevel2() { Text = "Move 2", Value = 4},
             };
 
             return itemList;

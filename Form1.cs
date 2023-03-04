@@ -704,10 +704,14 @@ namespace GrandiaStatEditor
                                 }
                                 break;
                             case "Level":
-                                comboBox.DataSource = ComboBoxList.MagicMoveLevelList();
                                 if (item.Value.Equals("0") || item.Value.Equals("4"))
                                 {
+                                    comboBox.DataSource = ComboBoxList.MagicMoveLevel2List();
                                     comboBox.Enabled = false;
+                                }
+                                else
+                                {
+                                    comboBox.DataSource = ComboBoxList.MagicMoveLevelList();
                                 }
                                 break;
                             default:
