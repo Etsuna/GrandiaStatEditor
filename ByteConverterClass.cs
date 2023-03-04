@@ -25,6 +25,18 @@ namespace GrandiaStatEditor
             return bytes;
         }
 
+        public static string AddZero(string value)
+        {
+            var result = int.Parse(value);
+            return result.ToString();
+        }
+
+        public static string AddFour(string value)
+        {
+            var result = int.Parse(value) + 4;
+            return result.ToString();
+        }
+
         public static string AddSeven(string value)
         {
             var result = int.Parse(value) + 7;

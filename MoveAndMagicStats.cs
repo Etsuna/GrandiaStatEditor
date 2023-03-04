@@ -28,7 +28,8 @@ namespace GrandiaStatEditor
                     var IpPower = reader.ReadInt16();
                     var Power = reader.ReadInt16();
                     var Target = reader.ReadByte();
-                    var ExtCom = reader.ReadByte();
+                    //NIBBLE
+                    var LevelCom = reader.ReadByte();
                     var XP = reader.ReadByte();
                     var AreaRange = reader.ReadByte();
                     var Elemental = reader.ReadByte();
@@ -42,11 +43,16 @@ namespace GrandiaStatEditor
                     var IC = reader.ReadByte();
                     var Unknow = reader.ReadByte();
 
+                    var Level = ByteConverterClass.GetNibble(LevelCom).Item1 - 4;
+                    var Com = ByteConverterClass.GetNibble(LevelCom).Item2;
+
                     listStats.Add("MP_SP", MP_SP.ToString());
                     listStats.Add("CastSpeed", CastSpeed.ToString());
                     listStats.Add("IpPower", IpPower.ToString());
                     listStats.Add("Power", Power.ToString());
                     listStats.Add("Target", Target.ToString());
+                    listStats.Add("Level", Level.ToString());
+                    listStats.Add("Com", Com.ToString());
                     listStats.Add("XP", XP.ToString());
                     listStats.Add("AreaRange", AreaRange.ToString());
                     listStats.Add("Elemental", Elemental.ToString());

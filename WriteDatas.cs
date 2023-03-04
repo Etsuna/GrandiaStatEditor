@@ -593,7 +593,8 @@ namespace GrandiaStatEditor
                 var Target = ByteConverterClass.IntToByte(innerDictionary["Target"]);
                 stream.Write(Target, 0, Target.Length);
 
-                stream.ReadByte();
+                var LevelCom = ByteConverterClass.IntToByte(ByteConverterClass.NibbleToByte(ByteConverterClass.AddFour(innerDictionary["Level"]), ByteConverterClass.AddZero(innerDictionary["Com"])).ToString());
+                stream.Write(LevelCom, 0, LevelCom.Length);
 
                 var XP = ByteConverterClass.IntToByte(innerDictionary["XP"]);
                 stream.Write(XP, 0, XP.Length);

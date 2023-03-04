@@ -98,7 +98,7 @@ namespace GrandiaStatEditor
             // SetPosition
             // 
             this.SetPosition.AutoSize = true;
-            this.SetPosition.Location = new System.Drawing.Point(15, 930);
+            this.SetPosition.Location = new System.Drawing.Point(14, 930);
             this.SetPosition.Name = "SetPosition";
             this.SetPosition.Size = new System.Drawing.Size(60, 13);
             this.SetPosition.TabIndex = 3;
@@ -108,7 +108,7 @@ namespace GrandiaStatEditor
             // EnemiePosition
             // 
             this.EnemiePosition.AutoSize = true;
-            this.EnemiePosition.Location = new System.Drawing.Point(3, 930);
+            this.EnemiePosition.Location = new System.Drawing.Point(2, 930);
             this.EnemiePosition.Name = "EnemiePosition";
             this.EnemiePosition.Size = new System.Drawing.Size(14, 13);
             this.EnemiePosition.TabIndex = 2;
@@ -141,7 +141,7 @@ namespace GrandiaStatEditor
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1751, 946);
+            this.tabPage2.Size = new System.Drawing.Size(1751, 1006);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CharacterStats";
             // 
@@ -151,7 +151,7 @@ namespace GrandiaStatEditor
             this.tabPage3.BackColor = System.Drawing.Color.Lavender;
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1751, 946);
+            this.tabPage3.Size = new System.Drawing.Size(1751, 1006);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MoveAndMagicStats";
             // 
@@ -161,7 +161,7 @@ namespace GrandiaStatEditor
             this.tabPage4.BackColor = System.Drawing.Color.Lavender;
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1751, 946);
+            this.tabPage4.Size = new System.Drawing.Size(1751, 1006);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "MoveRequirement";
             // 

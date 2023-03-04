@@ -628,7 +628,7 @@ namespace GrandiaStatEditor
                 GroupBox groupBox = new GroupBox();
                 groupBox.Name = $"{value}GroupBox";
                 groupBox.Text = value;
-                groupBox.Location = new Point(10 + x, 30 + y2);
+                groupBox.Location = new Point(10 + x, 10 + y2);
                 groupBox.AutoSize = true;
                 this.tabPage3.Controls.Add(groupBox);
 
@@ -646,7 +646,7 @@ namespace GrandiaStatEditor
                     label.Size = new Size(80, 20);
                     groupBox.Controls.Add(label);
 
-                    if (item.Key.Equals("Target") || item.Key.Equals("Elemental") || item.Key.Equals("EffectType") || item.Key.Equals("Mode"))
+                    if (item.Key.Equals("Target") || item.Key.Equals("Elemental") || item.Key.Equals("EffectType") || item.Key.Equals("Mode") || item.Key.Equals("Level"))
                     {
                         ComboBox comboBox = new ComboBox();
                         switch (item.Key)
@@ -703,6 +703,13 @@ namespace GrandiaStatEditor
                                         break;
                                 }
                                 break;
+                            case "Level":
+                                comboBox.DataSource = ComboBoxList.MagicMoveLevelList();
+                                if (item.Value.Equals("0") || item.Value.Equals("4"))
+                                {
+                                    comboBox.Enabled = false;
+                                }
+                                break;
                             default:
                                 break;
                         }
@@ -711,6 +718,7 @@ namespace GrandiaStatEditor
                         comboBox.DisplayMember = "Text";
                         comboBox.Location = new Point(100, 20 + y);
                         comboBox.Size = new Size(100, 20);
+                        
                         groupBox.Controls.Add(comboBox);
                         comboBox.CreateControl();
                         comboBox.SelectedValue = int.Parse(item.Value);
@@ -738,6 +746,9 @@ namespace GrandiaStatEditor
                             case "IpPower":
                                 textBox.TextChanged += new EventHandler(TextBox_0to12800_TextChanged);
                                 break;
+                            case "Com":
+                                textBox.Enabled = false;
+                                break;
                             default:
                                 break;
                         }
@@ -747,6 +758,11 @@ namespace GrandiaStatEditor
                         textBox.Size = new Size(100, 20);
                         textBox.KeyPress += new KeyPressEventHandler(textBox1_KeyPress);
                         groupBox.Controls.Add(textBox);
+
+                        if (value.Equals("LACOSTA") || value.Equals("SANCTUARY"))
+                        {
+                            groupBox.Enabled = false;
+                        }
                     }
 
                     y += 30;
@@ -761,7 +777,7 @@ namespace GrandiaStatEditor
                 }
                 else
                 {
-                    y2 = 400;
+                    y2 = 460;
                 }
 
             }
@@ -1395,6 +1411,10 @@ namespace GrandiaStatEditor
                     {
 
                         var itemKey = comboBox.Name.Replace("ComboBox", "").Replace($"{groupKey}_", "");
+                        if(comboBox.SelectedValue is null)
+                        {
+                            comboBox.SelectedIndex = 0;
+                        }
                         var ItemValue = comboBox.SelectedValue.ToString().Replace("ComboBox", "");
 
                         if (MoveAndMagicStats.MoveAndStatDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDict))
