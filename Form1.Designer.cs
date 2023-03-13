@@ -66,7 +66,7 @@ namespace GrandiaStatEditor
             this.tabControl1.Location = new System.Drawing.Point(13, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1759, 972);
+            this.tabControl1.Size = new System.Drawing.Size(1759, 882);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -80,7 +80,7 @@ namespace GrandiaStatEditor
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1751, 946);
+            this.tabPage1.Size = new System.Drawing.Size(1751, 856);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "EnemyStats";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -98,7 +98,7 @@ namespace GrandiaStatEditor
             // SetPosition
             // 
             this.SetPosition.AutoSize = true;
-            this.SetPosition.Location = new System.Drawing.Point(14, 930);
+            this.SetPosition.Location = new System.Drawing.Point(14, 840);
             this.SetPosition.Name = "SetPosition";
             this.SetPosition.Size = new System.Drawing.Size(60, 13);
             this.SetPosition.TabIndex = 3;
@@ -108,7 +108,7 @@ namespace GrandiaStatEditor
             // EnemiePosition
             // 
             this.EnemiePosition.AutoSize = true;
-            this.EnemiePosition.Location = new System.Drawing.Point(2, 930);
+            this.EnemiePosition.Location = new System.Drawing.Point(2, 840);
             this.EnemiePosition.Name = "EnemiePosition";
             this.EnemiePosition.Size = new System.Drawing.Size(14, 13);
             this.EnemiePosition.TabIndex = 2;
@@ -141,7 +141,7 @@ namespace GrandiaStatEditor
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1751, 1006);
+            this.tabPage2.Size = new System.Drawing.Size(1751, 946);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CharacterStats";
             // 
@@ -151,7 +151,7 @@ namespace GrandiaStatEditor
             this.tabPage3.BackColor = System.Drawing.Color.Lavender;
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1751, 1006);
+            this.tabPage3.Size = new System.Drawing.Size(1751, 946);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MoveAndMagicStats";
             // 
@@ -161,7 +161,7 @@ namespace GrandiaStatEditor
             this.tabPage4.BackColor = System.Drawing.Color.Lavender;
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1751, 1006);
+            this.tabPage4.Size = new System.Drawing.Size(1751, 946);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "MoveRequirement";
             // 
@@ -270,7 +270,7 @@ namespace GrandiaStatEditor
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(1784, 1011);
+            this.ClientSize = new System.Drawing.Size(1784, 915);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;

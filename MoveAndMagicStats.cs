@@ -56,6 +56,7 @@ namespace GrandiaStatEditor
                     listStats.Add("XP", XP.ToString());
                     listStats.Add("AreaRange", AreaRange.ToString());
                     listStats.Add("Elemental", Elemental.ToString());
+                    listStats.Add("Weapon", Weapon.ToString());
                     listStats.Add("Move", Move.ToString());
                     listStats.Add("CriticalPourcent", CriticalPourcent.ToString());
                     listStats.Add("EffectType", EffectType.ToString());

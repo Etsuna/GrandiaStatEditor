@@ -605,7 +605,8 @@ namespace GrandiaStatEditor
                 var Elemental = ByteConverterClass.IntToByte(innerDictionary["Elemental"]);
                 stream.Write(Elemental, 0, Elemental.Length);
 
-                stream.ReadByte();
+                var Weapon = ByteConverterClass.IntToByte(innerDictionary["Weapon"]);
+                stream.Write(Weapon, 0, Weapon.Length);
 
                 var Move = ByteConverterClass.IntToByte(innerDictionary["Move"]);
                 stream.Write(Move, 0, Move.Length);

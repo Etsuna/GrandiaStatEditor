@@ -619,7 +619,6 @@ namespace GrandiaStatEditor
         {
             var x = 10;
             var y2 = 0;
-            var count = 0;
 
             foreach (var value in MoveAndMagicStats.MoveAndStatDictionary.Keys)
             {
@@ -727,6 +726,34 @@ namespace GrandiaStatEditor
                         comboBox.CreateControl();
                         comboBox.SelectedValue = int.Parse(item.Value);
                     }
+                    else if (item.Key.Equals("Weapon"))
+                    {
+                        string[] weapons = { "Knife", "Sword", "Mace", "Axe", "Whip", "Throw" };
+
+                        foreach (string weapon in weapons)
+                        {
+                            CheckBox checkBox = new CheckBox();
+                            checkBox.Name = $"{value}_{item.Key}CheckBox";
+                            checkBox.Text = weapon;
+                            checkBox.Location = new Point(100, 20 + y);
+                            checkBox.Size = new Size(100, 20);
+
+                            BitArray bits = new BitArray(new int[] { int.Parse(item.Value) });
+                            if (bits.Get(Array.IndexOf(weapons, weapon)))
+                            {
+                                checkBox.Checked = true;
+                                checkBox.Enabled = false;
+                            }
+                            else
+                            {
+                                checkBox.Checked = false;
+                                checkBox.Enabled = false;
+                            }
+
+                            groupBox.Controls.Add(checkBox);
+                            y += 30;
+                        }
+                    }
                     else
                     {
                         TextBox textBox = new TextBox();
@@ -771,19 +798,7 @@ namespace GrandiaStatEditor
 
                     y += 30;
                 }
-                count++;
-
-                if (count == 2)
-                {
-                    x += 210;
-                    y2 = 0;
-                    count = 0;
-                }
-                else
-                {
-                    y2 = 460;
-                }
-
+                x += 210;
             }
         }
 
@@ -791,7 +806,6 @@ namespace GrandiaStatEditor
         {
             var x = 10;
             var y2 = 0;
-            var count = 0;
 
             foreach (var value in MoveRequirementStats.MoveRequirementDictionary.Keys)
             {
@@ -800,7 +814,7 @@ namespace GrandiaStatEditor
                 GroupBox groupBox = new GroupBox();
                 groupBox.Name = $"{value}GroupBox";
                 groupBox.Text = value;
-                groupBox.Location = new Point(10 + x, 30 + y2);
+                groupBox.Location = new Point(10 + x, 10 + y2);
                 groupBox.AutoSize = true;
                 this.tabPage4.Controls.Add(groupBox);
 
@@ -886,19 +900,7 @@ namespace GrandiaStatEditor
 
                     y += 30;
                 }
-                count++;
-
-                if (count == 2)
-                {
-                    x += 210;
-                    y2 = 0;
-                    count = 0;
-                }
-                else
-                {
-                    y2 += 450;
-                }
-
+                x += 210;
             }
         }
         #endregion
@@ -1385,14 +1387,19 @@ namespace GrandiaStatEditor
                 // Initialize a list to hold the textboxes
                 List<TextBox> textBoxes = new List<TextBox>();
                 List<ComboBox> comboBoxes = new List<ComboBox>();
+                List<CheckBox> checkBoxes = new List<CheckBox>();
+
 
                 // Get the textboxes in each groupbox
                 foreach (GroupBox groupBox in groupBoxes)
                 {
                     textBoxes.Clear();
                     comboBoxes.Clear();
+                    checkBoxes.Clear();
                     textBoxes.AddRange(groupBox.Controls.OfType<TextBox>());
                     comboBoxes.AddRange(groupBox.Controls.OfType<ComboBox>());
+                    checkBoxes.AddRange(groupBox.Controls.OfType<CheckBox>());
+
 
                     var groupKey = groupBox.Name.Replace("GroupBox", "");
 
@@ -1413,7 +1420,6 @@ namespace GrandiaStatEditor
 
                     foreach (ComboBox comboBox in comboBoxes)
                     {
-
                         var itemKey = comboBox.Name.Replace("ComboBox", "").Replace($"{groupKey}_", "");
                         if(comboBox.SelectedValue is null)
                         {
@@ -1430,6 +1436,38 @@ namespace GrandiaStatEditor
                             }
                         }
                     }
+
+                    List<int> arrayList = new List<int>();
+                    arrayList.Clear();
+                    foreach (CheckBox checkBox in checkBoxes)
+                    {
+
+                        var itemKey = checkBox.Name.Replace("CheckBox", "").Replace($"{groupKey}_", "");
+                        var isCheck = checkBox.Checked;
+                        if (isCheck)
+                        {
+                            arrayList.Add(1);
+                        }
+                        else
+                        {
+                            arrayList.Add(0);
+                        }
+                    }
+
+                    arrayList.Reverse();
+                    string binaryString = string.Join("", arrayList.Select(x => x.ToString()));
+                    string hexaString = Convert.ToInt32(binaryString, 2).ToString("X");
+                    int decimalValue = Convert.ToInt32(hexaString, 16);
+
+                    if (MoveAndMagicStats.MoveAndStatDictionary.TryGetValue(groupKey, out Dictionary<string, string> innerDictSpecial))
+                    {
+                        if (innerDictSpecial.TryGetValue("Weapon", out string value))
+                        {
+                            // Update the value for the key "innerKey" in the inner dictionary
+                            innerDictSpecial["Weapon"] = decimalValue.ToString();
+                        }
+                    }
+
                 }
                 WriteDatas.WriteWindt(SelectedFolder, "PC", 0x8D08);
                 WriteDatas.WriteBBG(SelectedFolder, "PC");
